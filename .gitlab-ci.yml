@@ -1,7 +1,7 @@
 image: node:alpine
 
 variables:
-  PUBLIC_URL: /escohotado
+  PUBLIC_URL: "/escohotado"
 
 cache:
   paths:
