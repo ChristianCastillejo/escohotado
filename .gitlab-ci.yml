@@ -1,0 +1,25 @@
+image: node:alpine
+
+variables:
+  PUBLIC_URL: /escohotado
+
+cache:
+  paths:
+  - node_modules
+
+stages:
+- deploy
+
+pages:
+  stage: deploy
+  script:
+    - yarn
+    - yarn build --prod
+    - cp public/index.html public/404.html
+    - mv public _public
+    - mv build public
+  artifacts:
+    paths:
+    - public
+  only:
+    - master
