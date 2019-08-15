@@ -34,7 +34,7 @@ class ArticlesController < ApplicationController
 
   def article_params
     # whitelist params
-    params.permit(:title, :created_by)
+    params.permit(:title, :description, :body, :images, :tags, :date, :article)
   end
 
   def set_article
