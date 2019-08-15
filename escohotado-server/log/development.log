@@ -386,3 +386,780 @@ Processing by ArticlesController#index as */*
 Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/" for 127.0.0.1 at 2019-08-15 22:53:06 +0200
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/chris/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as */*
+  Rendering /home/chris/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/chris/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (1.9ms)
+Completed 200 OK in 11ms (Views: 7.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-08-15 22:53:09 +0200
+Processing by Rails::WelcomeController#index as */*
+  Rendering /home/chris/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/chris/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.2ms)
+Completed 200 OK in 16ms (Views: 11.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-08-15 22:53:13 +0200
+Processing by Rails::WelcomeController#index as */*
+  Rendering /home/chris/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/chris/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.6ms)
+Completed 200 OK in 11ms (Views: 6.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-08-15 22:56:04 +0200
+Processing by Rails::WelcomeController#index as */*
+  Rendering /home/chris/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/chris/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (4.7ms)
+Completed 200 OK in 13ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started OPTIONS "/" for 127.0.0.1 at 2019-08-15 22:57:46 +0200
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started OPTIONS "/" for 127.0.0.1 at 2019-08-15 22:58:25 +0200
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started OPTIONS "/" for 127.0.0.1 at 2019-08-15 23:02:23 +0200
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started OPTIONS "/" for 127.0.0.1 at 2019-08-15 23:03:02 +0200
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started OPTIONS "/" for 127.0.0.1 at 2019-08-15 23:04:20 +0200
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started OPTIONS "/" for 127.0.0.1 at 2019-08-15 23:04:24 +0200
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started OPTIONS "/" for 127.0.0.1 at 2019-08-15 23:05:43 +0200
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started OPTIONS "/" for 127.0.0.1 at 2019-08-15 23:05:45 +0200
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started OPTIONS "/" for 127.0.0.1 at 2019-08-15 23:06:26 +0200
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started OPTIONS "/" for 127.0.0.1 at 2019-08-15 23:07:19 +0200
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started OPTIONS "/" for 127.0.0.1 at 2019-08-15 23:07:24 +0200
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started OPTIONS "/" for 127.0.0.1 at 2019-08-15 23:07:42 +0200
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started OPTIONS "/" for 127.0.0.1 at 2019-08-15 23:07:58 +0200
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started OPTIONS "/" for 127.0.0.1 at 2019-08-15 23:09:33 +0200
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2019-08-15 23:10:11 +0200
+Processing by Rails::WelcomeController#index as */*
+  Rendering /home/chris/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/chris/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (8.3ms)
+Completed 200 OK in 40ms (Views: 22.0ms | ActiveRecord: 0.0ms)
+
+
+Started OPTIONS "/" for 127.0.0.1 at 2019-08-15 23:13:04 +0200
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2019-08-15 23:14:06 +0200
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/chris/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as JSON
+  Parameters: {"welcome"=>{}}
+Completed 406 Not Acceptable in 13ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (Rails::WelcomeController#index is missing a template for this request format and variant.
+
+request.formats: ["application/json"]
+request.variant: []):
+  
+actionpack (5.2.3) lib/action_controller/metal/implicit_render.rb:42:in `default_render'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2019-08-15 23:14:36 +0200
+Processing by Rails::WelcomeController#index as JSON
+  Parameters: {"welcome"=>{}}
+Completed 406 Not Acceptable in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (Rails::WelcomeController#index is missing a template for this request format and variant.
+
+request.formats: ["application/json"]
+request.variant: []):
+  
+actionpack (5.2.3) lib/action_controller/metal/implicit_render.rb:42:in `default_render'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2019-08-15 23:15:05 +0200
+Processing by Rails::WelcomeController#index as JSON
+  Parameters: {"welcome"=>{}}
+Completed 406 Not Acceptable in 15ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (Rails::WelcomeController#index is missing a template for this request format and variant.
+
+request.formats: ["application/json"]
+request.variant: []):
+  
+actionpack (5.2.3) lib/action_controller/metal/implicit_render.rb:42:in `default_render'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2019-08-15 23:16:13 +0200
+Processing by Rails::WelcomeController#index as */*
+  Parameters: {"welcome"=>{}}
+  Rendering /home/chris/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/chris/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (5.4ms)
+Completed 200 OK in 27ms (Views: 21.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-08-15 23:16:32 +0200
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/chris/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as */*
+  Parameters: {"welcome"=>{}}
+  Rendering /home/chris/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/chris/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (3.2ms)
+Completed 200 OK in 17ms (Views: 11.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-08-15 23:16:54 +0200
+Processing by Rails::WelcomeController#index as */*
+  Parameters: {"welcome"=>{}}
+  Rendering /home/chris/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/chris/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.0ms)
+Completed 200 OK in 12ms (Views: 7.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-08-15 23:17:05 +0200
+Processing by Rails::WelcomeController#index as */*
+  Parameters: {"welcome"=>{}}
+  Rendering /home/chris/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/chris/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.7ms)
+Completed 200 OK in 16ms (Views: 9.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/articles/" for ::1 at 2019-08-15 23:18:52 +0200
+Processing by ArticlesController#index as */*
+  Parameters: {"title"=>"Negaciones metafóricas.", "description"=>"Los niños aprenden antes a decir no que a decir sí, y solemos ser unívocos en vez de ambiguos al negar. Ambigua es una histérica a quien espanta la idea del sexo, aunque mira todas las noches bajo la cama temiendo y buscando a la vez un varón lascivo. En mi juventud, cuando la mujer debía llegar virgen al matrimonio, era casi habitual que en el cortejo un no (me toques en tal sitio) fuese también un velado sí. La emancipación femenina ha fulminado esto, desde luego, pero sigue habiendo sí-no y no-sí en zonas emocionalmente trémulas, como la vanidad. Nadie deja de ver la adulación descarada, salvo siendo muy necio, escribió Cicerón, si bien es difícil evitar al adulador disimulado y astuto, pues a menudo adula simulando una oposición, hasta que al final se da por vencido, induciendo al engañado a creerse más perspicaz.La ecuanimidad es tan difícil como la libertad, y además de histeria e ínfulas en torno a la perspicacia propia hay mil situaciones donde sí y no se intercambian, como cuando un cónyuge niega haber echado una cana al aire, o el niño oculta alguna travesura. A un tipo de negación sin ambigüedad corresponderían el no al sida o el no a la droga, actitudes compatibles en principio con análisis desapasionados sobre el sistema inmunológico o ciertos alcaloides. La importancia del desapasionamiento no es exagerable, ya que para acercarnos a cualquier forma de control eficaz sobre la naturaleza es preciso averiguar en detalle cómo funciona. Análogo y muy actual es el no a la guerra, también compatible en principio con análisis desapasionados sobre porqués, alternativas, etcétera Por otra parte, la disposición analítica tiende a diluir en vez de concentrar un espíritu que se reconoce en el lema antiguerra. Tan a fondo lo ha asumido que prefiere no debatir con amigos y vecinos de otra opinión -para no indignarse más aún-, cosa insólita en España a propósito de asunto alguno. Y aunque los terroristas de Lavapiés conspirasen desde mucho antes de la reunión en Azores, dos tercios del país -según la reciente encuesta del Instituto Elcano- siguen atribuyendo el 11-M a que Aznar apoyó la invasión de Irak. Del mayor interés es también que la actitud antiguerra una a personas de segunda y tercera edad con gente joven y muy joven. El ala juvenil antiglobal puede deslizarse hacia vociferaciones beligerantes, pero el antiguerra maduro no es belicoso ni maleducado, sino más bien una persona apacible e integrada. Al mismo tiempo, apoyan la guerra fabricantes de armas, mercenarios, terroristas, algún otro psicópata desalmado y prácticamente nadie más. En términos lógicos, resulta abusivo suponer que quien no sea antiguerra es proguerra, si bien he ahí un problema inherente a las negaciones metafóricas en general. El antidroga, por ejemplo, supone prodroga al que no suscribe su lema, cuando en la gran mayoría de los casos quienes no comulgan con él sencillamente evitan santificar o satanizar ciertos compuestos químicos, neutros en sí. El antisida, por ejemplo, propuso hacer obligatorio el preservativo -mejor aún combinado con guantes del mismo material para los tocamientos-, y llamó prosida a quienes no augurasen la desaparición de media especie, debido a una dolencia por fuerza mortal que ha resultado ser simplemente crónica, e incluso curable. Millones de crédulos sucumbieron al mero diagnóstico en los primeros tiempos. Los inconvenientes de simplificar no vienen de que podamos equivocarnos sobre el malo o el bueno, sino del simplismo en sí. El antiguerra no debería, pues, tomar criterios distintos del suyo como sinónimo de belicosidad. En política hay básicamente conservadores, totalitarios y liberales, y el antiguerrismo tiene un poco de cada ingrediente. A juzgar por pancartas y manifestantes, lo integran un grueso de socialistas democráticos, al que se suman los antiamericanos de siempre y bastantes personas de segunda y tercera edad, que quizá habían votado PP hasta el 14-M. ¿Qué pueden tener en común? Todas las grandes figuras del comunismo y el anarquismo fueron personas laboralmente ociosas. El antiguerra, en cambio, trabaja por cuenta propia o ajena, y quiere propiedad privada, como han querido siempre no sólo los banqueros y tenderos, sino los obreros y campesinos. Pero no compartir el ideal totalitario admite comulgar en mayor o menor medida con una versión victimista de la realidad. Jesús expulsó a los mercaderes del templo con un látigo, y su equivalente contemporáneo querría hacer lo propio con Wall Street y las multinacionales, núcleos de un imperio obseso por mercantilizarlo todo. Ignórase así que la alternativa a relaciones voluntarias o mercantiles son relaciones forzosas, presididas por dogmas nacionales y religiosos. Los países donde el comercio resulta lento e inseguro constituyen una incumbencia casi exclusiva de Cruz Roja y ONG afines. El islamismo no es anticomercio, pero queda en seria desventaja empresarial por los tabúes que mantiene sobre sexo, drogas, rock'n roll, ciertos artículos de alimentación, ropa de moda y otros pasatiempos. El progreso llega cuando ciertas reglas impersonales de juego -fundamentalmente no excluir la competencia- moderan la arrogante pretensión de resolver todo mediante decretos. Marx denunció que el proceso de producción domina al hombre, en vez de dominar el hombre ese proceso, y para hacerle caso se ensayaron economías no basadas sobre la libertad de elección. Los resultados han sido invariablemente pésimos, pero la arrogancia controlista pervive extralimitando el concepto de víctima. El pobre material, por ejemplo, es una víctima, proposición cuyo perfil altruista coexiste con elementos sumamente belicosos. Desde los cristianos primitivos al último marxista, el victimismo llama pecado y delito a la desigualdad de rentas. Siendo anticomercio por principio, el estado de pobreza no puede atribuirlo a falta de incentivo, desinformación o transigencia con el despotismo, sino a que los ricos roban. En el movimiento antiguerra esta convicción sólo corresponde seguramente a una minoría ardorosa, hecha a llamar asesino y fascista a quien no coree su lema. Sin embargo, en 2005 los países de la UE cumplirán 60 años de relaciones pacíficas y apoyo a un régimen de competencia (por lo demás siempre imperfecta), gracias al cual es posible baldarnos a impuestos para que los inermes e infelices tengan algunos mínimos, y las obras públicas florezcan. Terminado el casus belli de la lucha de clases, el que surge con algunos intérpretes de Alá mejoraría ayudando a repartir menos delirantemente las rentas públicas en ciertos países bendecidos por el petróleo, lo cual no significa dar el visto bueno a agresiones arbitrarias, sino algo más parecido a un acto de buena vecindad internacional. Ya veremos por eso qué pasa en Irak de aquí a unos meses, y hasta qué punto el antiguerrismo ayuda a encontrar formas mejores de cooperación. Óptimo sería que sus primeras elecciones libres fuesen ganadas por la causa del confort y la higiene. Sea como fuere, urge enterrar la división producida entre nosotros por un conflicto que nadie civilizado desea. A los europeos incumbe más directamente aún practicar la ecuanimidad con tantos conciudadanos islámicos, en ciertos casos desgarrados por dentro tras emigrar a lugares contaminantes por libertinos. Son melifluas entonces las invocaciones a principios como lo particular de cada cultura, porque la realidad nos ha fundido en espacios pequeños, imponiendo un acuerdo más ambicioso. España y Portugal ganaron en todos sentidos enviando emigrantes a Europa septentrional, que se quedaron allí o acabaron volviendo, pero en cualquier caso aprendieron, ahorraron y prestaron un servicio a sus anfitriones. De servicios mutuos y confianza va el nivel de vida. El talón de Aquiles aparejado a negaciones metafóricas consiste en añadir trivialidad al simplismo. Siendo el bufón la única persona sincera entre amos vanidosos, rodeados por cobistas y trepadores, Falstaff se uniría al cortejo del victimismo agresivo-llorón con una pancarta mucho más radical. Por ejemplo: No a beber y comer para luego evacuar lo bebido y comido, no al metabolismo. En efecto, nuestro linaje es algo a caballo entre el pigmeo del Kalahari y el esquimal de Siberia, que sigue teniendo en común con cualquier otra forma de vida ser una isla de autoayuda en un océano indiferente a ella. En las sociedades abiertas o comerciales trabajamos sin saberlo para innumerables individuos que hacen lo mismo con nosotros, recompensando ante todo las invenciones útiles para terceros, desde las hojitas de quita y pon llamadas post-it a un cierre más sencillo para los envases, o un buen libro. Paladines de negaciones metafóricas, los cruzados, salvadores y comisarios ideológicos empezarían otra vez desde cero. Su origen son viejas escuelas de renuncia, que aborrecían esta existencia para enaltecer otra, infinitamente superior por celestial, mensaje retraducido en el lema antiglobalizador de que otro mundo es posible. Sé de muchos, en cambio, a quienes compensa la vida tal cual es, lindante siempre con la intemperie y la precariedad, pues la naturaleza humana sólo es ingeniosa cuando aprende a gozar las incertidumbres de su libertad. Pero retengamos una diferencia crucial entre negadores metafóricos y ciudadanos libertarios. Estos últimos tienen en común denunciar la tolerancia como lo que es: una meta de belicosos perdonavidas, hechos a la pringosa concesión de sufrir (tolerare) opiniones distintas. En vez de tolerancia, abogamos por un respeto hacia los demás, que sólo merecerán los respetuosos.", "images"=>"https://www.ocultalit.com/wp-content/uploads/2017/02/morralla-filosof%C3%ADa.jpg", "tags"=>"filosofía", "date"=>"17-08-2019", "article"=>{"title"=>"Negaciones metafóricas.", "description"=>"Los niños aprenden antes a decir no que a decir sí, y solemos ser unívocos en vez de ambiguos al negar. Ambigua es una histérica a quien espanta la idea del sexo, aunque mira todas las noches bajo la cama temiendo y buscando a la vez un varón lascivo. En mi juventud, cuando la mujer debía llegar virgen al matrimonio, era casi habitual que en el cortejo un no (me toques en tal sitio) fuese también un velado sí. La emancipación femenina ha fulminado esto, desde luego, pero sigue habiendo sí-no y no-sí en zonas emocionalmente trémulas, como la vanidad. Nadie deja de ver la adulación descarada, salvo siendo muy necio, escribió Cicerón, si bien es difícil evitar al adulador disimulado y astuto, pues a menudo adula simulando una oposición, hasta que al final se da por vencido, induciendo al engañado a creerse más perspicaz.La ecuanimidad es tan difícil como la libertad, y además de histeria e ínfulas en torno a la perspicacia propia hay mil situaciones donde sí y no se intercambian, como cuando un cónyuge niega haber echado una cana al aire, o el niño oculta alguna travesura. A un tipo de negación sin ambigüedad corresponderían el no al sida o el no a la droga, actitudes compatibles en principio con análisis desapasionados sobre el sistema inmunológico o ciertos alcaloides. La importancia del desapasionamiento no es exagerable, ya que para acercarnos a cualquier forma de control eficaz sobre la naturaleza es preciso averiguar en detalle cómo funciona. Análogo y muy actual es el no a la guerra, también compatible en principio con análisis desapasionados sobre porqués, alternativas, etcétera Por otra parte, la disposición analítica tiende a diluir en vez de concentrar un espíritu que se reconoce en el lema antiguerra. Tan a fondo lo ha asumido que prefiere no debatir con amigos y vecinos de otra opinión -para no indignarse más aún-, cosa insólita en España a propósito de asunto alguno. Y aunque los terroristas de Lavapiés conspirasen desde mucho antes de la reunión en Azores, dos tercios del país -según la reciente encuesta del Instituto Elcano- siguen atribuyendo el 11-M a que Aznar apoyó la invasión de Irak. Del mayor interés es también que la actitud antiguerra una a personas de segunda y tercera edad con gente joven y muy joven. El ala juvenil antiglobal puede deslizarse hacia vociferaciones beligerantes, pero el antiguerra maduro no es belicoso ni maleducado, sino más bien una persona apacible e integrada. Al mismo tiempo, apoyan la guerra fabricantes de armas, mercenarios, terroristas, algún otro psicópata desalmado y prácticamente nadie más. En términos lógicos, resulta abusivo suponer que quien no sea antiguerra es proguerra, si bien he ahí un problema inherente a las negaciones metafóricas en general. El antidroga, por ejemplo, supone prodroga al que no suscribe su lema, cuando en la gran mayoría de los casos quienes no comulgan con él sencillamente evitan santificar o satanizar ciertos compuestos químicos, neutros en sí. El antisida, por ejemplo, propuso hacer obligatorio el preservativo -mejor aún combinado con guantes del mismo material para los tocamientos-, y llamó prosida a quienes no augurasen la desaparición de media especie, debido a una dolencia por fuerza mortal que ha resultado ser simplemente crónica, e incluso curable. Millones de crédulos sucumbieron al mero diagnóstico en los primeros tiempos. Los inconvenientes de simplificar no vienen de que podamos equivocarnos sobre el malo o el bueno, sino del simplismo en sí. El antiguerra no debería, pues, tomar criterios distintos del suyo como sinónimo de belicosidad. En política hay básicamente conservadores, totalitarios y liberales, y el antiguerrismo tiene un poco de cada ingrediente. A juzgar por pancartas y manifestantes, lo integran un grueso de socialistas democráticos, al que se suman los antiamericanos de siempre y bastantes personas de segunda y tercera edad, que quizá habían votado PP hasta el 14-M. ¿Qué pueden tener en común? Todas las grandes figuras del comunismo y el anarquismo fueron personas laboralmente ociosas. El antiguerra, en cambio, trabaja por cuenta propia o ajena, y quiere propiedad privada, como han querido siempre no sólo los banqueros y tenderos, sino los obreros y campesinos. Pero no compartir el ideal totalitario admite comulgar en mayor o menor medida con una versión victimista de la realidad. Jesús expulsó a los mercaderes del templo con un látigo, y su equivalente contemporáneo querría hacer lo propio con Wall Street y las multinacionales, núcleos de un imperio obseso por mercantilizarlo todo. Ignórase así que la alternativa a relaciones voluntarias o mercantiles son relaciones forzosas, presididas por dogmas nacionales y religiosos. Los países donde el comercio resulta lento e inseguro constituyen una incumbencia casi exclusiva de Cruz Roja y ONG afines. El islamismo no es anticomercio, pero queda en seria desventaja empresarial por los tabúes que mantiene sobre sexo, drogas, rock'n roll, ciertos artículos de alimentación, ropa de moda y otros pasatiempos. El progreso llega cuando ciertas reglas impersonales de juego -fundamentalmente no excluir la competencia- moderan la arrogante pretensión de resolver todo mediante decretos. Marx denunció que el proceso de producción domina al hombre, en vez de dominar el hombre ese proceso, y para hacerle caso se ensayaron economías no basadas sobre la libertad de elección. Los resultados han sido invariablemente pésimos, pero la arrogancia controlista pervive extralimitando el concepto de víctima. El pobre material, por ejemplo, es una víctima, proposición cuyo perfil altruista coexiste con elementos sumamente belicosos. Desde los cristianos primitivos al último marxista, el victimismo llama pecado y delito a la desigualdad de rentas. Siendo anticomercio por principio, el estado de pobreza no puede atribuirlo a falta de incentivo, desinformación o transigencia con el despotismo, sino a que los ricos roban. En el movimiento antiguerra esta convicción sólo corresponde seguramente a una minoría ardorosa, hecha a llamar asesino y fascista a quien no coree su lema. Sin embargo, en 2005 los países de la UE cumplirán 60 años de relaciones pacíficas y apoyo a un régimen de competencia (por lo demás siempre imperfecta), gracias al cual es posible baldarnos a impuestos para que los inermes e infelices tengan algunos mínimos, y las obras públicas florezcan. Terminado el casus belli de la lucha de clases, el que surge con algunos intérpretes de Alá mejoraría ayudando a repartir menos delirantemente las rentas públicas en ciertos países bendecidos por el petróleo, lo cual no significa dar el visto bueno a agresiones arbitrarias, sino algo más parecido a un acto de buena vecindad internacional. Ya veremos por eso qué pasa en Irak de aquí a unos meses, y hasta qué punto el antiguerrismo ayuda a encontrar formas mejores de cooperación. Óptimo sería que sus primeras elecciones libres fuesen ganadas por la causa del confort y la higiene. Sea como fuere, urge enterrar la división producida entre nosotros por un conflicto que nadie civilizado desea. A los europeos incumbe más directamente aún practicar la ecuanimidad con tantos conciudadanos islámicos, en ciertos casos desgarrados por dentro tras emigrar a lugares contaminantes por libertinos. Son melifluas entonces las invocaciones a principios como lo particular de cada cultura, porque la realidad nos ha fundido en espacios pequeños, imponiendo un acuerdo más ambicioso. España y Portugal ganaron en todos sentidos enviando emigrantes a Europa septentrional, que se quedaron allí o acabaron volviendo, pero en cualquier caso aprendieron, ahorraron y prestaron un servicio a sus anfitriones. De servicios mutuos y confianza va el nivel de vida. El talón de Aquiles aparejado a negaciones metafóricas consiste en añadir trivialidad al simplismo. Siendo el bufón la única persona sincera entre amos vanidosos, rodeados por cobistas y trepadores, Falstaff se uniría al cortejo del victimismo agresivo-llorón con una pancarta mucho más radical. Por ejemplo: No a beber y comer para luego evacuar lo bebido y comido, no al metabolismo. En efecto, nuestro linaje es algo a caballo entre el pigmeo del Kalahari y el esquimal de Siberia, que sigue teniendo en común con cualquier otra forma de vida ser una isla de autoayuda en un océano indiferente a ella. En las sociedades abiertas o comerciales trabajamos sin saberlo para innumerables individuos que hacen lo mismo con nosotros, recompensando ante todo las invenciones útiles para terceros, desde las hojitas de quita y pon llamadas post-it a un cierre más sencillo para los envases, o un buen libro. Paladines de negaciones metafóricas, los cruzados, salvadores y comisarios ideológicos empezarían otra vez desde cero. Su origen son viejas escuelas de renuncia, que aborrecían esta existencia para enaltecer otra, infinitamente superior por celestial, mensaje retraducido en el lema antiglobalizador de que otro mundo es posible. Sé de muchos, en cambio, a quienes compensa la vida tal cual es, lindante siempre con la intemperie y la precariedad, pues la naturaleza humana sólo es ingeniosa cuando aprende a gozar las incertidumbres de su libertad. Pero retengamos una diferencia crucial entre negadores metafóricos y ciudadanos libertarios. Estos últimos tienen en común denunciar la tolerancia como lo que es: una meta de belicosos perdonavidas, hechos a la pringosa concesión de sufrir (tolerare) opiniones distintas. En vez de tolerancia, abogamos por un respeto hacia los demás, que sólo merecerán los respetuosos.", "images"=>"https://www.ocultalit.com/wp-content/uploads/2017/02/morralla-filosof%C3%ADa.jpg", "date"=>"17-08-2019", "tags"=>"filosofía"}}
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/concerns/response.rb:3
+Completed 200 OK in 15ms (Views: 11.4ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/articles/" for 127.0.0.1 at 2019-08-15 23:19:19 +0200
+Processing by ArticlesController#index as */*
+  Parameters: {"article"=>{}}
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/concerns/response.rb:3
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/articles/" for 127.0.0.1 at 2019-08-15 23:19:48 +0200
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/chris/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ArticlesController#index as */*
+  Parameters: {"article"=>{}}
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/concerns/response.rb:3
+Completed 200 OK in 12ms (Views: 9.1ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/articles/" for 127.0.0.1 at 2019-08-15 23:20:34 +0200
+Processing by ArticlesController#index as */*
+  Parameters: {"article"=>{}}
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/concerns/response.rb:3
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/articles/" for 127.0.0.1 at 2019-08-15 23:21:24 +0200
+Processing by ArticlesController#index as */*
+  Parameters: {"article"=>{}}
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/concerns/response.rb:3
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/articles/" for 127.0.0.1 at 2019-08-15 23:21:47 +0200
+Processing by ArticlesController#index as */*
+  Parameters: {"article"=>{}}
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/concerns/response.rb:3
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/articles/" for 127.0.0.1 at 2019-08-15 23:21:50 +0200
+Processing by ArticlesController#index as */*
+  Parameters: {"article"=>{}}
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/concerns/response.rb:3
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/articles/" for 127.0.0.1 at 2019-08-15 23:22:20 +0200
+Processing by ArticlesController#index as */*
+  Parameters: {"article"=>{}}
+  [1m[36mArticle Load (6.8ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/concerns/response.rb:3
+Completed 200 OK in 10ms (Views: 2.7ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/articles/" for 127.0.0.1 at 2019-08-15 23:22:22 +0200
+Processing by ArticlesController#index as */*
+  Parameters: {"article"=>{}}
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/concerns/response.rb:3
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/articles/" for 127.0.0.1 at 2019-08-15 23:22:44 +0200
+Processing by ArticlesController#index as */*
+  Parameters: {"article"=>{}}
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/concerns/response.rb:3
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/articles/" for 127.0.0.1 at 2019-08-15 23:24:37 +0200
+Processing by ArticlesController#index as */*
+  Parameters: {"article"=>{}}
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/concerns/response.rb:3
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/articles/" for 127.0.0.1 at 2019-08-15 23:25:20 +0200
+Processing by ArticlesController#index as */*
+  Parameters: {"article"=>{}}
+  [1m[36mArticle Load (2.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/concerns/response.rb:3
+Completed 200 OK in 13ms (Views: 10.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/articles/" for 127.0.0.1 at 2019-08-15 23:25:51 +0200
+Processing by ArticlesController#index as */*
+  Parameters: {"article"=>{}}
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/concerns/response.rb:3
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/articles/" for 127.0.0.1 at 2019-08-15 23:26:26 +0200
+Processing by ArticlesController#index as */*
+  Parameters: {"article"=>{}}
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/concerns/response.rb:3
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/articles/" for 127.0.0.1 at 2019-08-15 23:26:33 +0200
+Processing by ArticlesController#index as */*
+  Parameters: {"article"=>{}}
+  [1m[36mArticle Load (1.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/concerns/response.rb:3
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 1.4ms)
+
+
