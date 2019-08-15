@@ -5,7 +5,7 @@ variables:
 
 cache:
   paths:
-  - node_modules
+  - escohotado-client/node_modules
 
 stages:
 - deploy
