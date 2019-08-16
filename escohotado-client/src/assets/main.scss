@@ -39,6 +39,14 @@ body {
     align-items: center;
     text-decoration: none;
     color: #fff;
+    p {
+        font-weight: bold;
+        font-size: 20px;
+        margin: 0px;
+    }
+}
+.menu-item:focus {
+    outline: 0;
 }
 .mobile-layout, .mobile-layout-icon, .mobile-layout-title {
     display: none;
