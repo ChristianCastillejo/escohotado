@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchArticles } from "../actions/articles";
+import { fetchArticles, filterArticles } from "../actions/articles";
 
+const categories = {
+  philosophy: "Filosofía",
+  comunism: "Comunismo",
+  drugs: "Drogas",
+  ecomomy: "Economía",
+  history: "Historia"
+}
 function Articles() {
   const articlesStore = useSelector(state => state.article);
   const dispatch = useDispatch();
@@ -21,11 +28,18 @@ function Articles() {
     },
     [dispatch]
   );
+
   function updateFilters(field, value) {
     let newFilters = { ...filters };
     newFilters[field] = value;
     setFilters(newFilters);
+    if (Object.keys(newFilters).every(k => !newFilters[k])) {
+      dispatch(fetchArticles());
+    } else {
+      dispatch(filterArticles(newFilters));
+    }
   }
+
   return (
     <div className="screen articles-container">
       <div className="articles-articles">
@@ -70,13 +84,6 @@ function Articles() {
           >
             Historia
           </div>
-          <div
-            onClick={() => updateFilters("general", !filters.general)}
-            className={`articles-filter-item articles-filter-item${filters.general &&
-              "--selected"}`}
-          >
-            General
-          </div>
         </div>
         {articlesStore.map(article => (
           <div key={article.id} className="articles-article">
@@ -89,11 +96,11 @@ function Articles() {
               <h3 className="articles-article-title">{article.title}</h3>
               <p className="articles-article-body">
                 {article.body && article.body.slice(0, 500).concat("... ")}
-                <span>Segir Leyendo</span>
+                <span>Segir leyendo</span>
               </p>
-              {article.tags.split(",").map(tag => (
-                <span key={tag} className="articles-article-tags">
-                  {tag}
+              {Array.from(article.tags).map(tag => (
+                <span key={tag.name} className="articles-article-tags">
+                  {categories[tag.name]}
                 </span>
               ))}
             </div>
