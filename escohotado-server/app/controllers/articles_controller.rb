@@ -3,8 +3,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles
   def index
-    @articles = Article.all
-    json_response(@articles)
+    render json: Article.all
   end
 
   # POST /articles
