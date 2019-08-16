@@ -29,23 +29,23 @@
 #   git config --global core.excludesfile '~/.gitignore_global'
 
 # Ignore bundler config.
-/../.bundle
+/escohotado-server/.bundle
 
 # Ignore the default SQLite database.
-/db/*.sqlite3
-/db/*.sqlite3-journal
+/escohotado-server/db/*.sqlite3
+/escohotado-server/db/*.sqlite3-journal
 
 # Ignore all logfiles and tempfiles.
-/log/*
-/tmp/*
-!/log/.keep
-!/tmp/.keep
+/escohotado-server/log/*
+/escohotado-server/tmp/*
+!/escohotado-server/log/.keep
+!/escohotado-server/tmp/.keep
 
 # Ignore uploaded files in development
-/storage/*
-!/storage/.keep
+/escohotado-server/storage/*
+!/escohotado-server/storage/.keep
 
-.byebug_history
+/escohotado-server.byebug_history
 
 # Ignore master key for decrypting credentials and more.
-/config/master.key
+/escohotado-server/config/master.key
