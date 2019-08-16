@@ -8,7 +8,7 @@ const categories = {
   drugs: "Drogas",
   ecomomy: "Economía",
   history: "Historia"
-}
+};
 function Articles() {
   const articlesStore = useSelector(state => state.article);
   const dispatch = useDispatch();
@@ -45,6 +45,11 @@ function Articles() {
       <div className="articles-articles">
         <div className="articles-header">
           <h1>Artículos</h1>
+          {Object.values(filters).every(e => e === false) ? (
+            <p />
+          ) : (
+            <p className="articles-header-p">Filtros activados</p>
+          )}
           <div
             className="articles-filter-button"
             onClick={() => setOpenFilter(!openFilter)}
@@ -85,27 +90,36 @@ function Articles() {
             Historia
           </div>
         </div>
-        {articlesStore.map(article => (
-          <div key={article.id} className="articles-article">
-            <img
-              alt="article"
-              className="articles-article-img"
-              src={article.images}
-            />
-            <div className="articles-articles-details">
-              <h3 className="articles-article-title">{article.title}</h3>
-              <p className="articles-article-body">
-                {article.body && article.body.slice(0, 500).concat("... ")}
-                <span>Segir leyendo</span>
-              </p>
-              {Array.from(article.tags).map(tag => (
-                <span key={tag.name} className="articles-article-tags">
-                  {categories[tag.name]}
-                </span>
-              ))}
+        {articlesStore.length === 0 ? (
+          <p className="articles-error-message">
+            Lo sentimos, no hay ningún artículo que incluya las categorías
+            seleccionadas.
+          </p>
+        ) : (
+          articlesStore.map(article => (
+            <div key={article.id} className="articles-article">
+              <img
+                alt="article"
+                className="articles-article-img"
+                src={article.images}
+              />
+              <div className="articles-article-details">
+                <h3 className="articles-article-title">{article.title}</h3>
+                <p className="articles-article-body">
+                  {article.body && article.body.slice(0, 250).concat("... ")}
+                  <span>Segir leyendo</span>
+                </p>
+                <div>
+                {Array.from(article.tags).map(tag => (
+                  <span key={tag.name} className="articles-article-tag">
+                    {categories[tag.name]}
+                  </span>
+                ))}
+              </div>
+              </div>
             </div>
-          </div>
-        ))}
+          ))
+        )}
       </div>
     </div>
   );

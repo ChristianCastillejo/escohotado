@@ -1,7 +1,9 @@
 import { FETCH_ARTICLES, FILTER_ARTICLES } from "./actionTypes";
+//const baseUrlLocal = "http://localhost";
+const baseUrl = "http://192.168.2.6";
 
 export async function fetchArticles() {
-  const response = await fetch("http://localhost:4000/articles/", {
+  const response = await fetch(`${baseUrl}:4000/articles/`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json"
@@ -23,7 +25,7 @@ export async function filterArticles(tags) {
     .filter(Boolean)
     .join(",");
   const response = await fetch(
-    `http://localhost:4000/search_articles/?tags=${[filterTags]}`,
+    `${baseUrl}:4000/search_articles/?tags=${[filterTags]}`,
     {
       method: "GET",
       headers: {
