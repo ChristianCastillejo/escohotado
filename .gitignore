@@ -45,7 +45,7 @@
 /escohotado-server/storage/*
 !/escohotado-server/storage/.keep
 
-/escohotado-server.byebug_history
+/escohotado-server/.byebug_history
 
 # Ignore master key for decrypting credentials and more.
 /escohotado-server/config/master.key
