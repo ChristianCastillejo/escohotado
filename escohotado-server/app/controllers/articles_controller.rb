@@ -9,12 +9,17 @@ class ArticlesController < ApplicationController
   # POST /articles
   def create
     @article = Article.create!(article_params)
-    json_response(@article, :created)
+
+    params['tag'].each do |t|
+      tag = Tag.find_by(name: t)
+      @article.tags << tag
+    end
+    render json: @article
   end
 
   # GET /articles/:id
   def show
-    json_response(@article)
+    render json: @article
   end
 
   # PUT /articles/:id
@@ -29,11 +34,19 @@ class ArticlesController < ApplicationController
     head :no_content
   end
 
+  def search_by_tags
+    tags = params["tags"].split(',')
+    render json: Article.joins(:tags)
+       .where(tags: { name: tags })
+       .group('articles.id')
+       .having('count(*) = ?', tags.count)
+  end
+
   private
 
   def article_params
     # whitelist params
-    params.permit(:title, :description, :body, :images, :tags, :date, :article)
+    params.permit(:title, :description, :body, :images, :date, tags: [])
   end
 
   def set_article
