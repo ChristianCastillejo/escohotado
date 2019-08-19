@@ -9,8 +9,8 @@ const categories = {
   ecomomy: "Economía",
   history: "Historia"
 };
-function Articles() {
-  const articlesStore = useSelector(state => state.article);
+function Articles(props) {
+  const articles = useSelector(state => state.articles);
   const dispatch = useDispatch();
   const [openFilter, setOpenFilter] = useState(false);
   const [filters, setFilters] = useState({
@@ -24,6 +24,7 @@ function Articles() {
 
   useEffect(
     () => {
+      window.scrollTo(0, 0);
       dispatch(fetchArticles());
     },
     [dispatch]
@@ -46,7 +47,7 @@ function Articles() {
         <div className="articles-header">
           <h1>Artículos</h1>
           {Object.values(filters).every(e => e === false) ? (
-            <p />
+            <p className="articles-header-p articles-header-p--hidden" />
           ) : (
             <p className="articles-header-p">Filtros activados</p>
           )}
@@ -54,7 +55,7 @@ function Articles() {
             className="articles-filter-button"
             onClick={() => setOpenFilter(!openFilter)}
           >
-            <i className="fa fa-sliders" />
+            <i className="fas fa-sliders-h" />
           </div>
         </div>
         <div
@@ -90,14 +91,18 @@ function Articles() {
             Historia
           </div>
         </div>
-        {articlesStore.length === 0 ? (
+        {articles.length === 0 ? (
           <p className="articles-error-message">
             Lo sentimos, no hay ningún artículo que incluya las categorías
             seleccionadas.
           </p>
         ) : (
-          articlesStore.map(article => (
-            <div key={article.id} className="articles-article">
+          articles.map(article => (
+            <div
+              key={article.id}
+              className="articles-article"
+              onClick={() => props.history.push(`/articles/${article.id}`)}
+            >
               <img
                 alt="article"
                 className="articles-article-img"
@@ -106,16 +111,21 @@ function Articles() {
               <div className="articles-article-details">
                 <h3 className="articles-article-title">{article.title}</h3>
                 <p className="articles-article-body">
-                  {article.body && article.body.slice(0, 250).concat("... ")}
-                  <span>Segir leyendo</span>
+                  {article.body.slice(0, 250)}
+                  <span className="articles-article-body-more">
+                    {article.body.slice(250, 600)}
+                  </span>
+                  <span className="articles-article-body-continue">
+                    ... Segir leyendo
+                  </span>
                 </p>
                 <div>
-                {Array.from(article.tags).map(tag => (
-                  <span key={tag.name} className="articles-article-tag">
-                    {categories[tag.name]}
-                  </span>
-                ))}
-              </div>
+                  {Array.from(article.tags).map(tag => (
+                    <span key={tag.name} className="articles-article-tag">
+                      {categories[tag.name]}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           ))

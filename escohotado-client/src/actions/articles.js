@@ -1,9 +1,10 @@
-import { FETCH_ARTICLES, FILTER_ARTICLES } from "./actionTypes";
-//const baseUrlLocal = "http://localhost";
-const baseUrl = "http://192.168.2.6";
+import { FETCH_ARTICLES, FILTER_ARTICLES, FETCH_ARTICLE } from "./actionTypes";
+//const baseUrlLocal = "http://localhost:4000";
+const baseUrl = "http://192.168.2.6:4000";
+//const baseUrl = "https://escohotado.herokuapp.com";
 
 export async function fetchArticles() {
-  const response = await fetch(`${baseUrl}:4000/articles/`, {
+  const response = await fetch(`${baseUrl}/articles/`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json"
@@ -25,7 +26,7 @@ export async function filterArticles(tags) {
     .filter(Boolean)
     .join(",");
   const response = await fetch(
-    `${baseUrl}:4000/search_articles/?tags=${[filterTags]}`,
+    `${baseUrl}/search_articles/?tags=${[filterTags]}`,
     {
       method: "GET",
       headers: {
@@ -37,6 +38,21 @@ export async function filterArticles(tags) {
 
   return {
     type: FILTER_ARTICLES,
+    payload: data
+  };
+}
+
+export async function fetchArticle(id) {
+  const response = await fetch(`${baseUrl}/articles/${id}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json"
+    }
+  });
+  const data = await response.json();
+
+  return {
+    type: FETCH_ARTICLE,
     payload: data
   };
 }
