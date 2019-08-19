@@ -13,7 +13,7 @@ function Article({match}) {
       dispatch(fetchArticle(match.params.id));
       window.scrollTo(0, 0);
     },
-    []
+    [dispatch, match.params.id]
   );
 
   function toggleSetings() {
