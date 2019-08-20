@@ -135,34 +135,66 @@ body {
 }
 .articles-filter {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 200px);
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 50px;
     min-height: 100px;
-    align-items: center;
-    justify-content: center;
     background-color: #292f33;
     border-radius: 15px;
     color: #fff;
     -webkit-box-shadow: 0px 8px 14px 3px #D8D8D8; 
     box-shadow: 0px 4px 14px 3px #DFDFDF;
-    cursor: pointer;
+    padding: 30px;
     transition: height 0.8s;
     &--close {
         display: none;
         height: 0px;
     }
 }
+.articles-filter-categories{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    align-items: center;
+    grid-gap: 30px;
+}
 .articles-filter-item {
     display: grid;
-    margin: 30px;
+    margin: opx 30px;
     border: 1px solid #fff;
     text-align: center;
     border-radius: 5px;
     padding: 10px;
     font-weight: bold;
+    cursor: pointer;
     &--selected {
         background-color: #fff;
         color: #292f33;
     }
+}
+.articles-filter-search {
+    display: grid;
+    grid-template-columns: 1fr 3fr auto;
+    grid-template-rows: 1fr;
+    align-items: center;
+    grid-gap: 30px;
+}
+.articles-filter-search-title {
+    margin: 0px 20px 0px 0px ;
+    font-weight: bold;
+}
+.articles-filter-search-input {
+    display: grid;
+    border-radius: 10px;
+    height: 50px;
+    border: none;
+    padding: 0px 10px;
+}
+.articles-filter-search-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: 1px solid #fff;
+    cursor: pointer;
 }
 .articles-articles {
     display: grid;
@@ -227,11 +259,23 @@ body {
         display: none;
     }
     .articles-filter {
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 0px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 2fr 3fr;
+        grid-gap: 20px;
+        padding: 30px;
     }
-    .articles-filter-item {
-        margin: 10px;
+    .articles-filter-search {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-gap: 20px;
+    }
+    .articles-filter-categories {
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+    }
+    .articles-filter-search-input {
+        grid-column: 1;
+        grid-row: 2;
     }
     .articles-articles {
         padding: 15px;
@@ -265,8 +309,8 @@ body {
 }
 @media (max-width: 500px) {
     .articles-filter {
-        padding: 5px;
-        grid-template-columns: 1fr 1fr;
+        padding: 15px;
+        grid-template-columns: 1fr;
     }
 }
 

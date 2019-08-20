@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchArticle } from "../actions/articles";
 
-function Article({match}) {
+function Article({ match }) {
   const article = useSelector(state => state.article);
   const dispatch = useDispatch();
   const [openSettings, setOpenSettings] = useState(false);
@@ -51,9 +51,11 @@ function Article({match}) {
         <p className="article-author">Por Antonio Escohotado. {article.date}</p>
         {article.tags &&
           article.tags.map(tag => (
-            <span key={tag.name} className="articles-article-tag">{tag.name}</span>
+            <span key={tag.name} className="articles-article-tag">
+              {tag.name}
+            </span>
           ))}
-        <img className="article-img" src={article.images} alt="article"/>
+        <img className="article-img" src={article.images} alt="article" />
         <p className="article-body">{article.body} </p>
       </div>
     </div>
