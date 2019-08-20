@@ -128,7 +128,7 @@ function Articles(props) {
             </div>
             <input
               className="articles-filter-search-input"
-              placeholder="Ejemplo: De la piel para adentro..."
+              placeholder="De la piel para adentro..."
               onChange={e => setSearch(e.target.value)}
             />
             <button
