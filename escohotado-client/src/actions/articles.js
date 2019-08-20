@@ -1,7 +1,7 @@
 import { FETCH_ARTICLES, FILTER_ARTICLES, FETCH_ARTICLE } from "./actionTypes";
-//const baseUrlLocal = "http://localhost:4000";
+const baseUrl = "http://localhost:4000";
 //const baseUrl = "http://192.168.2.6:4000";
-const baseUrl = "https://escohotado.herokuapp.com";
+//const baseUrl = "https://escohotado.herokuapp.com";
 
 export async function fetchArticles() {
   const response = await fetch(`${baseUrl}/articles/`, {
@@ -18,7 +18,7 @@ export async function fetchArticles() {
   };
 }
 
-export async function filterArticles(tags) {
+export async function filterArticles(tags, search) {
   let filterTags = Array.from(
     Object.keys(tags),
     k => tags[k] === true && `${k}`
@@ -26,7 +26,9 @@ export async function filterArticles(tags) {
     .filter(Boolean)
     .join(",");
   const response = await fetch(
-    `${baseUrl}/search_articles/?tags=${[filterTags]}`,
+    `${baseUrl}/search_articles/?tags=${[filterTags]}&search=${
+      search ? search : false
+    }`,
     {
       method: "GET",
       headers: {

@@ -35,11 +35,21 @@ class ArticlesController < ApplicationController
   end
 
   def search_by_tags
-    tags = params["tags"].split(',')
-    render json: Article.joins(:tags)
-       .where(tags: { name: tags })
-       .group('articles.id')
-       .having('count(*) = ?', tags.count)
+    @articles = Article.all
+
+    unless params["tags"] === ""
+      tags = params["tags"].split(',')
+      @articles = Article.joins(:tags)
+      .where(tags: { name: tags })
+      .group('articles.id')
+      .having('count(*) = ?', tags.count)
+    end
+
+    unless params["search"] === "false"
+      @articles = @articles.where("title like ? or body like ?", "%#{params["search"]}%", "%#{params["search"]}%")
+    end
+
+    render json: @articles
   end
 
   private

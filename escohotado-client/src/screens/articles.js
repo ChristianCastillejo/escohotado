@@ -13,6 +13,8 @@ function Articles(props) {
   const articles = useSelector(state => state.articles);
   const dispatch = useDispatch();
   const [openFilter, setOpenFilter] = useState(false);
+  const [search, setSearch] = useState("");
+  const [text, setText] = useState("");
   const [filters, setFilters] = useState({
     philosophy: false,
     comunism: false,
@@ -30,26 +32,50 @@ function Articles(props) {
     [dispatch]
   );
 
-  function updateFilters(field, value) {
+  function updateFilters(field, value, search) {
     let newFilters = { ...filters };
-    newFilters[field] = value;
+    if (value !== undefined) {
+      newFilters[field] = value;
+    }
     setFilters(newFilters);
     if (Object.keys(newFilters).every(k => !newFilters[k])) {
-      dispatch(fetchArticles());
+      if (search && search !== "") {
+        dispatch(filterArticles(newFilters, search));
+      } else {
+        dispatch(fetchArticles());
+      }
     } else {
-      dispatch(filterArticles(newFilters));
+      if (search) {
+        dispatch(filterArticles(newFilters, search));
+      } else {
+        dispatch(filterArticles(newFilters, false));
+      }
     }
+    setText(search);
   }
 
+  useEffect(
+    () => {
+      if (Object.keys(filters).every(k => !filters[k])) {
+        dispatch(fetchArticles());
+      } else {
+        dispatch(filterArticles(filters, false));
+      }
+      if (search === "") {
+        setText(search);
+      }
+    },
+    [search === ""]
+  );
   return (
     <div className="screen articles-container">
       <div className="articles-articles">
         <div className="articles-header">
           <h1>Artículos</h1>
-          {Object.values(filters).every(e => e === false) ? (
-            <p className="articles-header-p articles-header-p--hidden" />
-          ) : (
+          {Object.values(filters).some(e => e === true) || text !== "" ? (
             <p className="articles-header-p">Filtros activados</p>
+          ) : (
+            <p className="articles-header-p articles-header-p--hidden" />
           )}
           <div
             className="articles-filter-button"
@@ -62,39 +88,61 @@ function Articles(props) {
           className={`articles-filter articles-filter${!openFilter &&
             "--close"}`}
         >
-          <div
-            onClick={() => updateFilters("philosophy", !filters.philosophy)}
-            className={`articles-filter-item articles-filter-item${filters.philosophy &&
-              "--selected"}`}
-          >
-            Filosofía
+          <div className="articles-filter-categories">
+            <div
+              onClick={() =>
+                updateFilters("philosophy", !filters.philosophy, search)
+              }
+              className={`articles-filter-item articles-filter-item${filters.philosophy &&
+                "--selected"}`}
+            >
+              Filosofía
+            </div>
+            <div
+              onClick={() =>
+                updateFilters("comunism", !filters.comunism, search)
+              }
+              className={`articles-filter-item articles-filter-item${filters.comunism &&
+                "--selected"}`}
+            >
+              Comunismo
+            </div>
+            <div
+              onClick={() => updateFilters("drugs", !filters.drugs, search)}
+              className={`articles-filter-item articles-filter-item${filters.drugs &&
+                "--selected"}`}
+            >
+              Drogas
+            </div>
+            <div
+              onClick={() => updateFilters("history", !filters.history, search)}
+              className={`articles-filter-item articles-filter-item${filters.history &&
+                "--selected"}`}
+            >
+              Historia
+            </div>
           </div>
-          <div
-            onClick={() => updateFilters("comunism", !filters.comunism)}
-            className={`articles-filter-item articles-filter-item${filters.comunism &&
-              "--selected"}`}
-          >
-            Comunismo
-          </div>
-          <div
-            onClick={() => updateFilters("drugs", !filters.drugs)}
-            className={`articles-filter-item articles-filter-item${filters.drugs &&
-              "--selected"}`}
-          >
-            Drogas
-          </div>
-          <div
-            onClick={() => updateFilters("history", !filters.history)}
-            className={`articles-filter-item articles-filter-item${filters.history &&
-              "--selected"}`}
-          >
-            Historia
+          <div className="articles-filter-search">
+            <div className="articles-filter-search-title">
+              Buscar por palabras en el titulo o en el contenido:
+            </div>
+            <input
+              className="articles-filter-search-input"
+              placeholder="Ejemplo: De la piel para adentro..."
+              onChange={e => setSearch(e.target.value)}
+            />
+            <button
+              className="articles-filter-search-button"
+              onClick={() => updateFilters(undefined, undefined, search)}
+            >
+              <i className="fas fa-search" />
+            </button>
           </div>
         </div>
         {articles.length === 0 ? (
           <p className="articles-error-message">
-            Lo sentimos, no hay ningún artículo que incluya las categorías
-            seleccionadas.
+            {`Lo sentimos, no hay ningún artículo que incluya las categorías
+            seleccionadas${text !== "" ? ` y el texto "${text}"` : ""}.`}
           </p>
         ) : (
           articles.map(article => (
@@ -115,8 +163,9 @@ function Articles(props) {
                   <span className="articles-article-body-more">
                     {article.body.slice(250, 600)}
                   </span>
+                  ...
                   <span className="articles-article-body-continue">
-                    ... Segir leyendo
+                    Segir leyendo
                   </span>
                 </p>
                 <div>
