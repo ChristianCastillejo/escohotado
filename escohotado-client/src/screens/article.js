@@ -18,8 +18,9 @@ function Article({ match }) {
     [dispatch, match.params.id]
   );
 
-  function toggleSetings() {
-    setOpenSettings(!openSettings);
+  function editFontSize(e, fontSize) {
+    e.stopPropagation();
+    setFontSize(fontSize);
   }
 
   useEffect(() => {
@@ -35,31 +36,32 @@ function Article({ match }) {
       ) : (
         <div
           className={`screen article-container article-container--${theme}`}
-          onClick={() => openSettings && toggleSetings(false)}
+          onClick={() => openSettings && setOpenSettings(false)}
         >
+          >
           <div
             className={`article-settings ${openSettings &&
               "article-settings--open"}`}
-            onClick={() => !openSettings && toggleSetings(true)}
+            onClick={() => !openSettings && setOpenSettings(true)}
           >
             <div className="article-settings-icon">
               <i className="fa fa-text-height" />
             </div>
             <div
               className="article-settings-font"
-              onClick={() => setFontSize(fontSize - 1)}
+              onClick={e => editFontSize(e, fontSize - 1)}
             >
               <i className="fa fa-minus" />
             </div>
             <div
               className="article-settings-font"
-              onClick={() => fontSize < 34 && setFontSize(fontSize + 1)}
+              onClick={e => fontSize < 34 && editFontSize(e, fontSize + 1)}
             >
               <i className="fa fa-plus" />
             </div>
             <div
               className="article-settings-light"
-              onClick={() => setTheme("light")}
+              onClick={e => setTheme("light")}
             >
               Día
             </div>
