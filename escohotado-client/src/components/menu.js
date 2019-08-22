@@ -6,11 +6,11 @@ function Menu() {
     <Fragment>
       <div className={`menu-container menu-container${!openMenu && "--close"}`}>
         <Link
-          className="menu-item-name"
+          className={`menu-item-name${openMenu && "--mobile"}`}
           to="/"
           onClick={() => setOpenMenu(false)}
         >
-          <p>Antonio Escohotado</p>
+          <p>{openMenu ? "Inicio" : "Antonio Escohotado"}</p>
         </Link>
         <Link
           className="menu-item"
