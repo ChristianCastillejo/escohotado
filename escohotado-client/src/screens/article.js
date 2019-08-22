@@ -7,6 +7,7 @@ function Article({ match }) {
   const dispatch = useDispatch();
   const [openSettings, setOpenSettings] = useState(false);
   const [theme, setTheme] = useState("light");
+  const [fontSize, setFontSize] = useState(21);
 
   useEffect(
     () => {
@@ -25,10 +26,16 @@ function Article({ match }) {
       <div
         className={`article-settings ${openSettings &&
           "article-settings--open"}`}
-        onClick={() => toggleSetings()}
+        onClick={() => !openSettings && toggleSetings(true)}
       >
         <div className="article-settings-icon">
-          <i className="fa fa-moon" />
+          <i className="fa fa-text-height" />
+        </div>
+        <div className="article-settings-font" onClick={() => setFontSize(fontSize -1)}>
+        <i className="fa fa-minus" />
+        </div>
+        <div className="article-settings-font" onClick={() => fontSize < 34 && setFontSize(fontSize+1)}>
+        <i className="fa fa-plus" />
         </div>
         <div
           className="article-settings-light"
@@ -46,7 +53,8 @@ function Article({ match }) {
           Noche
         </div>
       </div>
-      <div className="article">
+      <div className="article"         onClick={() => openSettings && toggleSetings(false)}
+>
         <h1 className="article-title">{article.title} </h1>
         <p className="article-author">Por Antonio Escohotado. {article.date}</p>
         {article.tags &&
@@ -56,7 +64,7 @@ function Article({ match }) {
             </span>
           ))}
         <img className="article-img" src={article.images} alt="article" />
-        <p className="article-body">{article.body} </p>
+        <p className="article-body" style={{fontSize}}>{article.body} </p>
       </div>
     </div>
   );
