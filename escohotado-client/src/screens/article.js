@@ -29,6 +29,7 @@ function Article({ match }) {
     };
   }, []); // eslint-disable-line
 
+  //    setText(text.replace(/\r?\n/g, "<br />"));
   return (
     <div className="screen">
       {article.empty ? (
@@ -38,7 +39,6 @@ function Article({ match }) {
           className={`screen article-container article-container--${theme}`}
           onClick={() => openSettings && setOpenSettings(false)}
         >
-          >
           <div
             className={`article-settings ${openSettings &&
               "article-settings--open"}`}
@@ -90,9 +90,11 @@ function Article({ match }) {
                 </span>
               ))}
             <img className="article-img" src={article.images} alt="article" />
-            <p className="article-body" style={{ fontSize }}>
-              {article.body}
-            </p>
+            <div className="article-body" style={{ fontSize }}>
+              {article.body.split("<br />").map((par, i) => {
+                return <p key={i}>{par}</p>;
+              })}
+            </div>
           </div>
         </div>
       )}
