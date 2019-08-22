@@ -57,7 +57,7 @@ function Article({ match }) {
             </div>
             <div
               className="article-settings-font"
-              onClick={e => editFontSize(e, fontSize - 1)}
+              onClick={e => fontSize > 10 && editFontSize(e, fontSize - 1)}
             >
               <i className="fa fa-minus" />
             </div>

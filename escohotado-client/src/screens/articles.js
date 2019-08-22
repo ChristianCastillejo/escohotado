@@ -143,7 +143,7 @@ function Articles(props) {
               </div>
               <div className="articles-filter-search">
                 <div className="articles-filter-search-title">
-                  Buscar por palabras en el titulo o en el contenido:
+                  Buscar por título o contenido:
                 </div>
                 <input
                   className="articles-filter-search-input"
