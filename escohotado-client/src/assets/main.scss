@@ -10,17 +10,19 @@ body {
 // Menu
 .menu-container {
     display: grid;
-    grid-template-columns:repeat(3, 200px);
+    grid-template-columns: 100px 350px repeat(3, 200px);
+    grid-template-rows: 1fr;
     grid-gap: 10px;
     position: fixed;
     overflow: hidden;
+    align-items: center;
     top: 0;
     right: 0px;
     left: 0px;
     align-items: center;
     height: 70px;
-    background-color: rgb(156, 70, 255);
-    color: #fff;
+    background-color: #edeae5;
+    color: #292f33;
 }
 .menu-logo {
     display: grid;
@@ -38,14 +40,26 @@ body {
     display: grid;
     align-items: center;
     text-decoration: none;
-    color: #fff;
+    color: #292f33;
     p {
         font-weight: bold;
         font-size: 20px;
         margin: 0px;
     }
 }
-.menu-item:focus {
+.menu-item-name{
+    display: grid;
+    grid-column: 2;
+    align-items: center;
+    text-decoration: none;
+    color: #292f33;
+    p {
+        font-weight: 100;
+        font-size: 35px;
+        margin: 0px;
+    }
+}
+.menu-item:focus, .menu-item-name:focus {
     outline: 0;
 }
 .mobile-layout, .mobile-layout-icon, .mobile-layout-title {
@@ -55,7 +69,7 @@ body {
     .menu-container {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(auto-fill, minmax(80px, 1fr));
-        background-color: rgb(0, 228, 153);
+        background-color: #edeae5;
         z-index: 10;
         height: 100vh;
         width: 250px;
@@ -84,7 +98,7 @@ body {
         right: 0px;
         left: 0px;
         height: 70px;
-        background-color: rgb(255, 51, 187);
+        background-color: #edeae5;
         color: #fff;
         font-size: 20px;
     }

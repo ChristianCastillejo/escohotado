@@ -1,16 +1,12 @@
 import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
-import Logo from "../assets/logo.png";
 function Menu() {
   const [openMenu, setOpenMenu] = useState(false);
   return (
     <Fragment>
       <div className={`menu-container menu-container${!openMenu && "--close"}`}>
-        <div className="menu-logo">
-          <img className="menu-logo-img" src={Logo} alt="logo" />
-        </div>
-        <Link className="menu-item" to="/" onClick={() => setOpenMenu(false)}>
-          <p className="menu-item-p">Inicio</p>
+        <Link className="menu-item-name" to="/" onClick={() => setOpenMenu(false)}>
+          <p>Antonio Escohotado</p>
         </Link>
         <Link
           className="menu-item"
