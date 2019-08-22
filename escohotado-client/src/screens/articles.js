@@ -14,6 +14,7 @@ const categories = {
   ecomomy: "Economía",
   history: "Historia"
 };
+
 function Articles(props) {
   const articles = useSelector(state => state.articles);
   const dispatch = useDispatch();
@@ -28,14 +29,6 @@ function Articles(props) {
     history: false,
     general: false
   });
-
-  useEffect(
-    () => {
-      window.scrollTo(0, 0);
-      dispatch(fetchArticles());
-    },
-    [dispatch]
-  );
 
   function updateFilters(field, value, search) {
     let newFilters = { ...filters };
@@ -58,6 +51,14 @@ function Articles(props) {
     }
     setText(search);
   }
+
+  useEffect(
+    () => {
+      window.scrollTo(0, 0);
+      dispatch(fetchArticles());
+    },
+    [dispatch]
+  );
 
   useEffect(
     () => {

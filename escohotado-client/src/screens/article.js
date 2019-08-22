@@ -3,12 +3,25 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchArticle, cleanArticle } from "../actions/articles";
 import Loading from "../components/loading";
 
+const categories = {
+  philosophy: "Filosofía",
+  comunism: "Comunismo",
+  drugs: "Drogas",
+  ecomomy: "Economía",
+  history: "Historia"
+};
+
 function Article({ match }) {
   const article = useSelector(state => state.article);
   const dispatch = useDispatch();
   const [openSettings, setOpenSettings] = useState(false);
   const [theme, setTheme] = useState("light");
   const [fontSize, setFontSize] = useState(21);
+
+  function editFontSize(e, fontSize) {
+    e.stopPropagation();
+    setFontSize(fontSize);
+  }
 
   useEffect(
     () => {
@@ -17,11 +30,6 @@ function Article({ match }) {
     },
     [dispatch, match.params.id]
   );
-
-  function editFontSize(e, fontSize) {
-    e.stopPropagation();
-    setFontSize(fontSize);
-  }
 
   useEffect(() => {
     return () => {
@@ -86,7 +94,7 @@ function Article({ match }) {
             {article.tags &&
               article.tags.map(tag => (
                 <span key={tag.name} className="articles-article-tag">
-                  {tag.name}
+                  {categories[tag.name]}
                 </span>
               ))}
             <img className="article-img" src={article.images} alt="article" />
