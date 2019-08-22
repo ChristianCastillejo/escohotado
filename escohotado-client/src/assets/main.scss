@@ -7,6 +7,16 @@ body {
     margin-top: 70px;
 }
 
+// Loading
+.loading-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    justify-items: center;
+    min-height: 90vh;
+}
+
 // Menu
 .menu-container {
     display: grid;
@@ -50,7 +60,7 @@ body {
         margin: 0px;
     }
 }
-.menu-item:focus, .menu-item-name:focus {
+.menu-item:focus, .menu-item-name:focus, .mobile-layout-title:focus {
     outline: 0;
 }
 .mobile-layout, .mobile-layout-icon, .mobile-layout-title {
@@ -78,6 +88,7 @@ body {
         width: 250px;
         font-size: 30px;
         transition: width 0.6s;
+        grid-gap: 5px;
         &--close{
             width: 0px;
             -webkit-box-shadow: none; 
@@ -115,6 +126,10 @@ body {
         font-weight: 100;
         padding: 0px 0px 0px 20px;
         color: #ffffff;
+        text-decoration: none;
+        p {
+            margin: 0px;
+        }
     }
     .mobile-layout-icon {
         z-index: 10;

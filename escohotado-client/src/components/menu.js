@@ -6,7 +6,7 @@ function Menu() {
     <Fragment>
       <div className={`menu-container menu-container${!openMenu && "--close"}`}>
         <Link
-          className={`menu-item-name${openMenu ? "--mobile": ""}`}
+          className={`menu-item-name${openMenu ? "--mobile" : ""}`}
           to="/"
           onClick={() => setOpenMenu(false)}
         >
@@ -21,7 +21,9 @@ function Menu() {
         </Link>
       </div>
       <div className="mobile-layout">
-        <div className="mobile-layout-title"> Antonio Escohotado</div>
+        <Link className="mobile-layout-title" to="/">
+          <p>Antonio Escohotado</p>
+        </Link>
         <div
           className="mobile-layout-icon"
           onClick={() => setOpenMenu(!openMenu)}

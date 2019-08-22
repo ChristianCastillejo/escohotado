@@ -1,4 +1,10 @@
-import { FETCH_ARTICLES, FILTER_ARTICLES, FETCH_ARTICLE } from "./actionTypes";
+import {
+  FETCH_ARTICLES,
+  FILTER_ARTICLES,
+  FETCH_ARTICLE,
+  CLEAN_ARTICLE,
+  CLEAN_ARTICLES
+} from "./actionTypes";
 //const baseUrl = "http://localhost:4000";
 //const baseUrl = "http://192.168.2.6:4000";
 const baseUrl = "https://escohotado.herokuapp.com";
@@ -44,6 +50,12 @@ export async function filterArticles(tags, search) {
   };
 }
 
+export function cleanArticles(id) {
+  return {
+    type: CLEAN_ARTICLES,
+    payload: []
+  };
+}
 export async function fetchArticle(id) {
   const response = await fetch(`${baseUrl}/articles/${id}`, {
     method: "GET",
@@ -56,5 +68,12 @@ export async function fetchArticle(id) {
   return {
     type: FETCH_ARTICLE,
     payload: data
+  };
+}
+
+export function cleanArticle(id) {
+  return {
+    type: CLEAN_ARTICLE,
+    payload: {}
   };
 }

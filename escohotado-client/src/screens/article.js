@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchArticle } from "../actions/articles";
+import { fetchArticle, cleanArticle } from "../actions/articles";
+import Loading from "../components/loading";
 
 function Article({ match }) {
   const article = useSelector(state => state.article);
@@ -21,51 +22,78 @@ function Article({ match }) {
     setOpenSettings(!openSettings);
   }
 
+  useEffect(() => {
+    return () => {
+      dispatch(cleanArticle());
+    };
+  }, []); // eslint-disable-line
+
   return (
-    <div className={`screen article-container article-container--${theme}`} onClick={() => openSettings && toggleSetings(false)}>
-      <div
-        className={`article-settings ${openSettings &&
-          "article-settings--open"}`}
-        onClick={() => !openSettings && toggleSetings(true)}
-      >
-        <div className="article-settings-icon">
-          <i className="fa fa-text-height" />
-        </div>
-        <div className="article-settings-font" onClick={() => setFontSize(fontSize -1)}>
-        <i className="fa fa-minus" />
-        </div>
-        <div className="article-settings-font" onClick={() => fontSize < 34 && setFontSize(fontSize+1)}>
-        <i className="fa fa-plus" />
-        </div>
+    <div className="screen">
+      {article.empty ? (
+        <Loading />
+      ) : (
         <div
-          className="article-settings-light"
-          onClick={() => setTheme("light")}
+          className={`screen article-container article-container--${theme}`}
+          onClick={() => openSettings && toggleSetings(false)}
         >
-          Día
+          <div
+            className={`article-settings ${openSettings &&
+              "article-settings--open"}`}
+            onClick={() => !openSettings && toggleSetings(true)}
+          >
+            <div className="article-settings-icon">
+              <i className="fa fa-text-height" />
+            </div>
+            <div
+              className="article-settings-font"
+              onClick={() => setFontSize(fontSize - 1)}
+            >
+              <i className="fa fa-minus" />
+            </div>
+            <div
+              className="article-settings-font"
+              onClick={() => fontSize < 34 && setFontSize(fontSize + 1)}
+            >
+              <i className="fa fa-plus" />
+            </div>
+            <div
+              className="article-settings-light"
+              onClick={() => setTheme("light")}
+            >
+              Día
+            </div>
+            <div
+              className="article-settings-sepia"
+              onClick={() => setTheme("sepia")}
+            >
+              Sepia
+            </div>
+            <div
+              className="article-settings-dark"
+              onClick={() => setTheme("dark")}
+            >
+              Noche
+            </div>
+          </div>
+          <div className="article">
+            <h1 className="article-title">{article.title} </h1>
+            <p className="article-author">
+              Por Antonio Escohotado. {article.date}
+            </p>
+            {article.tags &&
+              article.tags.map(tag => (
+                <span key={tag.name} className="articles-article-tag">
+                  {tag.name}
+                </span>
+              ))}
+            <img className="article-img" src={article.images} alt="article" />
+            <p className="article-body" style={{ fontSize }}>
+              {article.body}
+            </p>
+          </div>
         </div>
-        <div
-          className="article-settings-sepia"
-          onClick={() => setTheme("sepia")}
-        >
-          Sepia
-        </div>
-        <div className="article-settings-dark" onClick={() => setTheme("dark")}>
-          Noche
-        </div>
-      </div>
-      <div className="article"         
->
-        <h1 className="article-title">{article.title} </h1>
-        <p className="article-author">Por Antonio Escohotado. {article.date}</p>
-        {article.tags &&
-          article.tags.map(tag => (
-            <span key={tag.name} className="articles-article-tag">
-              {tag.name}
-            </span>
-          ))}
-        <img className="article-img" src={article.images} alt="article" />
-        <p className="article-body" style={{fontSize}}>{article.body} </p>
-      </div>
+      )}
     </div>
   );
 }
