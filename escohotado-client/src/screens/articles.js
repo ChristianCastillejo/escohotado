@@ -65,7 +65,7 @@ function Articles(props) {
         setText(search);
       }
     },
-    [search === ""]  // eslint-disable-line
+    [search === ""] // eslint-disable-line
   );
   return (
     <div className="screen articles-container">

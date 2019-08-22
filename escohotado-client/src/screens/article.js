@@ -22,7 +22,7 @@ function Article({ match }) {
   }
 
   return (
-    <div className={`screen article-container article-container--${theme}`}>
+    <div className={`screen article-container article-container--${theme}`} onClick={() => openSettings && toggleSetings(false)}>
       <div
         className={`article-settings ${openSettings &&
           "article-settings--open"}`}
@@ -53,7 +53,7 @@ function Article({ match }) {
           Noche
         </div>
       </div>
-      <div className="article"         onClick={() => openSettings && toggleSetings(false)}
+      <div className="article"         
 >
         <h1 className="article-title">{article.title} </h1>
         <p className="article-author">Por Antonio Escohotado. {article.date}</p>

@@ -5,7 +5,11 @@ function Menu() {
   return (
     <Fragment>
       <div className={`menu-container menu-container${!openMenu && "--close"}`}>
-        <Link className="menu-item-name" to="/" onClick={() => setOpenMenu(false)}>
+        <Link
+          className="menu-item-name"
+          to="/"
+          onClick={() => setOpenMenu(false)}
+        >
           <p>Antonio Escohotado</p>
         </Link>
         <Link
