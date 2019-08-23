@@ -184,7 +184,7 @@ function Articles(props) {
                       </span>
                       ...
                       <span className="articles-article-body-continue">
-                        Seguir leyendo
+                        {" Seguir leyendo"}
                       </span>
                     </p>
                     <div>
