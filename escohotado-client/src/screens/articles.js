@@ -148,7 +148,7 @@ function Articles(props) {
                 <input
                   className="articles-filter-search-input"
                   placeholder="De la piel para dentro..."
-                  onChange={e => setSearch(e.target.value)}
+                  onChange={e => setSearch(e.target.value.toLowerCase())}
                 />
                 <button
                   className="articles-filter-search-button"
