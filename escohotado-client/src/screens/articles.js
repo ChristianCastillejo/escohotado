@@ -98,7 +98,7 @@ function Articles(props) {
                 className="articles-filter-button"
                 onClick={() => setOpenFilter(!openFilter)}
               >
-                <i className="fas fa-sliders-h" />
+                <i className="fas fa-search" />
               </div>
             </div>
             <div
@@ -147,14 +147,14 @@ function Articles(props) {
                 </div>
                 <input
                   className="articles-filter-search-input"
-                  placeholder="De la piel para adentro..."
+                  placeholder="De la piel para dentro..."
                   onChange={e => setSearch(e.target.value)}
                 />
                 <button
                   className="articles-filter-search-button"
                   onClick={() => updateFilters(undefined, undefined, search)}
                 >
-                  <i className="fas fa-search" />
+                  <p>Buscar</p>
                 </button>
               </div>
             </div>
@@ -184,7 +184,7 @@ function Articles(props) {
                       </span>
                       ...
                       <span className="articles-article-body-continue">
-                        Segir leyendo
+                        Seguir leyendo
                       </span>
                     </p>
                     <div>
