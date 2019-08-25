@@ -46,7 +46,7 @@ class ArticlesController < ApplicationController
     end
 
     unless params["search"] === "false"
-      @articles = @articles.where("title like ? or body like ?", "%#{params["search"]}%", "%#{params["search"]}%")
+      @articles = @articles.where("title ILIKE ? or body ILIKE ?", "%#{params["search"]}%", "%#{params["search"]}%")
     end
 
     render json: @articles
