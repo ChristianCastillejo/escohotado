@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import Loading from "../components/loading";
+import SearchBar from "../components/searchBar";
 import {
   fetchArticles,
   filterArticles,
   cleanArticles
 } from "../actions/articles";
-import Loading from "../components/loading";
 
 const categories = {
   philosophy: "Filosofía",
@@ -16,9 +17,11 @@ const categories = {
 };
 
 function Articles(props) {
+  const { history } = props;
+  const path = history.location.state;
   const articles = useSelector(state => state.articles);
   const dispatch = useDispatch();
-  const [openSearch, setopenSearch] = useState(false);
+  const [openSearch, setOpenSearch] = useState(false);
   const [search, setSearch] = useState("");
   const [text, setText] = useState("");
   const [filters, setFilters] = useState({
@@ -87,76 +90,24 @@ function Articles(props) {
       ) : (
         <div className="articles-container">
           <div className="articles-articles">
-            <div
-              className={`articles-filter-categories articles-filter-categories${openSearch &&
-                "--search"}`}
-            >
-              <div
-              className={`articles-filter-button articles-filter-button${openSearch &&
-                "--search"}`}
-                onClick={() => setopenSearch(!openSearch)}
-              >
-                <i className="fas fa-search" />
-              </div>
-              <input
-                className={`articles-filter-search-input articles-filter-search-input${!openSearch &&
-                  "--hidden"}`}
-                placeholder="De la piel para dentro..."
-                onChange={e => setSearch(e.target.value)}
-                onKeyPress={e => {
-                  if (e.key === 'Enter') {
-                    updateFilters(undefined, undefined, search)
-                  }
-                }}
-              />
-              <button
-              className={`articles-filter-search-button articles-filter-search-button${!openSearch &&
-                "--hidden"}`}
-                onClick={() => updateFilters(undefined, undefined, search)}
-              >
-                <p>Buscar</p>
-              </button>
-              <div
-                onClick={() =>
-                  updateFilters("philosophy", !filters.philosophy, search)
-                }
-                className={`articles-filter-item ${filters.philosophy &&
-                  "articles-filter-item--selected"} ${openSearch &&
-                    "articles-filter-item--hidden"}`}
-              >
-                Filosofía
-              </div>
-              <div
-                onClick={() =>
-                  updateFilters("comunism", !filters.comunism, search)
-                }
-                className={`articles-filter-item ${filters.comunism &&
-                  "articles-filter-item--selected"} ${openSearch &&
-                    "articles-filter-item--hidden"}`}
-              >
-                Comunismo
-              </div>
-              <div
-                onClick={() => updateFilters("drugs", !filters.drugs, search)}
-                className={`articles-filter-item ${filters.drugs &&
-                  "articles-filter-item--selected"} ${openSearch &&
-                    "articles-filter-item--hidden"}`}
-              >
-                Drogas
-              </div>
-              <div
-                onClick={() =>
-                  updateFilters("history", !filters.history, search)
-                }
-                className={`articles-filter-item ${filters.history &&
-                  "articles-filter-item--selected"} ${openSearch &&
-                    "articles-filter-item--hidden"}`}
-              >
-                Historia
-              </div>
-            </div>
+            <SearchBar
+              openSearch={openSearch}
+              setOpenSearch={setOpenSearch}
+              search={search}
+              setSearch={setSearch}
+              filters={filters}
+              updateFilters={updateFilters}
+            />
             <div className="articles-header">
-              <h1>Artículos</h1>
+              <h1>
+                {!path
+                  ? "Recursos"
+                  : path.articles
+                  ? "Artículos"
+                  : path.videos
+                  ? "Videos"
+                  : path.books && "Libros"}{" "}
+              </h1>
             </div>
             {articles.length === 0 ? (
               <p className="articles-error-message">
@@ -168,7 +119,7 @@ function Articles(props) {
                 <div
                   key={article.id}
                   className="articles-article"
-                  onClick={() => props.history.push(`/articles/${article.id}`)}
+                  onClick={() => props.history.push(`/resource/${article.id}`)}
                 >
                   <img
                     alt="article"
