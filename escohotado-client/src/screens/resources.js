@@ -2,19 +2,12 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Loading from "../components/loading";
 import SearchBar from "../components/searchBar";
+import Article from "../components/article";
 import {
   fetchArticles,
   filterArticles,
   cleanArticles
 } from "../actions/articles";
-
-const categories = {
-  philosophy: "Filosofía",
-  comunism: "Comunismo",
-  drugs: "Drogas",
-  ecomomy: "Economía",
-  history: "Historia"
-};
 
 function Articles(props) {
   const { history } = props;
@@ -116,37 +109,7 @@ function Articles(props) {
               </p>
             ) : (
               articles.map(article => (
-                <div
-                  key={article.id}
-                  className="articles-article"
-                  onClick={() => props.history.push(`/resource/${article.id}`)}
-                >
-                  <img
-                    alt="article"
-                    className="articles-article-img"
-                    src={article.images}
-                  />
-                  <div className="articles-article-details">
-                    <h3 className="articles-article-title">{article.title}</h3>
-                    <p className="articles-article-body">
-                      {article.body.slice(0, 250)}
-                      <span className="articles-article-body-more">
-                        {article.body.slice(250, 600)}
-                      </span>
-                      ...
-                      <span className="articles-article-body-continue">
-                        {" Seguir leyendo"}
-                      </span>
-                    </p>
-                    <div>
-                      {Array.from(article.tags).map(tag => (
-                        <span key={tag.name} className="articles-article-tag">
-                          {categories[tag.name]}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
+                <Article article={article} history={history} />
               ))
             )}
           </div>
