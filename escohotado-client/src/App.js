@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import Menu from "./components/menu";
 import Home from "./screens/home";
-import Articles from "./screens/articles";
-import Article from "./screens/article";
+import Resources from "./screens/resources";
+import Resource from "./screens/resource";
 import store from "./lib/store";
 
 function App() {
@@ -13,8 +13,12 @@ function App() {
       <Router basename={process.env.PUBLIC_URL}>
         <Menu />
         <Route exact path="/" component={Home} />
-        <Route exact path="/articles" component={Articles} />
-        <Route exact path="/articles/:id" component={Article} />
+        <Route exact path="/articles" component={Resources} />
+        <Route exact path="/articles/:id" component={Resource} />
+        <Route exact path="/videos" component={Resources} />
+        <Route exact path="/videos/:id" component={Resource} />
+        <Route exact path="/books" component={Resources} />
+        <Route exact path="/books/:id" component={Resource} />
       </Router>
     </Provider>
   );

@@ -1,13 +1,14 @@
 import {
-  FETCH_ARTICLES,
-  FILTER_ARTICLES,
-  FETCH_ARTICLE,
-  CLEAN_ARTICLE,
-  CLEAN_ARTICLES,
+  FETCH_VIDEOS,
+  FILTER_VIDEOS,
+  FETCH_VIDEO,
+  CLEAN_VIDEO,
+  CLEAN_VIDEOS,
   baseUrl
 } from "./actionTypes";
-export async function fetchArticles() {
-  const response = await fetch(`${baseUrl}/articles/`, {
+
+export async function fetchVideos() {
+  const response = await fetch(`${baseUrl}/videos/`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json"
@@ -16,12 +17,12 @@ export async function fetchArticles() {
   const data = await response.json();
 
   return {
-    type: FETCH_ARTICLES,
+    type: FETCH_VIDEOS,
     payload: data
   };
 }
 
-export async function filterArticles(tags, search) {
+export async function filterVideos(tags, search) {
   let filterTags = Array.from(
     Object.keys(tags),
     k => tags[k] === true && `${k}`
@@ -29,7 +30,7 @@ export async function filterArticles(tags, search) {
     .filter(Boolean)
     .join(",");
   const response = await fetch(
-    `${baseUrl}/search_articles/?tags=${[filterTags]}&search=${
+    `${baseUrl}/search_videos/?tags=${[filterTags]}&search=${
       search ? search : false
     }`,
     {
@@ -42,19 +43,19 @@ export async function filterArticles(tags, search) {
   const data = await response.json();
 
   return {
-    type: FILTER_ARTICLES,
+    type: FILTER_VIDEOS,
     payload: data
   };
 }
 
-export function cleanArticles(id) {
+export function cleanVideos(id) {
   return {
-    type: CLEAN_ARTICLES,
+    type: CLEAN_VIDEOS,
     payload: []
   };
 }
-export async function fetchArticle(id) {
-  const response = await fetch(`${baseUrl}/articles/${id}`, {
+export async function fetchVideo(id) {
+  const response = await fetch(`${baseUrl}/videos/${id}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json"
@@ -63,14 +64,14 @@ export async function fetchArticle(id) {
   const data = await response.json();
 
   return {
-    type: FETCH_ARTICLE,
+    type: FETCH_VIDEO,
     payload: data
   };
 }
 
-export function cleanArticle(id) {
+export function cleanVideo(id) {
   return {
-    type: CLEAN_ARTICLE,
+    type: CLEAN_VIDEO,
     payload: {}
   };
 }

@@ -19,6 +19,20 @@ function Menu() {
         >
           <p className="menu-item-p">Artículos</p>
         </Link>
+        <Link
+          className="menu-item"
+          to="/videos"
+          onClick={() => setOpenMenu(false)}
+        >
+          <p className="menu-item-p">Videos</p>
+        </Link>
+        <Link
+          className="menu-item"
+          to="/books"
+          onClick={() => setOpenMenu(false)}
+        >
+          <p className="menu-item-p">Libros</p>
+        </Link>
       </div>
       <div className="mobile-layout">
         <Link className="mobile-layout-title" to="/">
