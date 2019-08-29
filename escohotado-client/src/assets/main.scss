@@ -20,12 +20,13 @@ body {
 // Menu
 .menu-container {
     display: grid;
-    grid-template-columns: 100px 350px repeat(3, 200px);
+    grid-template-columns: 100px 350px repeat(3, 180px);
     grid-template-rows: 1fr;
     grid-gap: 20px;
     position: fixed;
     overflow: hidden;
     align-items: center;
+    z-index: 100;
     top: 0;
     right: 0px;
     left: 0px;
@@ -83,7 +84,7 @@ body {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(auto-fill, minmax(80px, 1fr));
         background-color: #2c4857;
-        z-index: 10;
+        z-index: 100;
         height: 100vh;
         width: 250px;
         font-size: 30px;
@@ -110,6 +111,7 @@ body {
         align-items: center;
         position: fixed;
         overflow: hidden;
+        z-index: 99;
         top: 0;
         right: 0px;
         left: 0px;
@@ -144,7 +146,7 @@ body {
     padding: 30px;
     font-size: 25px;
 }
-// Articles
+// Resources
 .articles-filter-categories{
     display: grid;
     grid-template-columns: auto repeat(4, minmax(auto,1fr));
@@ -304,6 +306,40 @@ body {
     background-color: #292f33;
     color: #ffffff;
 }
+.resources-video {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 20px;
+    border-radius: 15px;
+    padding: 30px;
+    -webkit-box-shadow: 0px 8px 14px 3px #D8D8D8; 
+    box-shadow: 0px 4px 14px 3px #DFDFDF;
+    cursor: pointer;
+}
+.resources-video-video {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 0px;
+	height: 0;
+    border-radius: 5px;
+}
+.resources-video-video iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+    border-radius: 5px;
+}
+.resources-video-title {
+    display: block;
+    font-size: 22px;
+    &--mobile {
+        display: none;
+        margin: 5px 0px 0px 0px;
+    }
+}
 .articles-error-message {
     font-size: 25px;
 }
@@ -368,11 +404,25 @@ body {
     .articles-article-body-more {
         display: none;
     }
+    .resources-video {
+        grid-template-columns: 1fr;
+        grid-template-rows:  1fr auto;
+        padding: 20px;
+    }
+    .resources-video-title {
+        display: none;
+        &--mobile {
+            display: block;
+        }
+    }
 }
 @media (max-width: 500px) {
     .articles-filter {
         padding: 15px;
         grid-template-columns: 1fr;
+    }
+    .articles-article{
+        padding: 0px;
     }
 }
 

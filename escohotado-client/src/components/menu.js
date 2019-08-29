@@ -14,30 +14,21 @@ function Menu() {
         </Link>
         <Link
           className="menu-item"
-          to={{
-            pathname: "/resource",
-            state: { articles: true }
-          }}
+          to="/articles"
           onClick={() => setOpenMenu(false)}
         >
           <p className="menu-item-p">Artículos</p>
         </Link>
         <Link
           className="menu-item"
-          to={{
-            pathname: "/resource",
-            state: { videos: true }
-          }}
+          to="/videos"
           onClick={() => setOpenMenu(false)}
         >
           <p className="menu-item-p">Videos</p>
         </Link>
         <Link
           className="menu-item"
-          to={{
-            pathname: "/resource",
-            state: { books: true }
-          }}
+          to="/books"
           onClick={() => setOpenMenu(false)}
         >
           <p className="menu-item-p">Libros</p>

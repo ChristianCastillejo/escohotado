@@ -11,9 +11,8 @@ const categories = {
 function Article({ article, history }) {
   return (
     <div
-      key={article.id}
       className="articles-article"
-      onClick={() => history.push(`/resource/${article.id}`)}
+      onClick={() => history.push(`/articles/${article.id}`)}
     >
       <img
         alt="article"
