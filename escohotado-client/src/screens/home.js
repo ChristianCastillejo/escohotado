@@ -3,7 +3,7 @@ import React from "react";
 function Home() {
   return (
     <div className="screen home-container">
-      Por favor, pulsa en la sección "Artículos".{" "}
+      Por favor, pulsa en la sección "Artículos" o "Vídeos".
     </div>
   );
 }

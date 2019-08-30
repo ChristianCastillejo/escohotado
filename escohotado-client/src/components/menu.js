@@ -24,15 +24,15 @@ function Menu() {
           to="/videos"
           onClick={() => setOpenMenu(false)}
         >
-          <p className="menu-item-p">Videos</p>
+          <p className="menu-item-p">Vídeos</p>
         </Link>
-        <Link
+        {/* <Link
           className="menu-item"
           to="/books"
           onClick={() => setOpenMenu(false)}
         >
           <p className="menu-item-p">Libros</p>
-        </Link>
+        </Link> */}
       </div>
       <div className="mobile-layout">
         <Link className="mobile-layout-title" to="/">

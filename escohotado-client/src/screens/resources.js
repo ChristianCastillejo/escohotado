@@ -31,7 +31,7 @@ function Articles(props) {
 
   useEffect(
     () => {
-      window.scrollTo(0, 0);
+      window.scrollTo(0, -100);
       path === "articles"
         ? dispatch(fetchArticles())
         : path === "videos" && dispatch(fetchVideos());
@@ -121,7 +121,7 @@ function Articles(props) {
                   : path === "articles"
                   ? "Artículos"
                   : path === "videos"
-                  ? "Videos"
+                  ? "Vídeos"
                   : path === "books" && "Libros"}
               </h1>
             </div>
