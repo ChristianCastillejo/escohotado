@@ -32,7 +32,7 @@ function Video({ video, history }) {
           width="560"
           height="315"
           frameBorder="0"
-          allowFullScreen="allowfullscreen"
+          allowfullscreen="allowfullscreen"
           mozallowfullscreen="mozallowfullscreen"
           msallowfullscreen="msallowfullscreen"
           oallowfullscreen="oallowfullscreen"
