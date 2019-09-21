@@ -12,7 +12,8 @@ function SearchBar({
     <React.Fragment>
       <div className={`articles-filter-categories`}>
         <div
-          className={`articles-filter-button articles-filter-button${(openSearch || search !== "") &&
+          className={`articles-filter-button articles-filter-button${(openSearch ||
+            search !== "") &&
             "--search"}`}
           onClick={() => setOpenSearch(!openSearch)}
         >
@@ -50,17 +51,17 @@ function SearchBar({
         </div>
       </div>
       <div className={`search-bar ${!openSearch && "search-bar--hidden"}`}>
-      <input
-        className={`articles-filter-search-input articles-filter-search-input${!openSearch &&
-          "--hidden"}`}
-        placeholder="De la piel para dentro..."
-        onChange={e => setSearch(e.target.value)}
-        onKeyPress={e => {
-          if (e.key === "Enter") {
-            updateFilters(undefined, undefined, search);
-          }
-        }}
-      />
+        <input
+          className={`articles-filter-search-input articles-filter-search-input${!openSearch &&
+            "--hidden"}`}
+          placeholder="De la piel para dentro..."
+          onChange={e => setSearch(e.target.value)}
+          onKeyPress={e => {
+            if (e.key === "Enter") {
+              updateFilters(undefined, undefined, search);
+            }
+          }}
+        />
         <button
           className={`articles-filter-search-button articles-filter-search-button${!openSearch &&
             "--hidden"}`}
@@ -68,7 +69,7 @@ function SearchBar({
         >
           <p>Buscar</p>
         </button>
-    </div>
+      </div>
     </React.Fragment>
   );
 }

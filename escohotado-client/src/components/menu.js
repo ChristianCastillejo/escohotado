@@ -1,6 +1,13 @@
 import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
 function Menu() {
+  const { t, i18n } = useTranslation();
+  const changeLanguage = lng => {
+    i18n.changeLanguage(lng);
+  };
+
   const [openMenu, setOpenMenu] = useState(false);
   return (
     <Fragment>
@@ -17,14 +24,14 @@ function Menu() {
           to="/articles"
           onClick={() => setOpenMenu(false)}
         >
-          <p className="menu-item-p">Artículos</p>
+          <p className="menu-item-p">{t("menu.articles")}</p>
         </Link>
         <Link
           className="menu-item"
           to="/videos"
           onClick={() => setOpenMenu(false)}
         >
-          <p className="menu-item-p">Vídeos</p>
+          <p className="menu-item-p">{t("menu.videos")}</p>
         </Link>
         {/* <Link
           className="menu-item"
@@ -33,6 +40,10 @@ function Menu() {
         >
           <p className="menu-item-p">Libros</p>
         </Link> */}
+        <div className="menu-item">
+          <button onClick={() => changeLanguage("es")}>es</button>
+          <button onClick={() => changeLanguage("en")}>en</button>
+        </div>
       </div>
       <div className="mobile-layout">
         <Link className="mobile-layout-title" to="/">
