@@ -1,14 +1,6 @@
 import React from "react";
 
-const categories = {
-  philosophy: "Filosofía",
-  comunism: "Comunismo",
-  drugs: "Drogas",
-  ecomomy: "Economía",
-  history: "Historia"
-};
-
-function Article({ article, history }) {
+function Article({ article, history, t }) {
   return (
     <div
       className="articles-article"
@@ -28,13 +20,13 @@ function Article({ article, history }) {
           </span>
           ...
           <span className="articles-article-body-continue">
-            {" Seguir leyendo"}
+            {t("article.continue")}
           </span>
         </p>
         <div>
           {Array.from(article.tags).map(tag => (
             <span key={tag.name} className="articles-article-tag">
-              {categories[tag.name]}
+              {t(`categories.${[tag.name]}`)}
             </span>
           ))}
         </div>

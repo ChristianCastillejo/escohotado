@@ -6,7 +6,7 @@ import store from "./lib/store";
 const Menu = lazy(() => import("./components/menu"));
 const Home = lazy(() => import("./screens/home"));
 const Resources = lazy(() => import("./screens/resources"));
-const Resource = lazy(() => import("./screens/resource"));
+const Article = lazy(() => import("./screens/article"));
 
 function App() {
   return (
@@ -16,11 +16,10 @@ function App() {
           <Menu />
           <Route exact path="/" component={Home} />
           <Route exact path="/articles" component={Resources} />
-          <Route exact path="/articles/:id" component={Resource} />
+          <Route exact path="/articles/:id" component={Article} />
           <Route exact path="/videos" component={Resources} />
-          <Route exact path="/videos/:id" component={Resource} />
           <Route exact path="/books" component={Resources} />
-          <Route exact path="/books/:id" component={Resource} />
+          <Route exact path="/books/:id" component={Article} />
         </Suspense>
       </Router>
     </Provider>

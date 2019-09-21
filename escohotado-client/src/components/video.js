@@ -1,14 +1,6 @@
 import React from "react";
 
-const categories = {
-  philosophy: "Filosofía",
-  comunism: "Comunismo",
-  drugs: "Drogas",
-  ecomomy: "Economía",
-  history: "Historia"
-};
-
-function Video({ video, history }) {
+function Video({ video, t  }) {
   const videoSrc =
     video.url +
     "?wmode=opaque?autoplay=" +
@@ -44,7 +36,7 @@ function Video({ video, history }) {
         <p>{video.description.slice(0, 250)}</p>
         {Array.from(video.tags).map(tag => (
           <span key={tag.name} className="articles-article-tag">
-            {categories[tag.name]}
+            {t(`categories.${[tag.name]}`)}
           </span>
         ))}
       </div>

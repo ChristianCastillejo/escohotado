@@ -2,16 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchArticle, cleanArticle } from "../actions/articles";
 import Loading from "../components/loading";
-
-const categories = {
-  philosophy: "Filosofía",
-  comunism: "Comunismo",
-  drugs: "Drogas",
-  ecomomy: "Economía",
-  history: "Historia"
-};
+import { useTranslation } from "react-i18next";
 
 function Article({ match }) {
+  const { t } = useTranslation();
   const article = useSelector(state => state.article);
   const dispatch = useDispatch();
   const [openSettings, setOpenSettings] = useState(false);
@@ -71,30 +65,30 @@ function Article({ match }) {
               className="article-settings-light"
               onClick={e => setTheme("light")}
             >
-              Día
+              {t(`resource.day`)}
             </div>
             <div
               className="article-settings-sepia"
               onClick={() => setTheme("sepia")}
             >
-              Sepia
+              {t(`resource.sepia`)}
             </div>
             <div
               className="article-settings-dark"
               onClick={() => setTheme("dark")}
             >
-              Noche
+              {t(`resource.night`)}
             </div>
           </div>
           <div className="article">
             <h1 className="article-title">{article.title} </h1>
             <p className="article-author">
-              Por Antonio Escohotado. {article.date}
+            {t(`resource.by`)} Antonio Escohotado. {article.date}
             </p>
             {article.tags &&
               article.tags.map(tag => (
                 <span key={tag.name} className="articles-article-tag">
-                  {categories[tag.name]}
+                  {t(`categories.${[tag.name]}`)}
                 </span>
               ))}
             <img className="article-img" src={article.images} alt="article" />
