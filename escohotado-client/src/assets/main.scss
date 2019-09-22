@@ -20,7 +20,7 @@ body {
 // Menu
 .menu-container {
     display: grid;
-    grid-template-columns: 100px 350px repeat(3, 180px);
+    grid-template-columns: 100px 350px repeat(6, minmax(auto,180px));
     grid-template-rows: 1fr;
     grid-gap: 20px;
     position: fixed;
@@ -48,6 +48,11 @@ body {
         font-size: 20px;
         margin: 0px;
     }
+    &--language {
+        grid-column: 7;
+        grid-template-columns: repeat(3,auto);
+        justify-content: left;
+    }
 }
 .menu-item-name{
     display: grid;
@@ -60,6 +65,15 @@ body {
         font-size: 30px;
         margin: 0px;
     }
+}
+.menu-item-button {
+    background-color: transparent;
+    border: none;
+    font-weight: bold;
+    color: #292f33;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    cursor: pointer;
 }
 .menu-item:focus, .menu-item-name:focus, .mobile-layout-title:focus {
     outline: 0;
@@ -101,6 +115,15 @@ body {
     }
     .menu-item {
         padding-left: 20px;
+        &--language {
+            grid-column: 1;
+            p {
+                margin: 0px 10px;
+            }
+        }
+    }
+    .menu-item-button {
+        padding: 0px;
     }
     .menu-logo {
         display: none;

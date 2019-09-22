@@ -17,7 +17,7 @@ function Menu() {
           to="/"
           onClick={() => setOpenMenu(false)}
         >
-          <p>{openMenu ? "Inicio" : "Antonio Escohotado"}</p>
+          <p>{openMenu ? t("menu.home") : "Antonio Escohotado"}</p>
         </Link>
         <Link
           className="menu-item"
@@ -40,9 +40,10 @@ function Menu() {
         >
           <p className="menu-item-p">Libros</p>
         </Link> */}
-        <div className="menu-item">
-          <button onClick={() => changeLanguage("es")}>es</button>
-          <button onClick={() => changeLanguage("en")}>en</button>
+        <div className="menu-item menu-item--language">
+          <button className="menu-item-button" onClick={() => changeLanguage("es")}>Esp</button>
+          <p>/</p>
+          <button className="menu-item-button" onClick={() => changeLanguage("en")}>Eng</button>
         </div>
       </div>
       <div className="mobile-layout">
