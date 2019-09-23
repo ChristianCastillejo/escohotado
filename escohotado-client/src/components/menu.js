@@ -40,6 +40,15 @@ function Menu() {
         >
           <p className="menu-item-p">Libros</p>
         </Link> */}
+        <a
+          className="menu-item menu-item"
+          href="http://laemboscadura.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => setOpenMenu(false)}
+        >
+          <p className="menu-item-p">La Emboscadura</p>
+        </a>
         <div className="menu-item menu-item--language">
           <button
             className="menu-item-button"

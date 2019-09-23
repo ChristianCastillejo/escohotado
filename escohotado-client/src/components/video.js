@@ -39,7 +39,7 @@ function Video({ video, t, language }) {
         </h3>
         {language === "en" && !video.description_en && (
           <p className="articles-article-no-translation">
-            Sorry, the description is no available in English.
+            Sorry, the description is not available in English.
           </p>
         )}
         <p>
