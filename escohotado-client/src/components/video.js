@@ -1,6 +1,6 @@
 import React from "react";
 
-function Video({ video, t  }) {
+function Video({ video, t, language }) {
   const videoSrc =
     video.url +
     "?wmode=opaque?autoplay=" +
@@ -32,8 +32,22 @@ function Video({ video, t  }) {
         />
       </div>
       <div className="resources-video-details">
-        <h3 className="resources-video-title">{video.title}</h3>
-        <p>{video.description.slice(0, 250)}</p>
+        <h3 className="resources-video-title">
+          {language === "en" && video.title_en
+            ? video.title_en
+            : video.title_sp}
+        </h3>
+        {language === "en" && !video.description_en && (
+          <p className="articles-article-no-translation">
+            Sorry, the description is no available in English.
+          </p>
+        )}
+        <p>
+          {language === "en" && video.description_en
+            ? video.description_en.slice(0, 250)
+            : video.description_sp.slice(0, 250)}
+          ...
+        </p>
         {Array.from(video.tags).map(tag => (
           <span key={tag.name} className="articles-article-tag">
             {t(`categories.${[tag.name]}`)}

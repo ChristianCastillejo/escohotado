@@ -5,7 +5,7 @@ import Loading from "../components/loading";
 import { useTranslation } from "react-i18next";
 
 function Article({ match }) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const article = useSelector(state => state.article);
   const dispatch = useDispatch();
   const [openSettings, setOpenSettings] = useState(false);
@@ -81,9 +81,18 @@ function Article({ match }) {
             </div>
           </div>
           <div className="article">
-            <h1 className="article-title">{article.title} </h1>
+            <h1 className="article-title">
+              {i18n.language === "en" && article.title_en
+                ? article.title_en
+                : article.title_sp}{" "}
+            </h1>
+            {i18n.language === "en" && !article.body_en && (
+              <p className="articles-article-no-translation">
+                Sorry, this article is not translated into English. It is only available in Spanish.
+              </p>
+            )}
             <p className="article-author">
-            {t(`resource.by`)} Antonio Escohotado. {article.date}
+              {t(`resource.by`)} Antonio Escohotado. {article.date}
             </p>
             {article.tags &&
               article.tags.map(tag => (
@@ -93,9 +102,13 @@ function Article({ match }) {
               ))}
             <img className="article-img" src={article.images} alt="article" />
             <div className="article-body" style={{ fontSize }}>
-              {article.body.split("<br />").map((par, i) => {
-                return <p key={i}>{par}</p>;
-              })}
+              {i18n.language === "en" && article.body_en
+                ? article.body_en.split("<br />").map((par, i) => {
+                    return <p key={i}>{par}</p>;
+                  })
+                : article.body_sp.split("<br />").map((par, i) => {
+                    return <p key={i}>{par}</p>;
+                  })}
             </div>
           </div>
         </div>

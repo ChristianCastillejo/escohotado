@@ -14,7 +14,7 @@ import { useTranslation } from "react-i18next";
 
 function Articles(props) {
   const { history, location } = props;
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const path = location.pathname.substring(1);
   const articles = useSelector(state => state.articles);
   const videos = useSelector(state => state.videos);
@@ -98,7 +98,6 @@ function Articles(props) {
         : path === "videos" && dispatch(cleanVideos());
     };
   }, []); // eslint-disable-line
-
   return (
     <div className="screen">
       {path === "articles" && articles[0] === "clean" ? (
@@ -130,22 +129,38 @@ function Articles(props) {
             </div>
             {path === "articles" && articles.length === 0 ? (
               <p className="articles-error-message">
-                {t("resources.msgNoResources1articles") + (text !== "" ? (t("resources.msgNoResources2") + text + ".") : ".")}
+                {t("resources.msgNoResources1articles") +
+                  (text !== ""
+                    ? t("resources.msgNoResources2") + text + "."
+                    : ".")}
               </p>
             ) : path === "videos" && videos.length === 0 ? (
               <p className="articles-error-message">
-               {t("resources.msgNoResources1videos") + (text !== "" ? (t("resources.msgNoResources2") + text + ".") : ".")}
+                {t("resources.msgNoResources1videos") +
+                  (text !== ""
+                    ? t("resources.msgNoResources2") + text + "."
+                    : ".")}
               </p>
             ) : path === "articles" ? (
               articles.map(article => (
-                <Article key={article.id} article={article} history={history}
-                t={t} />
+                <Article
+                  key={article.id}
+                  article={article}
+                  history={history}
+                  language={i18n.language}
+                  t={t}
+                />
               ))
             ) : (
               path === "videos" &&
               videos.map(video => (
-                <Video key={video.id} video={video} history={history}
-                t={t} />
+                <Video
+                  key={video.id}
+                  video={video}
+                  history={history}
+                  language={i18n.language}
+                  t={t}
+                />
               ))
             )}
           </div>

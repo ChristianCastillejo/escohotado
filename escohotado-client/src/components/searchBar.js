@@ -34,21 +34,21 @@ function SearchBar({
           className={`articles-filter-item ${filters.comunism &&
             "articles-filter-item--selected"}`}
         >
-        {t("categories.comunism")}
+          {t("categories.comunism")}
         </div>
         <div
           onClick={() => updateFilters("drugs", !filters.drugs, search)}
           className={`articles-filter-item ${filters.drugs &&
             "articles-filter-item--selected"}`}
         >
-        {t("categories.drugs")}
+          {t("categories.drugs")}
         </div>
         <div
           onClick={() => updateFilters("history", !filters.history, search)}
           className={`articles-filter-item ${filters.history &&
             "articles-filter-item--selected"}`}
         >
-        {t("categories.history")}
+          {t("categories.history")}
         </div>
       </div>
       <div className={`search-bar ${!openSearch && "search-bar--hidden"}`}>
