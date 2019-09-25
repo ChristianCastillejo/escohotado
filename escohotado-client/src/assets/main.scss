@@ -55,9 +55,7 @@ body {
         margin: 0px;
     }
     &--language {
-        grid-column: 7;
-        grid-template-columns: repeat(3,auto);
-        justify-content: left;
+        grid-column: 8;
     }
 }
 .menu-item-name{
@@ -75,10 +73,10 @@ body {
 .menu-item-button {
     background-color: transparent;
     border: none;
-    font-weight: bold;
     color: #292f33;
     font-family: 'Open Sans', sans-serif;
     font-size: 20px;
+    text-align: left;
     cursor: pointer;
 }
 .menu-item:focus, .menu-item-name:focus, .mobile-layout-title:focus {
