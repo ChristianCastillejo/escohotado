@@ -88,7 +88,8 @@ function Article({ match }) {
             </h1>
             {i18n.language === "en" && !article.body_en && (
               <p className="articles-article-no-translation">
-                Sorry, this article is not translated into English. It is only available in Spanish.
+                Sorry, this article is not translated into English. It is only
+                available in Spanish.
               </p>
             )}
             <p className="article-author">

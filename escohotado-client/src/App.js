@@ -1,28 +1,64 @@
 import React, { lazy, Suspense } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect
+} from "react-router-dom";
 import { Provider } from "react-redux";
+import cookie from "react-cookies";
 import Loading from "./components/loading";
 import store from "./lib/store";
 const Menu = lazy(() => import("./components/menu"));
 const Home = lazy(() => import("./screens/home"));
 const Resources = lazy(() => import("./screens/resources"));
 const Article = lazy(() => import("./screens/article"));
+const Login = lazy(() => import("./screens/login"));
+
+function isAuthenticated() {
+  const accessToken = cookie.load("jwt");
+  console.log("asdasd");
+  return accessToken ? true : false;
+}
+
+const ProtectedRoute = ({ component: Component, ...rest }) => (
+  <Route
+    {...rest}
+    render={props =>
+      isAuthenticated() ? (
+        <Component {...props} />
+      ) : (
+        <Redirect
+          to={{
+            pathname: "/login",
+            state: { from: props.location }
+          }}
+        />
+      )
+    }
+  />
+);
 
 function App() {
   return (
-    <Provider store={store}>
-      <Router basename={process.env.PUBLIC_URL}>
-        <Suspense fallback={<Loading />}>
+    <Suspense fallback={<Loading />}>
+      <Provider store={store}>
+        <Router basename={process.env.PUBLIC_URL}>
           <Menu />
-          <Route exact path="/" component={Home} />
-          <Route exact path="/articles" component={Resources} />
-          <Route exact path="/articles/:id" component={Article} />
-          <Route exact path="/videos" component={Resources} />
-          <Route exact path="/books" component={Resources} />
-          <Route exact path="/books/:id" component={Article} />
-        </Suspense>
-      </Router>
-    </Provider>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/articles" component={Resources} />
+            <Route exact path="/articles/:id" component={Article} />
+            <Route exact path="/videos" component={Resources} />
+            <Route exact path="/books" component={Resources} />
+            <Route exact path="/books/:id" component={Article} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/admin/articles" component={Resources} />
+            <ProtectedRoute exact path="/admin/videos" component={Resources} />
+          </Switch>
+        </Router>
+      </Provider>
+    </Suspense>
   );
 }
 

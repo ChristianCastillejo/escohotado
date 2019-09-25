@@ -15,7 +15,8 @@ import { useTranslation } from "react-i18next";
 function Articles(props) {
   const { history, location } = props;
   const { t, i18n } = useTranslation();
-  const path = location.pathname.substring(1);
+  const path = location.pathname.split("/").pop();
+  const admin = location.pathname.includes("admin");
   const articles = useSelector(state => state.articles);
   const videos = useSelector(state => state.videos);
   const dispatch = useDispatch();
@@ -149,6 +150,7 @@ function Articles(props) {
                   history={history}
                   language={i18n.language}
                   t={t}
+                  admin={admin}
                 />
               ))
             ) : (
@@ -160,6 +162,7 @@ function Articles(props) {
                   history={history}
                   language={i18n.language}
                   t={t}
+                  admin={admin}
                 />
               ))
             )}
