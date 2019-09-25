@@ -1,4 +1,4 @@
-import React, { useState, Fragment} from "react";
+import React, { useState, Fragment } from "react";
 import { Link } from "react-router-dom";
 
 function Article({ article, history, t, language, admin }) {
@@ -10,33 +10,49 @@ function Article({ article, history, t, language, admin }) {
       onClick={!admin && (() => history.push(`/articles/${article.id}`))}
     >
       {admin && (
-        <div className={`articles-article-admin ${askDelete && "articles-article-admin--askDelete"}`}>
+        <div
+          className={`articles-article-admin ${askDelete &&
+            "articles-article-admin--askDelete"}`}
+        >
           {askDelete ? (
             <Fragment>
-          <p>{t("article.askDelete")}</p>
-          <button className="articles-article-delete articles-article-delete--no"
-          onClick={() => setAskDelete(false)}>
-          {t("article.cancel")}</button>
-          <button className="articles-article-delete articles-article-delete--yes"
-          onClick={() => setAskDelete(true)}>
-          {t("article.delete")}</button>
-          </Fragment>):
-          (  
-            <Fragment>      <Link
-            to={`/articles/${article.id}`}
-            className="articles-article-review"
-          >
-          <i className={`fa fa-eye`} />
-          </Link>
-          <Link
-            to={`/articles/${article.id}/edit`}
-            className="articles-article-edit"
-          >
-          <i className={`fa fa-edit`} />
-          </Link>
-          <button className="articles-article-delete"
-          onClick={() => setAskDelete(true)}>
-          <i className={`fa fa-trash-alt`} /></button> </Fragment>)}
+              <p>{t("article.askDelete")}</p>
+              <button
+                className="articles-article-delete articles-article-delete--no"
+                onClick={() => setAskDelete(false)}
+              >
+                {t("article.cancel")}
+              </button>
+              <button
+                className="articles-article-delete articles-article-delete--yes"
+                onClick={() => setAskDelete(true)}
+              >
+                {t("article.delete")}
+              </button>
+            </Fragment>
+          ) : (
+            <Fragment>
+              {" "}
+              <Link
+                to={`/articles/${article.id}`}
+                className="articles-article-review"
+              >
+                <i className={`fa fa-eye`} />
+              </Link>
+              <Link
+                to={`/articles/${article.id}/edit`}
+                className="articles-article-edit"
+              >
+                <i className={`fa fa-edit`} />
+              </Link>
+              <button
+                className="articles-article-delete"
+                onClick={() => setAskDelete(true)}
+              >
+                <i className={`fa fa-trash-alt`} />
+              </button>{" "}
+            </Fragment>
+          )}
         </div>
       )}
       <img
