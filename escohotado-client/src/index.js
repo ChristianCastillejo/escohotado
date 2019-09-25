@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./assets/main.scss";
 import App from "./App";
+import "./lib/i18n";
+import "./assets/main.scss";
 import "./assets/font-awesome/css/all.css";
 import * as serviceWorker from "./serviceWorker";
 

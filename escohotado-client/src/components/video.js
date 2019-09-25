@@ -1,14 +1,6 @@
 import React from "react";
 
-const categories = {
-  philosophy: "Filosofía",
-  comunism: "Comunismo",
-  drugs: "Drogas",
-  ecomomy: "Economía",
-  history: "Historia"
-};
-
-function Video({ video, history }) {
+function Video({ video, t, language }) {
   const videoSrc =
     video.url +
     "?wmode=opaque?autoplay=" +
@@ -40,11 +32,25 @@ function Video({ video, history }) {
         />
       </div>
       <div className="resources-video-details">
-        <h3 className="resources-video-title">{video.title}</h3>
-        <p>{video.description.slice(0, 250)}</p>
+        <h3 className="resources-video-title">
+          {language === "en" && video.title_en
+            ? video.title_en
+            : video.title_sp}
+        </h3>
+        {language === "en" && !video.description_en && (
+          <p className="articles-article-no-translation">
+            Sorry, the description is not available in English.
+          </p>
+        )}
+        <p>
+          {language === "en" && video.description_en
+            ? video.description_en.slice(0, 250)
+            : video.description_sp.slice(0, 250)}
+          ...
+        </p>
         {Array.from(video.tags).map(tag => (
           <span key={tag.name} className="articles-article-tag">
-            {categories[tag.name]}
+            {t(`categories.${[tag.name]}`)}
           </span>
         ))}
       </div>

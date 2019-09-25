@@ -46,7 +46,7 @@ class VideosController < ApplicationController
       end
   
       unless params["search"] === "false"
-        @videos = @videos.where("title ILIKE ? or description ILIKE ?", "%#{params["search"]}%", "%#{params["search"]}%")
+        @videos = @videos.where("title_sp ILIKE ? or description_sp ILIKE ? or title_en ILIKE ? or description_en ILIKE ?", "%#{params["search"]}%", "%#{params["search"]}%", "%#{params["search"]}%", "%#{params["search"]}%")
       end
   
       render json: @videos
@@ -56,7 +56,7 @@ class VideosController < ApplicationController
   
     def video_params
       # whitelist params
-      params.permit(:title, :description, :url, :date, tags: [])
+      params.permit(:title_sp, :title_en, :description_sp, :description_en, :url, :date, tags: [])
     end
   
     def set_video

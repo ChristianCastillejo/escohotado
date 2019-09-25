@@ -1,0 +1,38 @@
+{
+  "menu": {
+    "home": "Home",
+    "articles": "Articles",
+    "videos": "Videos"
+  },
+  "home":{
+    "info": "Please, click on Articles or Videos."
+  },
+  "categories": {
+    "philosophy": "Philosophy",
+    "comunism": "Comunism",
+    "drugs": "Drugs",
+    "ecomomy": "Economy",
+    "history": "History",
+    "general": "General",
+    "search": "Search",
+    "placeholder": "From my skin inwards..."
+  },
+  "resources": {
+    "resources": "Resources",
+    "articles": "Articles",
+    "videos": "Videos",
+    "books": "Books",
+    "msgNoResources1articles":"Sorry, there are not articles that include these categories",
+    "msgNoResources1videos":"Sorry, there are not articles that include these categories",
+    "msgNoResources2": " and the text "
+  },
+  "resource": {
+    "by": "By",
+    "day": "Day",
+    "sepia": "Sepia",
+    "night": "Night"
+  },
+  "article": {
+    "continue": " Continue reading"
+  }
+}

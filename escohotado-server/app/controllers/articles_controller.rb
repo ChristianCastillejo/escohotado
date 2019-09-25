@@ -46,7 +46,7 @@ class ArticlesController < ApplicationController
     end
 
     unless params["search"] === "false"
-      @articles = @articles.where("title ILIKE ? or body ILIKE ?", "%#{params["search"]}%", "%#{params["search"]}%")
+      @articles = @articles.where("title_sp ILIKE ? or body_sp ILIKE ? or title_en ILIKE ? or body_en ILIKE ?", "%#{params["search"]}%", "%#{params["search"]}%", "%#{params["search"]}%", "%#{params["search"]}%")
     end
 
     render json: @articles
@@ -56,7 +56,7 @@ class ArticlesController < ApplicationController
 
   def article_params
     # whitelist params
-    params.permit(:title, :description, :body, :images, :date, tags: [])
+    params.permit(:title_sp, :body_sp, :title_en, :body_en, :images, :date, tags: [])
   end
 
   def set_article

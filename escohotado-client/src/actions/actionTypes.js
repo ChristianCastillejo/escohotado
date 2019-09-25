@@ -10,5 +10,5 @@ export const CLEAN_VIDEO = "CLEAN_VIDEO";
 export const CLEAN_VIDEOS = "CLEAN_VIDEOS";
 
 //export const baseUrl = "http://localhost:4000";
-//export const baseUrl = "http://192.168.1.136:4000";
+// export const baseUrl = "http://192.168.2.6:4000";
 export const baseUrl = "https://escohotado.herokuapp.com";

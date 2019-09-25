@@ -10,9 +10,11 @@ import {
   cleanArticles
 } from "../actions/articles";
 import { fetchVideos, filterVideos, cleanVideos } from "../actions/videos";
+import { useTranslation } from "react-i18next";
 
 function Articles(props) {
   const { history, location } = props;
+  const { t, i18n } = useTranslation();
   const path = location.pathname.substring(1);
   const articles = useSelector(state => state.articles);
   const videos = useSelector(state => state.videos);
@@ -96,7 +98,6 @@ function Articles(props) {
         : path === "videos" && dispatch(cleanVideos());
     };
   }, []); // eslint-disable-line
-
   return (
     <div className="screen">
       {path === "articles" && articles[0] === "clean" ? (
@@ -113,36 +114,53 @@ function Articles(props) {
               setSearch={setSearch}
               filters={filters}
               updateFilters={updateFilters}
+              t={t}
             />
             <div className="articles-header">
               <h1>
                 {!path
-                  ? "Recursos"
+                  ? t("resources.resources")
                   : path === "articles"
-                  ? "Artículos"
+                  ? t("resources.articles")
                   : path === "videos"
-                  ? "Vídeos"
-                  : path === "books" && "Libros"}
+                  ? t("resources.videos")
+                  : path === "books" && t("resources.books")}
               </h1>
             </div>
             {path === "articles" && articles.length === 0 ? (
               <p className="articles-error-message">
-                {`Lo sentimos, no hay ningún artículo que incluya las categorías
-            seleccionadas${text !== "" ? ` y el texto "${text}"` : ""}.`}
+                {t("resources.msgNoResources1articles") +
+                  (text !== ""
+                    ? t("resources.msgNoResources2") + text + "."
+                    : ".")}
               </p>
             ) : path === "videos" && videos.length === 0 ? (
               <p className="articles-error-message">
-                {`Lo sentimos, no hay ningún video que incluya las categorías
-            seleccionadas${text !== "" ? ` y el texto "${text}"` : ""}.`}
+                {t("resources.msgNoResources1videos") +
+                  (text !== ""
+                    ? t("resources.msgNoResources2") + text + "."
+                    : ".")}
               </p>
             ) : path === "articles" ? (
               articles.map(article => (
-                <Article key={article.id} article={article} history={history} />
+                <Article
+                  key={article.id}
+                  article={article}
+                  history={history}
+                  language={i18n.language}
+                  t={t}
+                />
               ))
             ) : (
               path === "videos" &&
               videos.map(video => (
-                <Video key={video.id} video={video} history={history} />
+                <Video
+                  key={video.id}
+                  video={video}
+                  history={history}
+                  language={i18n.language}
+                  t={t}
+                />
               ))
             )}
           </div>

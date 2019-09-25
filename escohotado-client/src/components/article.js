@@ -1,14 +1,6 @@
 import React from "react";
 
-const categories = {
-  philosophy: "Filosofía",
-  comunism: "Comunismo",
-  drugs: "Drogas",
-  ecomomy: "Economía",
-  history: "Historia"
-};
-
-function Article({ article, history }) {
+function Article({ article, history, t, language }) {
   return (
     <div
       className="articles-article"
@@ -20,21 +12,34 @@ function Article({ article, history }) {
         src={article.images}
       />
       <div className="articles-article-details">
-        <h3 className="articles-article-title">{article.title}</h3>
+        <h3 className="articles-article-title">
+          {language === "en" && article.title_en
+            ? article.title_en
+            : article.title_sp}
+        </h3>
+        {language === "en" && !article.body_en && (
+          <p className="articles-article-no-translation">
+            Sorry, this article is not translated into English. It is only available in Spanish.
+          </p>
+        )}
         <p className="articles-article-body">
-          {article.body.slice(0, 250)}
+          {language === "en" && article.body_en
+            ? article.body_en.slice(0, 250)
+            : article.body_sp.slice(0, 250)}
           <span className="articles-article-body-more">
-            {article.body.slice(250, 600)}
+            {language === "en" && article.body_en
+              ? article.body_en.slice(250, 600)
+              : article.body_sp.slice(250, 600)}
           </span>
           ...
           <span className="articles-article-body-continue">
-            {" Seguir leyendo"}
+            {t("article.continue")}
           </span>
         </p>
         <div>
           {Array.from(article.tags).map(tag => (
             <span key={tag.name} className="articles-article-tag">
-              {categories[tag.name]}
+              {t(`categories.${[tag.name]}`)}
             </span>
           ))}
         </div>
