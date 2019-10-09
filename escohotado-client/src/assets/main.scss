@@ -53,6 +53,7 @@ body {
         font-weight: bold;
         font-size: 20px;
         margin: 0px;
+        white-space: nowrap;
     }
     &--language {
         grid-column: 8;
@@ -177,7 +178,7 @@ body {
     background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url("./images/hero.png");
     height: calc(100vh - 70px);
     background-attachment: fixed;
-    background-position: left;
+    background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -194,6 +195,9 @@ body {
     height: 100vh;
 }
 @media (max-width: 800px) {
+    .home-hero-img {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url("./images/hero-mobile.png");
+    }
     .home-hero-text {
         font-size: 80px;
     }
@@ -366,6 +370,7 @@ body {
     background-color: transparent;
     border: none;
     cursor: pointer;
+    font-size: 20px;
     &--no {
         border: 2px solid #292f33;
         border-radius: 5px;
@@ -407,6 +412,11 @@ body {
     border-radius: 5px;
     background-color: #292f33;
     color: #ffffff;
+    cursor: pointer;
+    &--selected {
+        background-color: #F4EC70;
+        color: #292f33;
+    }
 }
 .resources-video {
     display: grid;
@@ -682,4 +692,35 @@ body {
     .article-settings-icon {
         font-size: 2px;
     }
+}
+
+//Edit article
+
+.edit-article {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 40px;
+    max-width: 720px;
+    margin: auto;
+    padding: 30px;
+    textarea {
+        height: 300px;
+        border-radius: 10px;
+        padding: 20px;
+        border: none;
+        box-shadow: 0px 8px 14px 3px #D8D8D8;
+    }
+    p {
+        margin: 0px;
+    }
+}
+.edit-article-button {
+    justify-self: end;
+    height: 50px;
+    width: 150px;
+    margin: 15px 0px;
+    border-radius: 5px;
+    border: none;
+    background-color: #F4EC70;
+    color: #292f33;
 }
