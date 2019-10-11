@@ -24,7 +24,7 @@ function Video({ video, t, language }) {
           width="560"
           height="315"
           frameBorder="0"
-          allowfullscreen="allowfullscreen"
+          allowFullScreen="allowfullscreen"
           mozallowfullscreen="mozallowfullscreen"
           msallowfullscreen="msallowfullscreen"
           oallowfullscreen="oallowfullscreen"

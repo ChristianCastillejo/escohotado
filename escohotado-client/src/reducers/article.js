@@ -9,11 +9,11 @@ import {
 export function articlesReducer(state = [], { type, payload }) {
   switch (type) {
     case FETCH_ARTICLES:
-      return payload;
+      return payload.data;
     case CLEAN_ARTICLES:
       return ["clean"];
     case FILTER_ARTICLES:
-      return payload;
+      return payload.data;
     default: {
       return ["clean"];
     }
@@ -23,7 +23,7 @@ export function articlesReducer(state = [], { type, payload }) {
 export function articleReducer(state = {}, { type, payload }) {
   switch (type) {
     case FETCH_ARTICLE:
-      return payload;
+      return payload.data;
     case CLEAN_ARTICLE:
       return { empty: true };
     default: {

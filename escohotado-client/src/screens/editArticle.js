@@ -5,7 +5,7 @@ import Loading from "../components/loading";
 import { useTranslation } from "react-i18next";
 
 function Article({ match }) {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const fetchedArticle = useSelector(state => state.article);
   const [article, setArticle] = useState(fetchedArticle);
   const dispatch = useDispatch();
@@ -77,9 +77,7 @@ function Article({ match }) {
                   ) && "selected"}`}
                   onClick={() =>
                     setArticle(t =>
-                      article.tags.some(
-                        t => t.name === tag
-                      )
+                      article.tags.some(t => t.name === tag)
                         ? {
                             ...article,
                             tags: [
@@ -119,9 +117,12 @@ function Article({ match }) {
               className="edit-article-body"
               placeholder="Artículo en Inglés"
             />
-            <button className="edit-article-button" onClick={()=>editArticle()}>
+            <button
+              className="edit-article-button"
+              onClick={() => editArticle()}
+            >
               Editar
-              </button>
+            </button>
           </div>
         </div>
       )}

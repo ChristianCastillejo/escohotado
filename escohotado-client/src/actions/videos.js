@@ -1,77 +1,58 @@
+import { axiosInstance } from "../helpers/configured_axios";
 import {
   FETCH_VIDEOS,
   FILTER_VIDEOS,
   FETCH_VIDEO,
   CLEAN_VIDEO,
-  CLEAN_VIDEOS,
-  baseUrl
+  CLEAN_VIDEOS
 } from "./actionTypes";
 
-export async function fetchVideos() {
-  const response = await fetch(`${baseUrl}/videos/`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json"
-    }
-  });
-  const data = await response.json();
+export const fetchVideos = () => {
+  const request = axiosInstance.get("/videos/");
 
   return {
     type: FETCH_VIDEOS,
-    payload: data
+    payload: request
   };
-}
+};
 
-export async function filterVideos(tags, search) {
+export const filterVideos = (tags, search) => {
   let filterTags = Array.from(
     Object.keys(tags),
     k => tags[k] === true && `${k}`
   )
     .filter(Boolean)
     .join(",");
-  const response = await fetch(
-    `${baseUrl}/search_videos/?tags=${[filterTags]}&search=${
-      search ? search : false
-    }`,
-    {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json"
-      }
-    }
+
+  const response = axiosInstance.get(
+    `/search_videos/?tags=${[filterTags]}&search=${search ? search : false}`
   );
-  const data = await response.json();
 
   return {
     type: FILTER_VIDEOS,
-    payload: data
+    payload: response
   };
-}
+};
 
-export function cleanVideos(id) {
+export const cleanVideos = () => {
   return {
     type: CLEAN_VIDEOS,
     payload: []
   };
-}
-export async function fetchVideo(id) {
-  const response = await fetch(`${baseUrl}/videos/${id}`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json"
-    }
-  });
-  const data = await response.json();
+};
+
+export const fetchVideo = id => {
+  const response = axiosInstance.get(`/video/${id}`);
 
   return {
     type: FETCH_VIDEO,
-    payload: data
+    payload: response
   };
-}
+};
 
-export function cleanVideo(id) {
+export const cleanVideo = () => {
   return {
     type: CLEAN_VIDEO,
     payload: {}
   };
-}
+};
