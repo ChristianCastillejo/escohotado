@@ -4,8 +4,9 @@ import { fetchArticle, cleanArticle, editArticle } from "../actions/articles";
 import Loading from "../components/loading";
 import { useTranslation } from "react-i18next";
 
-function Article({ match }) {
+function Article({ match, location, history }) {
   const { t } = useTranslation();
+  const path = location.pathname.split("/").pop();
   const fetchedArticle = useSelector(state => state.article);
   const [article, setArticle] = useState(fetchedArticle);
   const dispatch = useDispatch();
@@ -26,22 +27,30 @@ function Article({ match }) {
 
   useEffect(
     () => {
-      setArticle(fetchedArticle);
+      if (fetchedArticle.updated) {
+        history.push(`/articles/`);
+      } else {
+        setArticle(fetchedArticle);
+      }
     },
-    [fetchedArticle]
+    [fetchedArticle, history]
   );
-  console.log(article);
+
+  const updateArticle = article => {
+    dispatch(editArticle(article));
+  };
+
   //    setText(text.replace(/\r?\n/g, "<br />"));
   return (
     <div className="screen">
-      {article.empty ? (
+      {article.empty && path === "edit" ? (
         <Loading />
       ) : (
         <div className="screen article-container">
-          <div className="edit-article">
+          <div className="create-edit-article">
             <h1>Editar artículo</h1>
             <input
-              className="edit-article-title"
+              className="create-edit-article-title"
               onChange={event =>
                 setArticle({ ...article, title_sp: event.target.value })
               }
@@ -49,7 +58,7 @@ function Article({ match }) {
               value={article.title_sp}
             />
             <input
-              className="edit-article-title"
+              className="create-edit-article-title"
               onChange={event =>
                 setArticle({ ...article, title_en: event.target.value })
               }
@@ -57,7 +66,7 @@ function Article({ match }) {
               value={article.title_en}
             />
             <input
-              className="edit-article-title"
+              className="create-edit-article-title"
               onChange={event =>
                 setArticle({ ...article, date: event.target.value })
               }
@@ -68,7 +77,7 @@ function Article({ match }) {
               {t(`resource.by`)} Antonio Escohotado. {article.date}
             </p>
 
-            <div className="edit-article-categories">
+            <div className="create-edit-article-categories">
               {["philosophy", "comunism", "drugs", "history"].map(tag => (
                 <span
                   key={tag}
@@ -107,19 +116,19 @@ function Article({ match }) {
               onChange={event =>
                 setArticle({ ...article, body_sp: event.target.value })
               }
-              className="edit-article-body"
+              className="create-edit-article-body"
               placeholder="Artículo en Español"
             />
             <textarea
               onChange={event =>
                 setArticle({ ...article, body_en: event.target.value })
               }
-              className="edit-article-body"
+              className="create-edit-article-body"
               placeholder="Artículo en Inglés"
             />
             <button
-              className="edit-article-button"
-              onClick={() => editArticle()}
+              className="create-edit-article-button"
+              onClick={() => updateArticle(article)}
             >
               Editar
             </button>

@@ -2,6 +2,8 @@ import {
   FETCH_ARTICLES,
   FILTER_ARTICLES,
   FETCH_ARTICLE,
+  CREATE_ARTICLE,
+  UPDATE_ARTICLE_SUCCESS,
   CLEAN_ARTICLE,
   CLEAN_ARTICLES
 } from "../actions/actionTypes";
@@ -24,6 +26,10 @@ export function articleReducer(state = {}, { type, payload }) {
   switch (type) {
     case FETCH_ARTICLE:
       return payload.data;
+    case CREATE_ARTICLE:
+      return payload.data;
+    case UPDATE_ARTICLE_SUCCESS:
+      return { updated: true };
     case CLEAN_ARTICLE:
       return { empty: true };
     default: {

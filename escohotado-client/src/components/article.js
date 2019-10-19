@@ -32,7 +32,6 @@ function Article({ article, history, t, language, admin }) {
             </Fragment>
           ) : (
             <Fragment>
-              {" "}
               <Link
                 to={`/articles/${article.id}`}
                 className="articles-article-review"
@@ -50,7 +49,7 @@ function Article({ article, history, t, language, admin }) {
                 onClick={() => setAskDelete(true)}
               >
                 <i className={`fa fa-trash-alt`} />
-              </button>{" "}
+              </button>
             </Fragment>
           )}
         </div>
@@ -64,7 +63,7 @@ function Article({ article, history, t, language, admin }) {
         <h3 className="articles-article-title">
           {language === "en" && article.title_en
             ? article.title_en
-            : article.title_sp}
+            : article.title_sp || ""}
         </h3>
         {language === "en" && !article.body_en && (
           <p className="articles-article-no-translation">
@@ -75,11 +74,11 @@ function Article({ article, history, t, language, admin }) {
         <p className="articles-article-body">
           {language === "en" && article.body_en
             ? article.body_en.slice(0, 200)
-            : article.body_sp.slice(0, 200)}
+            : article.body_sp && article.body_sp.slice(0, 200)}
           <span className="articles-article-body-more">
             {language === "en" && article.body_en
               ? article.body_en.slice(200, 500)
-              : article.body_sp.slice(200, 500)}
+              : article.body_sp && article.body_sp.slice(200, 500)}
           </span>
           ...
           <span className="articles-article-body-continue">

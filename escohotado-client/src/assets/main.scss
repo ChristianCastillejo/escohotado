@@ -194,9 +194,11 @@ body {
 .home-next {
     height: 100vh;
 }
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
     .home-hero-img {
         background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url("./images/hero-mobile.png");
+        background-attachment: scroll;
+
     }
     .home-hero-text {
         font-size: 80px;
@@ -694,27 +696,32 @@ body {
     }
 }
 
-//Edit article
+//Create and edit article
 
-.edit-article {
+.create-edit-article {
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 40px;
-    max-width: 720px;
+    width: 720px;
     margin: auto;
     padding: 30px;
     textarea {
-        height: 300px;
+        min-height: 600px;
         border-radius: 10px;
         padding: 20px;
         border: none;
         box-shadow: 0px 8px 14px 3px #D8D8D8;
+        font-family: inherit;
+        font-size: inherit;
+    }
+    input {
+        padding: 5px;
     }
     p {
         margin: 0px;
     }
 }
-.edit-article-button {
+.create-edit-article-button {
     justify-self: end;
     height: 50px;
     width: 150px;

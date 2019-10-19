@@ -1,9 +1,9 @@
 import axios from "axios";
 import cookie from "react-cookies";
 
-//export const baseUrl = "http://localhost:4000";
-// export const baseUrl = "http://192.168.2.6:4000";
-const baseURL = "https://escohotado.herokuapp.com";
+export const baseURL = "http://localhost:4000";
+// export const baseURL = "http://192.168.2.6:4000";
+// const baseURL = "https://escohotado.herokuapp.com";
 
 const axiosConfig = {
   baseURL,

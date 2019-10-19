@@ -8,11 +8,12 @@ import {
 import { Provider } from "react-redux";
 import cookie from "react-cookies";
 import Loading from "./components/loading";
-import store from "./lib/store";
+import store from "./helpers/store";
 const Menu = lazy(() => import("./components/menu"));
 const Home = lazy(() => import("./screens/home"));
 const Resources = lazy(() => import("./screens/resources"));
 const Article = lazy(() => import("./screens/article"));
+const CreateArticle = lazy(() => import("./screens/createArticle"));
 const EditArticle = lazy(() => import("./screens/editArticle"));
 const Login = lazy(() => import("./screens/login"));
 
@@ -50,6 +51,7 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route exact path="/articles" component={Resources} />
             <Route exact path="/articles/:id" component={Article} />
+            <Route exact path="/article/new" component={CreateArticle} />
             <Route exact path="/videos" component={Resources} />
             <Route exact path="/books" component={Resources} />
             <Route exact path="/books/:id" component={Article} />

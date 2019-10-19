@@ -1,8 +1,10 @@
 import { axiosInstance } from "../helpers/configured_axios";
 import {
-  UPDATE_ARTICLE,
   FETCH_ARTICLES,
   FILTER_ARTICLES,
+  CREATE_ARTICLE,
+  UPDATE_ARTICLE_SUCCESS,
+  // UPDATE_ARTICLE_ERROR,
   FETCH_ARTICLE,
   CLEAN_ARTICLE,
   CLEAN_ARTICLES
@@ -41,14 +43,45 @@ export const cleanArticles = () => {
   };
 };
 
-// export function createArticle(article) {
-//   const request = axiosInstance.post("/articles/", article).then(response => {
-//     return {
-//       type: CREATE_ARTICLE,
-//       payload: request
-//     };
-//   });
-// }
+// To improve in the future. Hint: map tags in Rails.
+export const createArticle = article => {
+  let newArticle = { ...article };
+  newArticle.tag = newArticle.tags;
+  delete newArticle.tags;
+  const response = axiosInstance.post("/articles/", newArticle);
+
+  return {
+    type: CREATE_ARTICLE,
+    payload: response
+  };
+};
+
+export const fetchArticle = id => {
+  const response = axiosInstance.get(`/articles/${id}`);
+
+  return {
+    type: FETCH_ARTICLE,
+    payload: response
+  };
+};
+
+export const editArticle = article => {
+  article.tag = article.tags;
+  delete article.tags;
+  const request = axiosInstance.put(`/articles/${article.id}/`, { article });
+
+  return {
+    type: UPDATE_ARTICLE_SUCCESS,
+    payload: request
+  };
+};
+
+export const cleanArticle = () => {
+  return {
+    type: CLEAN_ARTICLE,
+    payload: {}
+  };
+};
 
 // export function deleteArticle(article) {
 //   const request = axiosInstance
@@ -75,28 +108,3 @@ export const cleanArticles = () => {
 //     payload: data
 //   };
 // }
-
-export const fetchArticle = id => {
-  const response = axiosInstance.get(`/articles/${id}`);
-
-  return {
-    type: FETCH_ARTICLE,
-    payload: response
-  };
-};
-
-export const editArticle = article => {
-  const request = axiosInstance.put(`/articles/${article.id}/`, { article });
-
-  return {
-    type: UPDATE_ARTICLE,
-    payload: request
-  };
-};
-
-export const cleanArticle = () => {
-  return {
-    type: CLEAN_ARTICLE,
-    payload: {}
-  };
-};
