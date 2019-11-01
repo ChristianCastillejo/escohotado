@@ -57,6 +57,7 @@ function App() {
             <Route exact path="/books/:id" component={Article} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/admin/articles" component={Resources} />
+            <Route exact path="/admin/videos" component={Resources} />
             <Route exact path="/articles/:id/edit" component={EditArticle} />
             <ProtectedRoute exact path="/admin/videos" component={Resources} />
           </Switch>

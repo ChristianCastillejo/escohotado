@@ -50,6 +50,14 @@ export const fetchVideo = id => {
   };
 };
 
+export const deleteVideo = id => {
+  return dispatch => {
+    axiosInstance.delete(`/videos/${id}`, id).then(() => {
+      return dispatch(fetchVideos());
+    });
+  };
+};
+
 export const cleanVideo = () => {
   return {
     type: CLEAN_VIDEO,

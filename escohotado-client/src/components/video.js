@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useState, Fragment } from "react";
+import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { deleteVideo } from "../actions/videos";
 
-function Video({ video, t, language }) {
+function Video({ video, t, language, admin }) {
+  const [askDelete, setAskDelete] = useState(false);
+  const dispatch = useDispatch();
   const videoSrc =
     video.url +
     "?wmode=opaque?autoplay=" +
@@ -9,8 +14,52 @@ function Video({ video, t, language }) {
     0 +
     "&modestbranding=" +
     1;
+
+  const removeVideo = id => {
+    dispatch(deleteVideo(id));
+  };
+
   return (
-    <div className="resources-video">
+    <div className={`resources-video ${admin && "resources-video--admin"}`}>
+      {admin && (
+        <div
+          className={`resources-resource-admin ${askDelete &&
+            "resources-resource-admin--askDelete"}`}
+        >
+          {askDelete ? (
+            <Fragment>
+              <p>{t("article.askDelete")}</p>
+              <button
+                className="resources-resource-delete resources-resource-delete--no"
+                onClick={() => setAskDelete(false)}
+              >
+                {t("article.cancel")}
+              </button>
+              <button
+                className="resources-resource-delete resources-resource-delete--yes"
+                onClick={() => removeVideo(video.id)}
+              >
+                {t("article.delete")}
+              </button>
+            </Fragment>
+          ) : (
+            <Fragment>
+              <Link
+                to={`/videos/${video.id}/edit`}
+                className="resources-resource-edit"
+              >
+                <i className={`fa fa-edit`} />
+              </Link>
+              <button
+                className="resources-resource-delete"
+                onClick={() => setAskDelete(true)}
+              >
+                <i className={`fa fa-trash-alt`} />
+              </button>
+            </Fragment>
+          )}
+        </div>
+      )}
       <h3 className="resources-video-title resources-video-title--mobile">
         {video.title}
       </h3>

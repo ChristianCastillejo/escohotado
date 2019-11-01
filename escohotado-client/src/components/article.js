@@ -20,20 +20,20 @@ function Article({ article, history, t, language, admin }) {
     >
       {admin && (
         <div
-          className={`articles-article-admin ${askDelete &&
-            "articles-article-admin--askDelete"}`}
+          className={`resources-resource-admin ${askDelete &&
+            "resources-resource-admin--askDelete"}`}
         >
           {askDelete ? (
             <Fragment>
               <p>{t("article.askDelete")}</p>
               <button
-                className="articles-article-delete articles-article-delete--no"
+                className="resources-resource-delete resources-resource-delete--no"
                 onClick={() => setAskDelete(false)}
               >
                 {t("article.cancel")}
               </button>
               <button
-                className="articles-article-delete articles-article-delete--yes"
+                className="resources-resource-delete resources-resource-delete--yes"
                 onClick={() => removeArticle(article.id)}
               >
                 {t("article.delete")}
@@ -43,18 +43,18 @@ function Article({ article, history, t, language, admin }) {
             <Fragment>
               <Link
                 to={`/articles/${article.id}`}
-                className="articles-article-review"
+                className="resources-resource-review"
               >
                 <i className={`fa fa-eye`} />
               </Link>
               <Link
                 to={`/articles/${article.id}/edit`}
-                className="articles-article-edit"
+                className="resources-resource-edit"
               >
                 <i className={`fa fa-edit`} />
               </Link>
               <button
-                className="articles-article-delete"
+                className="resources-resource-delete"
                 onClick={() => setAskDelete(true)}
               >
                 <i className={`fa fa-trash-alt`} />
