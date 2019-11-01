@@ -15,6 +15,7 @@ const Resources = lazy(() => import("./screens/resources"));
 const Article = lazy(() => import("./screens/article"));
 const CreateArticle = lazy(() => import("./screens/createArticle"));
 const EditArticle = lazy(() => import("./screens/editArticle"));
+const CreateVideo = lazy(() => import("./screens/createVideo"));
 const Login = lazy(() => import("./screens/login"));
 
 function isAuthenticated() {
@@ -53,6 +54,7 @@ function App() {
             <Route exact path="/articles/:id" component={Article} />
             <Route exact path="/article/new" component={CreateArticle} />
             <Route exact path="/videos" component={Resources} />
+            <Route exact path="/video/new" component={CreateVideo} />
             <Route exact path="/books" component={Resources} />
             <Route exact path="/books/:id" component={Article} />
             <Route exact path="/login" component={Login} />

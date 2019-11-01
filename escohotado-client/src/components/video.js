@@ -97,11 +97,13 @@ function Video({ video, t, language, admin }) {
             : video.description_sp.slice(0, 250)}
           ...
         </p>
+        <div>
         {Array.from(video.tags).map(tag => (
           <span key={tag.name} className="articles-article-tag">
             {t(`categories.${[tag.name]}`)}
           </span>
         ))}
+        </div>
       </div>
     </div>
   );

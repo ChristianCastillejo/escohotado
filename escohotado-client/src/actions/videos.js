@@ -3,6 +3,7 @@ import {
   FETCH_VIDEOS,
   FILTER_VIDEOS,
   FETCH_VIDEO,
+  CREATE_VIDEO,
   CLEAN_VIDEO,
   CLEAN_VIDEOS
 } from "./actionTypes";
@@ -46,6 +47,18 @@ export const fetchVideo = id => {
 
   return {
     type: FETCH_VIDEO,
+    payload: response
+  };
+};
+
+export const createVideo = video => {
+  let newVideo = { ...video };
+  newVideo.tag = newVideo.tags;
+  delete newVideo.tags;
+  const response = axiosInstance.post("/videos/", newVideo);
+
+  return {
+    type: CREATE_VIDEO,
     payload: response
   };
 };

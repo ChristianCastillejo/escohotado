@@ -8,6 +8,7 @@ export const CLEAN_ARTICLES = "CLEAN_ARTICLES";
 export const FETCH_VIDEOS = "FETCH_VIDEOS";
 export const FILTER_VIDEOS = "FILTER_VIDEOS";
 export const FETCH_VIDEO = "FETCH_VIDEO";
+export const CREATE_VIDEO = "CREATE_VIDEO";
 export const CLEAN_VIDEO = "CLEAN_VIDEO";
 export const CLEAN_VIDEOS = "CLEAN_VIDEOS";
 

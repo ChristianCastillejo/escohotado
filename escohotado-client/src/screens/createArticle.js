@@ -35,7 +35,7 @@ function Article({ history }) {
     <div className="screen">
       <div className="screen article-container">
         <div className="create-edit-article">
-          <h1>Creat artículo</h1>
+          <h1>Crear artículo</h1>
           <input
             className="create-edit-article-title"
             onChange={event =>

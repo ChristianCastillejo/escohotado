@@ -735,7 +735,7 @@ body {
     }
 }
 
-//Create and edit article
+//Create and edit article adn video
 .create-edit-article {
     display: grid;
     grid-template-columns: 1fr;
@@ -769,3 +769,7 @@ body {
     background-color: #F4EC70;
     color: #292f33;
 }
+.create-video-iframe {
+    width: 100%;
+    min-height: 500px;
+    }
