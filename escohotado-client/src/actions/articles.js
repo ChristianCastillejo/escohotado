@@ -85,16 +85,13 @@ export const cleanArticle = () => {
   };
 };
 
-// export function deleteArticle(article) {
-//   const request = axiosInstance
-//     .delete(`/articleS/${article}`)
-//     .then(response => {
-//       return {
-//         type: DELETE_ARTICLE,
-//         payload: request
-//       };
-//     });
-// }
+export const deleteArticle = id => {
+  return dispatch => {
+    axiosInstance.delete(`/articles/${id}`, id).then(() => {
+      return dispatch(fetchArticles());
+    });
+  };
+};
 
 // export async function fetchArticles() {
 //   const response = await fetch(`${baseUrl}/articles/`, {

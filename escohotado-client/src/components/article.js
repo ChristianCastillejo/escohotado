@@ -1,13 +1,22 @@
 import React, { useState, Fragment } from "react";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { deleteArticle } from "../actions/articles";
 
 function Article({ article, history, t, language, admin }) {
   const [askDelete, setAskDelete] = useState(false);
+  const dispatch = useDispatch();
+
+  const removeArticle = id => {
+    dispatch(deleteArticle(id));
+  };
 
   return (
     <div
       className={`articles-article ${admin && "articles-article--admin"}`}
-      onClick={!admin ? (() => history.push(`/articles/${article.id}`)): undefined}
+      onClick={
+        !admin ? () => history.push(`/articles/${article.id}`) : undefined
+      }
     >
       {admin && (
         <div
@@ -25,7 +34,7 @@ function Article({ article, history, t, language, admin }) {
               </button>
               <button
                 className="articles-article-delete articles-article-delete--yes"
-                onClick={() => setAskDelete(true)}
+                onClick={() => removeArticle(article.id)}
               >
                 {t("article.delete")}
               </button>

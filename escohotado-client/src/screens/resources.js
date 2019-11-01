@@ -99,6 +99,7 @@ function Articles(props) {
         : path === "videos" && dispatch(cleanVideos());
     };
   }, []); // eslint-disable-line
+
   return (
     <div className="screen">
       {path === "articles" && articles[0] === "clean" ? (

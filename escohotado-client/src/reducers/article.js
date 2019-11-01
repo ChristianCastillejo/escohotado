@@ -29,7 +29,7 @@ export function articleReducer(state = {}, { type, payload }) {
     case CREATE_ARTICLE:
       return payload.data;
     case UPDATE_ARTICLE_SUCCESS:
-      return {...payload.data, updated: true};
+      return { ...payload.data, updated: true };
     case CLEAN_ARTICLE:
       return { empty: true };
     default: {

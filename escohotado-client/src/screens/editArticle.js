@@ -78,38 +78,39 @@ function Article({ match, location, history }) {
             </p>
 
             <div className="create-edit-article-categories">
-              {article.tags && ["philosophy", "comunism", "drugs", "history"].map(tag => (
-                <span
-                  key={tag}
-                  className={`articles-article-tag articles-article-tag--${article.tags.some(
-                    t => t.name === tag
-                  ) && "selected"}`}
-                  onClick={() =>
-                    setArticle(t =>
-                      article.tags.some(t => t.name === tag)
-                        ? {
-                            ...article,
-                            tags: [
-                              ...article["tags"].filter(ta => ta.name !== tag)
-                            ]
-                          }
-                        : {
-                            ...article,
-                            tags: [...article["tags"], { name: tag }]
-                          }
-                    )
-                  }
-                >
-                  {t(`categories.${[tag]}`)}
-                  <i
-                    className={`fa fa-${
-                      article.tags.some(t => t.name === tag)
-                        ? "times-circle"
-                        : "plus-circle"
-                    }`}
-                  />
-                </span>
-              ))}
+              {article.tags &&
+                ["philosophy", "comunism", "drugs", "history"].map(tag => (
+                  <span
+                    key={tag}
+                    className={`articles-article-tag articles-article-tag--${article.tags.some(
+                      t => t.name === tag
+                    ) && "selected"}`}
+                    onClick={() =>
+                      setArticle(t =>
+                        article.tags.some(t => t.name === tag)
+                          ? {
+                              ...article,
+                              tags: [
+                                ...article["tags"].filter(ta => ta.name !== tag)
+                              ]
+                            }
+                          : {
+                              ...article,
+                              tags: [...article["tags"], { name: tag }]
+                            }
+                      )
+                    }
+                  >
+                    {t(`categories.${[tag]}`)}
+                    <i
+                      className={`fa fa-${
+                        article.tags.some(t => t.name === tag)
+                          ? "times-circle"
+                          : "plus-circle"
+                      }`}
+                    />
+                  </span>
+                ))}
             </div>
             <img className="article-img" src={article.images} alt="article" />
             <textarea
