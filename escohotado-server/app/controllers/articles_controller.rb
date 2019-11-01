@@ -25,15 +25,19 @@ class ArticlesController < ApplicationController
 
   # PUT /articles/:id
   def update
-    byebug
-    @article = Article.update(article_params)
+    @article = Article.find(params[:id])
     
-    unless !params['tag']
-      params['tag'].each do |t|
+    if article_params['tag']
+      @article.tags.clear
+      article_params['tag'].each do |t|
         tag = Tag.find_by(name: t["name"])
-        @article.tags << tag
+        unless @article.tags.include? tag
+          @article.tags << tag
+        end
       end
     end
+
+    @article.update(article_params.except(:tag))
     render json: @article
   end
 
@@ -65,7 +69,7 @@ class ArticlesController < ApplicationController
 
   def article_params
     # whitelist params
-    params.require(:article).permit(:title_sp, :body_sp, :title_en, :body_en, :images, :date, :id, tags: [])
+    params.require(:article).permit(:title_sp, :body_sp, :title_en, :body_en, :images, :date, :id, tag: [:name])
   end
 
   def set_article

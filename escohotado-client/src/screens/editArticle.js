@@ -28,7 +28,7 @@ function Article({ match, location, history }) {
   useEffect(
     () => {
       if (fetchedArticle.updated) {
-        history.push(`/articles/`);
+        history.push(`/articles`);
       } else {
         setArticle(fetchedArticle);
       }
@@ -55,7 +55,7 @@ function Article({ match, location, history }) {
                 setArticle({ ...article, title_sp: event.target.value })
               }
               placeholder="Título"
-              value={article.title_sp}
+              defaultValue={article.title_sp}
             />
             <input
               className="create-edit-article-title"
@@ -63,7 +63,7 @@ function Article({ match, location, history }) {
                 setArticle({ ...article, title_en: event.target.value })
               }
               placeholder="Título en Ingles"
-              value={article.title_en}
+              defaultValue={article.title_en}
             />
             <input
               className="create-edit-article-title"
@@ -71,14 +71,14 @@ function Article({ match, location, history }) {
                 setArticle({ ...article, date: event.target.value })
               }
               placeholder="Fecha de publicacíon"
-              value={article.date}
+              defaultValue={article.date}
             />
             <p className="article-author">
               {t(`resource.by`)} Antonio Escohotado. {article.date}
             </p>
 
             <div className="create-edit-article-categories">
-              {["philosophy", "comunism", "drugs", "history"].map(tag => (
+              {article.tags && ["philosophy", "comunism", "drugs", "history"].map(tag => (
                 <span
                   key={tag}
                   className={`articles-article-tag articles-article-tag--${article.tags.some(
@@ -100,7 +100,7 @@ function Article({ match, location, history }) {
                     )
                   }
                 >
-                  {t(`categories.${[tag]}`)}{" "}
+                  {t(`categories.${[tag]}`)}
                   <i
                     className={`fa fa-${
                       article.tags.some(t => t.name === tag)
@@ -118,6 +118,7 @@ function Article({ match, location, history }) {
               }
               className="create-edit-article-body"
               placeholder="Artículo en Español"
+              defaultValue={article.body_sp}
             />
             <textarea
               onChange={event =>
@@ -125,6 +126,7 @@ function Article({ match, location, history }) {
               }
               className="create-edit-article-body"
               placeholder="Artículo en Inglés"
+              defaultValue={article.body_en}
             />
             <button
               className="create-edit-article-button"
