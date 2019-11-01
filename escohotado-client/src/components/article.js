@@ -7,7 +7,7 @@ function Article({ article, history, t, language, admin }) {
   return (
     <div
       className={`articles-article ${admin && "articles-article--admin"}`}
-      onClick={!admin && (() => history.push(`/articles/${article.id}`))}
+      onClick={!admin ? (() => history.push(`/articles/${article.id}`)): undefined}
     >
       {admin && (
         <div

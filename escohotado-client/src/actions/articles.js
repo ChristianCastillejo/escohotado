@@ -67,8 +67,10 @@ export const fetchArticle = id => {
 
 export const editArticle = article => {
   article.tag = article.tags;
+  let id = article.id;
   delete article.tags;
-  const request = axiosInstance.put(`/articles/${article.id}/`, { article });
+  delete article.id;
+  const request = axiosInstance.put(`/articles/${id}/`, { article });
 
   return {
     type: UPDATE_ARTICLE_SUCCESS,
