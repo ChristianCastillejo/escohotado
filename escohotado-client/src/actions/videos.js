@@ -4,6 +4,7 @@ import {
   FILTER_VIDEOS,
   FETCH_VIDEO,
   CREATE_VIDEO,
+  UPDATE_VIDEO_SUCCESS,
   CLEAN_VIDEO,
   CLEAN_VIDEOS
 } from "./actionTypes";
@@ -43,7 +44,7 @@ export const cleanVideos = () => {
 };
 
 export const fetchVideo = id => {
-  const response = axiosInstance.get(`/video/${id}`);
+  const response = axiosInstance.get(`/videos/${id}`);
 
   return {
     type: FETCH_VIDEO,
@@ -60,6 +61,19 @@ export const createVideo = video => {
   return {
     type: CREATE_VIDEO,
     payload: response
+  };
+};
+
+export const editVideo = video => {
+  video.tag = video.tags;
+  let id = video.id;
+  delete video.tags;
+  delete video.id;
+  const request = axiosInstance.put(`/videos/${id}/`, { video });
+
+  return {
+    type: UPDATE_VIDEO_SUCCESS,
+    payload: request
   };
 };
 

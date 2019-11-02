@@ -1,14 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { createVideo, cleanVideo } from "../actions/videos";
+import {fetchVideo, editVideo, cleanVideo } from "../actions/videos";
 import { useTranslation } from "react-i18next";
 
-function Video({ history }) {
+function Video({ match, history }) {
   const { t } = useTranslation();
   const fetchedVideo = useSelector(state => state.video);
   const [video, setVideo] = useState({ tags: [] });
   const dispatch = useDispatch();
   const [videoSrc, setVideoSrc] = useState("");
+
+  useEffect(
+    () => {
+      window.scrollTo(0, 0);
+      dispatch(fetchVideo(match.params.id));
+    },
+    [dispatch, match.params.id]
+  );
 
   useEffect(
     () => {
@@ -37,13 +45,16 @@ function Video({ history }) {
 
   useEffect(
     () => {
-      if (fetchedVideo.id) {
-        history.push(`/videos`);
+      if (fetchedVideo.updated) {
+        history.push(`/admin/videos`);
+      } else {
+        setVideo(fetchedVideo);
       }
     },
     [fetchedVideo, history]
   );
-  const addVideo = () => {
+
+  const updateVideo = () => {
     let newVideo = {
       ...video,
       url: (
@@ -58,8 +69,9 @@ function Video({ history }) {
         .replace("watch?v=", "embed/")
         .split("&")[0]
     };
-    dispatch(createVideo(newVideo));
+    dispatch(editVideo(newVideo));
   };
+
   //    setText(text.replace(/\r?\n/g, "<br />"));
   return (
     <div className="screen">
@@ -122,7 +134,7 @@ function Video({ history }) {
             value={video.description_en || ""}
           />
           <div className="create-edit-article-categories">
-            {["philosophy", "comunism", "drugs", "history"].map(tag => (
+            {video.tags &&["philosophy", "comunism", "drugs", "history"].map(tag => (
               <span
                 key={tag}
                 className={`articles-article-tag articles-article-tag--${video.tags.some(
@@ -153,7 +165,7 @@ function Video({ history }) {
               </span>
             ))}
           </div>
-          <button className="create-edit-article-button" onClick={()=>addVideo()}>
+          <button className="create-edit-article-button" onClick={()=>updateVideo()}>
             Crear
           </button>
         </div>

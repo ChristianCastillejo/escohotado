@@ -25,8 +25,20 @@ class VideosController < ApplicationController
 
   # PUT /videos/:id
   def update
-    @video.update(video_params)
-    head :no_content
+    @video = Video.find(params[:id])
+
+    if video_params['tag']
+      @video.tags.clear
+      video_params['tag'].each do |t|
+        tag = Tag.find_by(name: t["name"])
+        unless @video.tags.include? tag
+          @video.tags << tag
+        end
+      end
+    end
+
+    @video.update(video_params.except(:tag))
+    render json: @video
   end
 
   # DELETE /videos/:id

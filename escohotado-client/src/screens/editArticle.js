@@ -28,7 +28,7 @@ function Article({ match, location, history }) {
   useEffect(
     () => {
       if (fetchedArticle.updated) {
-        history.push(`/articles`);
+        history.push(`/admin/articles`);
       } else {
         setArticle(fetchedArticle);
       }
