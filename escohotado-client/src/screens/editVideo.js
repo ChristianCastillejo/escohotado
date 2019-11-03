@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {fetchVideo, editVideo, cleanVideo } from "../actions/videos";
+import { fetchVideo, editVideo, cleanVideo } from "../actions/videos";
 import { useTranslation } from "react-i18next";
 
 function Video({ match, history }) {
@@ -102,7 +102,7 @@ function Video({ match, history }) {
           />
           {videoSrc.includes("https://www.youtube.com") && (
             <iframe
-            className="create-video-iframe"
+              className="create-video-iframe"
               title={video.title}
               type="text/html"
               src={videoSrc.replace("watch?v=", "embed/")}
@@ -134,38 +134,44 @@ function Video({ match, history }) {
             value={video.description_en || ""}
           />
           <div className="create-edit-article-categories">
-            {video.tags &&["philosophy", "comunism", "drugs", "history"].map(tag => (
-              <span
-                key={tag}
-                className={`articles-article-tag articles-article-tag--${video.tags.some(
-                  t => t.name === tag
-                ) && "selected"}`}
-                onClick={() =>
-                  setVideo(t =>
-                    video.tags.some(t => t.name === tag)
-                      ? {
-                          ...video,
-                          tags: [...video["tags"].filter(ta => ta.name !== tag)]
-                        }
-                      : {
-                          ...video,
-                          tags: [...video["tags"], { name: tag }]
-                        }
-                  )
-                }
-              >
-                {t(`categories.${[tag]}`)}{" "}
-                <i
-                  className={`fa fa-${
-                    video.tags.some(t => t.name === tag)
-                      ? "times-circle"
-                      : "plus-circle"
-                  }`}
-                />
-              </span>
-            ))}
+            {video.tags &&
+              ["philosophy", "comunism", "drugs", "history"].map(tag => (
+                <span
+                  key={tag}
+                  className={`articles-article-tag articles-article-tag--${video.tags.some(
+                    t => t.name === tag
+                  ) && "selected"}`}
+                  onClick={() =>
+                    setVideo(t =>
+                      video.tags.some(t => t.name === tag)
+                        ? {
+                            ...video,
+                            tags: [
+                              ...video["tags"].filter(ta => ta.name !== tag)
+                            ]
+                          }
+                        : {
+                            ...video,
+                            tags: [...video["tags"], { name: tag }]
+                          }
+                    )
+                  }
+                >
+                  {t(`categories.${[tag]}`)}{" "}
+                  <i
+                    className={`fa fa-${
+                      video.tags.some(t => t.name === tag)
+                        ? "times-circle"
+                        : "plus-circle"
+                    }`}
+                  />
+                </span>
+              ))}
           </div>
-          <button className="create-edit-article-button" onClick={()=>updateVideo()}>
+          <button
+            className="create-edit-article-button"
+            onClick={() => updateVideo()}
+          >
             Crear
           </button>
         </div>

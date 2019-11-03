@@ -98,11 +98,11 @@ function Video({ video, t, language, admin }) {
           ...
         </p>
         <div>
-        {Array.from(video.tags).map(tag => (
-          <span key={tag.name} className="articles-article-tag">
-            {t(`categories.${[tag.name]}`)}
-          </span>
-        ))}
+          {Array.from(video.tags).map(tag => (
+            <span key={tag.name} className="articles-article-tag">
+              {t(`categories.${[tag.name]}`)}
+            </span>
+          ))}
         </div>
       </div>
     </div>

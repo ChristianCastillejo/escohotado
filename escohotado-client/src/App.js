@@ -18,6 +18,7 @@ const EditArticle = lazy(() => import("./screens/editArticle"));
 const CreateVideo = lazy(() => import("./screens/createVideo"));
 const EditVideo = lazy(() => import("./screens/editVideo"));
 const Login = lazy(() => import("./screens/login"));
+const Admin = lazy(() => import("./screens/admin"));
 
 function isAuthenticated() {
   const accessToken = cookie.load("jwt");
@@ -57,6 +58,7 @@ function App() {
             <Route exact path="/books" component={Resources} />
             <Route exact path="/books/:id" component={Article} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/admin" component={Admin} />
             <Route exact path="/admin/articles" component={Resources} />
             <Route exact path="/article/new" component={CreateArticle} />
             <Route exact path="/articles/:id/edit" component={EditArticle} />

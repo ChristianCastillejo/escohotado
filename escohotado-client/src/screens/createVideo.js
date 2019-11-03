@@ -90,7 +90,7 @@ function Video({ history }) {
           />
           {videoSrc.includes("https://www.youtube.com") && (
             <iframe
-            className="create-video-iframe"
+              className="create-video-iframe"
               title={video.title}
               type="text/html"
               src={videoSrc.replace("watch?v=", "embed/")}
@@ -153,7 +153,10 @@ function Video({ history }) {
               </span>
             ))}
           </div>
-          <button className="create-edit-article-button" onClick={()=>addVideo()}>
+          <button
+            className="create-edit-article-button"
+            onClick={() => addVideo()}
+          >
             Crear
           </button>
         </div>

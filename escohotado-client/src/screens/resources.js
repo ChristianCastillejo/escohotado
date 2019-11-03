@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import Loading from "../components/loading";
 import SearchBar from "../components/searchBar";
 import Article from "../components/article";
@@ -129,6 +130,15 @@ function Articles(props) {
                   : path === "books" && t("resources.books")}
               </h1>
             </div>
+            {admin && (
+              <Link
+                to={`/${path === "articles" ? "article" : "video"}/new`}
+                className="resources-add-resource"
+              >
+                <i className="fa fa-plus-circle" />
+                <p>{`Añadir ${path === "articles" ? "artículo" : "vídeo"}`}</p>
+              </Link>
+            )}
             {path === "articles" && articles.length === 0 ? (
               <p className="articles-error-message">
                 {t("resources.msgNoResources1articles") +
