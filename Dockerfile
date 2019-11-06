@@ -6,7 +6,7 @@ ADD package.json /escohotado-client/package.json
 ENV NODE_PATH=/escohotado-client/node_modules
 ENV PATH=$PATH:/escohotado-client/node_modules/.bin
 ENV PYTHON=/usr/bin/python
-RUN yarn
+RUN yarn install --force
 
 WORKDIR /escohotado-client/app
 ADD . /escohotado-client/app
