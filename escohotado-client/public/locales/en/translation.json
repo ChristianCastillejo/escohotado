@@ -33,6 +33,9 @@
     "night": "Night"
   },
   "article": {
-    "continue": " Continue reading"
+    "continue": " Continue reading",
+    "askDelete": "Are you sure you want to delete this article?",
+    "cancel": "Cancel",
+    "delete": "Delete permanently"
   }
 }

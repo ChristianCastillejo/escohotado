@@ -1,12 +1,10 @@
 import React from "react";
+import Sping from "../assets/images/spin.gif";
 
 function Loading() {
   return (
     <div className="loading-container">
-      <img
-        alt="loading"
-        src="https://cdn.dribbble.com/users/69182/screenshots/2151363/animated_loading__by__amiri.gif"
-      />
+      <img alt="loading" src={Sping} />
     </div>
   );
 }

@@ -50,19 +50,21 @@ function Menu() {
           <p className="menu-item-p">La Emboscadura</p>
         </a>
         <div className="menu-item menu-item--language">
-          <button
-            className="menu-item-button"
-            onClick={() => changeLanguage("es")}
-          >
-            Esp
-          </button>
-          <p>/</p>
-          <button
-            className="menu-item-button"
-            onClick={() => changeLanguage("en")}
-          >
-            Eng
-          </button>
+          {i18n.language === "en" ? (
+            <button
+              className="menu-item-button"
+              onClick={() => changeLanguage("es")}
+            >
+              Español
+            </button>
+          ) : (
+            <button
+              className="menu-item-button"
+              onClick={() => changeLanguage("en")}
+            >
+              English
+            </button>
+          )}
         </div>
       </div>
       <div className="mobile-layout">

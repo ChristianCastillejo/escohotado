@@ -1,9 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import "./lib/i18n";
-import "./assets/main.scss";
-import "./assets/font-awesome/css/all.css";
+import "./helpers/i18n";
+import "./assets/styles/main.scss";
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(<App />, document.getElementById("root"));

@@ -33,7 +33,10 @@
       "night": "Noche"
     },
     "article": {
-      "continue": " Seguir leyendo"
+      "continue": " Seguir leyendo",
+      "askDelete": "Estas seguro que quieres borrar este artículo?",
+      "cancel": "Cancelar",
+      "delete": "Borrar permanentemente"
     }
   }
   

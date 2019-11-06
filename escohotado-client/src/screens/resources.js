@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import Loading from "../components/loading";
 import SearchBar from "../components/searchBar";
 import Article from "../components/article";
@@ -15,7 +16,8 @@ import { useTranslation } from "react-i18next";
 function Articles(props) {
   const { history, location } = props;
   const { t, i18n } = useTranslation();
-  const path = location.pathname.substring(1);
+  const path = location.pathname.split("/").pop();
+  const admin = location.pathname.includes("admin");
   const articles = useSelector(state => state.articles);
   const videos = useSelector(state => state.videos);
   const dispatch = useDispatch();
@@ -98,6 +100,7 @@ function Articles(props) {
         : path === "videos" && dispatch(cleanVideos());
     };
   }, []); // eslint-disable-line
+
   return (
     <div className="screen">
       {path === "articles" && articles[0] === "clean" ? (
@@ -127,6 +130,15 @@ function Articles(props) {
                   : path === "books" && t("resources.books")}
               </h1>
             </div>
+            {admin && (
+              <Link
+                to={`/${path === "articles" ? "article" : "video"}/new`}
+                className="resources-add-resource"
+              >
+                <i className="fa fa-plus-circle" />
+                <p>{`Añadir ${path === "articles" ? "artículo" : "vídeo"}`}</p>
+              </Link>
+            )}
             {path === "articles" && articles.length === 0 ? (
               <p className="articles-error-message">
                 {t("resources.msgNoResources1articles") +
@@ -149,6 +161,7 @@ function Articles(props) {
                   history={history}
                   language={i18n.language}
                   t={t}
+                  admin={admin}
                 />
               ))
             ) : (
@@ -160,6 +173,7 @@ function Articles(props) {
                   history={history}
                   language={i18n.language}
                   t={t}
+                  admin={admin}
                 />
               ))
             )}

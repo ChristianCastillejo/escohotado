@@ -9,10 +9,11 @@ class ArticlesController < ApplicationController
   # POST /articles
   def create
     @article = Article.create!(article_params)
-
-    params['tag'].each do |t|
-      tag = Tag.find_by(name: t)
-      @article.tags << tag
+    unless !params['tag']
+      params['tag'].each do |t|
+        tag = Tag.find_by(name: t["name"])
+        @article.tags << tag
+      end
     end
     render json: @article
   end
@@ -24,8 +25,20 @@ class ArticlesController < ApplicationController
 
   # PUT /articles/:id
   def update
-    @article.update(article_params)
-    head :no_content
+    @article = Article.find(params[:id])
+    
+    if article_params['tag']
+      @article.tags.clear
+      article_params['tag'].each do |t|
+        tag = Tag.find_by(name: t["name"])
+        unless @article.tags.include? tag
+          @article.tags << tag
+        end
+      end
+    end
+
+    @article.update(article_params.except(:tag))
+    render json: @article
   end
 
   # DELETE /articles/:id
@@ -56,7 +69,7 @@ class ArticlesController < ApplicationController
 
   def article_params
     # whitelist params
-    params.permit(:title_sp, :body_sp, :title_en, :body_en, :images, :date, tags: [])
+    params.require(:article).permit(:title_sp, :body_sp, :title_en, :body_en, :images, :date, :id, tag: [:name])
   end
 
   def set_article
