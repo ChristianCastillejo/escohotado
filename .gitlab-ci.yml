@@ -15,7 +15,7 @@ pages:
   script:
     - cd escohotado-client/
     - yarn
-    - yarn  install --force node-sass
+    - npm rebuild node-sass
     - yarn build --prod
     - mv build ../public
     - cp ../public/index.html ../public/404.html
