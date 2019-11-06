@@ -14,8 +14,8 @@ pages:
   stage: deploy
   script:
     - cd escohotado-client/
-    - yarn
     - npm rebuild node-sass
+    - yarn
     - yarn build --prod
     - mv build ../public
     - cp ../public/index.html ../public/404.html
