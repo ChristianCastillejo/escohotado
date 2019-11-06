@@ -37,7 +37,14 @@ function Article({ match, location, history }) {
   );
 
   const updateArticle = article => {
-    dispatch(editArticle(article));
+    let updatedArticle = article;
+    updatedArticle.body_sp =
+      updatedArticle.body_sp &&
+      updatedArticle.body_sp.replace(/(?:\r\n|\r|\n)/g, "<br />");
+    updatedArticle.body_en =
+      updatedArticle.body_en &&
+      updatedArticle.body_en.replace(/(?:\r\n|\r|\n)/g, "<br />");
+    dispatch(editArticle(updatedArticle));
   };
 
   return (
