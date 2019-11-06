@@ -69,6 +69,12 @@ function Video({ match, history }) {
         .replace("watch?v=", "embed/")
         .split("&")[0]
     };
+    newVideo.description_sp =
+      newVideo.description_sp &&
+      newVideo.description_sp.replace(/(?:\r\n|\r|\n)/g, "<br />");
+    newVideo.body_en =
+      newVideo.description_en &&
+      newVideo.description_en.replace(/(?:\r\n|\r|\n)/g, "<br />");
     dispatch(editVideo(newVideo));
   };
 
@@ -123,7 +129,11 @@ function Video({ match, history }) {
               setVideo({ ...video, description_sp: event.target.value })
             }
             placeholder="Descripción en español"
-            value={video.description_sp || ""}
+            value={
+              video.description_sp
+                ? video.description_sp.replace(/<br\s*\/?>/gi, "\n")
+                : ""
+            }
           />
           <textarea
             className="create-video-article-description"
@@ -131,7 +141,11 @@ function Video({ match, history }) {
               setVideo({ ...video, description_en: event.target.value })
             }
             placeholder="Descripción en inglés"
-            value={video.description_en || ""}
+            value={
+              video.description_en
+                ? video.description_en.replace(/<br\s*\/?>/gi, "\n")
+                : ""
+            }
           />
           <div className="create-edit-article-categories">
             {video.tags &&
@@ -172,7 +186,7 @@ function Video({ match, history }) {
             className="create-edit-article-button"
             onClick={() => updateVideo()}
           >
-            Crear
+            Editar
           </button>
         </div>
       </div>

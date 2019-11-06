@@ -91,12 +91,22 @@ function Video({ video, t, language, admin }) {
             Sorry, the description is not available in English.
           </p>
         )}
-        <p>
+        <div>
           {language === "en" && video.description_en
-            ? video.description_en.slice(0, 250)
-            : video.description_sp.slice(0, 250)}
+            ? video.description_en
+                .slice(0, 250)
+                .split("<br />")
+                .map((par, i) => {
+                  return <p key={i}>{par}</p>;
+                })
+            : video.description_sp
+                .slice(0, 250)
+                .split("<br />")
+                .map((par, i) => {
+                  return <p key={i}>{par}</p>;
+                })}
           ...
-        </p>
+        </div>
         <div>
           {Array.from(video.tags).map(tag => (
             <span key={tag.name} className="articles-article-tag">

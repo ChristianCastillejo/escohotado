@@ -31,7 +31,6 @@ function Article({ match }) {
     };
   }, []); // eslint-disable-line
 
-  //    setText(text.replace(/\r?\n/g, "<br />"));
   return (
     <div className="screen">
       {article.empty ? (

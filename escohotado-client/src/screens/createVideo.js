@@ -38,7 +38,7 @@ function Video({ history }) {
   useEffect(
     () => {
       if (fetchedVideo.id) {
-        history.push(`/videos`);
+        history.push(`/admin/videos`);
       }
     },
     [fetchedVideo, history]
@@ -58,9 +58,15 @@ function Video({ history }) {
         .replace("watch?v=", "embed/")
         .split("&")[0]
     };
+    newVideo.description_sp =
+      newVideo.description_sp &&
+      newVideo.description_sp.replace(/(?:\r\n|\r|\n)/g, "<br />");
+    newVideo.description_en =
+      newVideo.description_en &&
+      newVideo.description_en.replace(/(?:\r\n|\r|\n)/g, "<br />");
     dispatch(createVideo(newVideo));
   };
-  //    setText(text.replace(/\r?\n/g, "<br />"));
+
   return (
     <div className="screen">
       <div className="screen video-container">

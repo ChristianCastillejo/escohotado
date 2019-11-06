@@ -80,20 +80,42 @@ function Article({ article, history, t, language, admin }) {
             available in Spanish.
           </p>
         )}
-        <p className="articles-article-body">
+        <div className="articles-article-body">
           {language === "en" && article.body_en
-            ? article.body_en.slice(0, 200)
-            : article.body_sp && article.body_sp.slice(0, 200)}
+            ? article.body_en
+                .slice(0, 200)
+                .split("<br />")
+                .map((par, i) => {
+                  return <p key={i}>{par}</p>;
+                })
+            : article.body_sp &&
+              article.body_sp
+                .slice(0, 200)
+                .split("<br />")
+                .map((par, i) => {
+                  return <p key={i}>{par}</p>;
+                })}
           <span className="articles-article-body-more">
             {language === "en" && article.body_en
-              ? article.body_en.slice(200, 500)
-              : article.body_sp && article.body_sp.slice(200, 500)}
+              ? article.body_en
+                  .slice(200, 500)
+                  .split("<br />")
+                  .map((par, i) => {
+                    return <p key={i}>{par}</p>;
+                  })
+              : article.body_sp &&
+                article.body_sp
+                  .slice(200, 500)
+                  .split("<br />")
+                  .map((par, i) => {
+                    return <p key={i}>{par}</p>;
+                  })}
           </span>
           ...
           <span className="articles-article-body-continue">
             {t("article.continue")}
           </span>
-        </p>
+        </div>
         <div>
           {Array.from(article.tags).map(tag => (
             <span key={tag.name} className="articles-article-tag">

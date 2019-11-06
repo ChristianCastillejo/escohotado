@@ -25,12 +25,22 @@ function Article({ history }) {
   useEffect(
     () => {
       if (fetchedArticle.id) {
-        history.push(`/articles`);
+        history.push(`/admin/articles`);
       }
     },
     [fetchedArticle, history]
   );
-  //    setText(text.replace(/\r?\n/g, "<br />"));
+  const addArticle = () => {
+    let updatedArticle = article;
+    updatedArticle.body_sp =
+      updatedArticle.body_sp &&
+      updatedArticle.body_sp.replace(/(?:\r\n|\r|\n)/g, "<br />");
+    updatedArticle.body_en =
+      updatedArticle.body_en &&
+      updatedArticle.body_en.replace(/(?:\r\n|\r|\n)/g, "<br />");
+    dispatch(createArticle(updatedArticle));
+  };
+
   return (
     <div className="screen">
       <div className="screen article-container">
@@ -115,10 +125,7 @@ function Article({ history }) {
             placeholder="Artículo en Inglés"
             value={article.body_en || ""}
           />
-          <button
-            className="create-edit-article-button"
-            onClick={() => dispatch(createArticle(article))}
-          >
+          <button className="create-edit-article-button" onClick={addArticle}>
             Crear
           </button>
         </div>

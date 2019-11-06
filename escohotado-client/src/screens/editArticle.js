@@ -40,7 +40,6 @@ function Article({ match, location, history }) {
     dispatch(editArticle(article));
   };
 
-  //    setText(text.replace(/\r?\n/g, "<br />"));
   return (
     <div className="screen">
       {article.empty && path === "edit" ? (
@@ -119,7 +118,7 @@ function Article({ match, location, history }) {
               }
               className="create-edit-article-body"
               placeholder="Artículo en Español"
-              defaultValue={article.body_sp}
+              defaultValue={article.body_sp.replace(/<br\s*\/?>/gi, "\n")}
             />
             <textarea
               onChange={event =>
@@ -127,7 +126,7 @@ function Article({ match, location, history }) {
               }
               className="create-edit-article-body"
               placeholder="Artículo en Inglés"
-              defaultValue={article.body_en}
+              defaultValue={article.body_en.replace(/<br\s*\/?>/gi, "\n")}
             />
             <button
               className="create-edit-article-button"

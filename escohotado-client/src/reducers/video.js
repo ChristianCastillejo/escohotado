@@ -2,6 +2,7 @@ import {
   FETCH_VIDEOS,
   FILTER_VIDEOS,
   FETCH_VIDEO,
+  CREATE_VIDEO,
   UPDATE_VIDEO_SUCCESS,
   CLEAN_VIDEO,
   CLEAN_VIDEOS
@@ -24,6 +25,8 @@ export function videosReducer(state = [], { type, payload }) {
 export function videoReducer(state = {}, { type, payload }) {
   switch (type) {
     case FETCH_VIDEO:
+      return payload.data;
+    case CREATE_VIDEO:
       return payload.data;
     case UPDATE_VIDEO_SUCCESS:
       return { ...payload.data, updated: true };
