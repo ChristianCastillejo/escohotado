@@ -108,7 +108,7 @@ function Article({ history }) {
               </span>
             ))}
           </div>
-          <img className="article-img" src={article.images} alt="article" />
+          {/* <img className="article-img" src={article.images} alt="article" /> */}
           <textarea
             onChange={event =>
               setArticle({ ...article, body_sp: event.target.value })
