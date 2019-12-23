@@ -3,6 +3,7 @@ import {
   FETCH_VIDEOS,
   FILTER_VIDEOS,
   FETCH_VIDEO,
+  FETCH_RANDOM_VIDEOS,
   CREATE_VIDEO,
   UPDATE_VIDEO_SUCCESS,
   CLEAN_VIDEO,
@@ -48,6 +49,15 @@ export const fetchVideo = id => {
 
   return {
     type: FETCH_VIDEO,
+    payload: response
+  };
+};
+
+export const fetchRandomVideos = id => {
+  const response = axiosInstance.get("/random_videos");
+
+  return {
+    type: FETCH_RANDOM_VIDEOS,
     payload: response
   };
 };

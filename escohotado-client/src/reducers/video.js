@@ -1,5 +1,6 @@
 import {
   FETCH_VIDEOS,
+  FETCH_RANDOM_VIDEOS,
   FILTER_VIDEOS,
   FETCH_VIDEO,
   CREATE_VIDEO,
@@ -11,6 +12,8 @@ import {
 export function videosReducer(state = [], { type, payload }) {
   switch (type) {
     case FETCH_VIDEOS:
+      return payload.data;
+    case FETCH_RANDOM_VIDEOS:
       return payload.data;
     case CLEAN_VIDEOS:
       return ["clean"];

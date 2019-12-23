@@ -100,7 +100,14 @@ function Article({ match }) {
                   {t(`categories.${[tag.name]}`)}
                 </span>
               ))}
-            <img className="article-img" src={article.images || "https://www.ocultalit.com/wp-content/uploads/2017/02/morralla-filosof%C3%ADa.jpg"} alt="article" />
+            <img
+              className="article-img"
+              src={
+                article.images ||
+                "https://www.ocultalit.com/wp-content/uploads/2017/02/morralla-filosof%C3%ADa.jpg"
+              }
+              alt="article"
+            />
             <div className="article-body" style={{ fontSize }}>
               {i18n.language === "en" && article.body_en
                 ? article.body_en.split("<br />").map((par, i) => {
