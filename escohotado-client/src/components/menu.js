@@ -33,13 +33,13 @@ function Menu() {
         >
           <p className="menu-item-p">{t("menu.videos")}</p>
         </Link>
-        {/* <Link
+        <Link
           className="menu-item"
-          to="/books"
+          to="/contact"
           onClick={() => setOpenMenu(false)}
         >
-          <p className="menu-item-p">Libros</p>
-        </Link> */}
+          <p className="menu-item-p">{t("menu.contact")}</p>
+        </Link>
         <a
           className="menu-item menu-item"
           href="http://laemboscadura.com"

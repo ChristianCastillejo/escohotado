@@ -2,7 +2,8 @@
   "menu": {
     "home": "Home",
     "articles": "Articles",
-    "videos": "Videos"
+    "videos": "Videos",
+    "contact": "Contact"
   },
   "home":{
     "info": "Please, click on Articles or Videos.",

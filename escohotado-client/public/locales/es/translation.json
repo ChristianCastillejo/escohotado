@@ -2,7 +2,8 @@
     "menu": {
       "home": "Inicio",
       "articles": "Artículos",
-      "videos": "Vídeos"
+      "videos": "Vídeos",
+      "contact": "Contacto"
     },
     "home":{
       "info":"Por favor, pulsa en la sección Artículos o Vídeos.",
