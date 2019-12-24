@@ -65,6 +65,15 @@ class VideosController < ApplicationController
     render json: @videos
   end
 
+  def random_video 
+    @first_video = Video.find(Video.pluck(:id).sample)
+    begin
+      @second_video = Video.find(Video.pluck(:id).sample)
+    end while @first_video === @second_video
+    @videos = [@first_video, @second_video]
+    render json: @videos
+  end
+
   private
 
   def video_params

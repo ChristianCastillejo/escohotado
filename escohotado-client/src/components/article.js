@@ -66,7 +66,10 @@ function Article({ article, history, t, language, admin }) {
       <img
         alt="article"
         className="articles-article-img"
-        src={article.images}
+        src={
+          article.images ||
+          "https://www.ocultalit.com/wp-content/uploads/2017/02/morralla-filosof%C3%ADa.jpg"
+        }
       />
       <div className="articles-article-details">
         <h3 className="articles-article-title">

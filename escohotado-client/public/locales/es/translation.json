@@ -5,7 +5,10 @@
       "videos": "Vídeos"
     },
     "home":{
-      "info":"Por favor, pulsa en la sección Artículos o Vídeos."
+      "info":"Por favor, pulsa en la sección Artículos o Vídeos.",
+      "bio": "Biografía",
+      "openBio": "Ver más",
+      "closeBio": "Ver menos"
     },
     "categories": {
       "philosophy": "Filosofía",
