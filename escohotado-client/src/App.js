@@ -70,7 +70,7 @@ function App() {
             <Route exact path="/contact" component={Contact} />
             <ProtectedRoute exact path="/admin/videos" component={Resources} />
           </Switch>
-          <Footer/>
+          <Footer />
         </Router>
       </Provider>
     </Suspense>

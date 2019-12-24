@@ -22,7 +22,9 @@ function Form({ history }) {
         "user_wbtDxlHqaPvuPpe1OJp09"
       )
       .then(a => {
-        alert("Tu mensaje ha sido enviado. Nos pondremos en contacto contigo tan pronto como podamos.");
+        alert(
+          "Tu mensaje ha sido enviado. Nos pondremos en contacto contigo tan pronto como podamos."
+        );
         setForm({});
       })
       .catch(err => {
@@ -91,10 +93,10 @@ function Form({ history }) {
         }
       />
       <p>*Todos los campos son obligatorios.</p>
-      {name && email && message && <button onClick={() => sendFormAdmin()}>
-        {t("form.send")}
-      </button>}
-      </div>
+      {name && email && message && (
+        <button onClick={() => sendFormAdmin()}>{t("form.send")}</button>
+      )}
+    </div>
   );
 }
 

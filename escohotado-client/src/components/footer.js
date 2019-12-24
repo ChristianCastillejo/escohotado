@@ -5,12 +5,10 @@ function Menu() {
   return (
     <div className="footer">
       <Fade right cascade>
-      <p>Antonio Escohotado 2019.</p>
-          <a
-          href="https://ezsoftware.io"
-          >
-            <p>Creado por Christian Castillejo</p>
-          </a>
+        <p>Antonio Escohotado 2019.</p>
+        <a href="https://ezsoftware.io">
+          <p>Creado por Christian Castillejo</p>
+        </a>
       </Fade>
     </div>
   );

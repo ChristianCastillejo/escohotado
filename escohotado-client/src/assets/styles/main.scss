@@ -921,6 +921,15 @@ h1, h2 {
 .input-form::placeholder {
     color: $black;
 }
+@media (max-width: 800px) {
+    .form-container {
+        margin: 30px;
+    }
+    .textarea-form, .input-form {
+        width: 90%;
+        min-width: 90%;
+    }
+}
 
 // Create and edit article adn video
 .create-edit-article {
