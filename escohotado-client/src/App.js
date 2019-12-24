@@ -19,6 +19,7 @@ const CreateVideo = lazy(() => import("./screens/createVideo"));
 const EditVideo = lazy(() => import("./screens/editVideo"));
 const Login = lazy(() => import("./screens/login"));
 const Admin = lazy(() => import("./screens/admin"));
+const Footer = lazy(() => import("./components/footer"));
 
 function isAuthenticated() {
   const accessToken = cookie.load("jwt");
@@ -67,6 +68,7 @@ function App() {
             <Route exact path="/videos/:id/edit" component={EditVideo} />
             <ProtectedRoute exact path="/admin/videos" component={Resources} />
           </Switch>
+          <Footer/>
         </Router>
       </Provider>
     </Suspense>

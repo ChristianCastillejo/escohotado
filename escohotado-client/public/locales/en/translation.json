@@ -5,7 +5,10 @@
     "videos": "Videos"
   },
   "home":{
-    "info": "Please, click on Articles or Videos."
+    "info": "Please, click on Articles or Videos.",
+    "bio": "Bio",
+    "openBio": "See more",
+    "closeBio": "See less"
   },
   "categories": {
     "philosophy": "Philosophy",
