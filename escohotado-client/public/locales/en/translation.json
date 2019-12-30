@@ -9,7 +9,9 @@
     "info": "Please, click on Articles or Videos.",
     "bio": "Bio",
     "openBio": "See more",
-    "closeBio": "See less"
+    "closeBio": "See less",
+    "networks": "Social media",
+    "follow": "Follow on"
   },
   "categories": {
     "philosophy": "Philosophy",
@@ -41,5 +43,8 @@
     "askDelete": "Are you sure you want to delete this article?",
     "cancel": "Cancel",
     "delete": "Delete permanently"
+  },
+  "form": {
+    "send": "Send"
   }
 }

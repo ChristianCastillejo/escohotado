@@ -9,7 +9,9 @@
       "info":"Por favor, pulsa en la sección Artículos o Vídeos.",
       "bio": "Biografía",
       "openBio": "Ver más",
-      "closeBio": "Ver menos"
+      "closeBio": "Ver menos",
+      "networks": "Redes sociales",
+      "follow": "Segir en"
     },
     "categories": {
       "philosophy": "Filosofía",
@@ -41,6 +43,9 @@
       "askDelete": "Estas seguro que quieres borrar este artículo?",
       "cancel": "Cancelar",
       "delete": "Borrar permanentemente"
+    },
+    "form": {
+      "send": "Enviar"
     }
   }
   

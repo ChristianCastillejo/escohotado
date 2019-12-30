@@ -255,7 +255,7 @@ function Home() {
             </div>
           </div>
           <div className="home-social">
-            <h1>Redes sociales</h1>
+            <h1>{t("home.networks")}</h1>
             <div className="home-social-items">
               <div className="centerContent">
                 <div className="selfCenter standardWidth">
@@ -263,12 +263,12 @@ function Home() {
                     sourceType="profile"
                     screenName="aescohotado"
                     theme="dark"
-                    options={{ height: 400 }}
+                    options={{ height: "50vh" }}
                   />
                 </div>
               </div>
               <div className="home-social-share">
-                <h2>Follow</h2>
+                <h2>{t("home.follow")}</h2>
                 <TwitterFollowButton screenName="aescohotado" />
                 <YouTubeSubscribe
                   // channelName={channelName}

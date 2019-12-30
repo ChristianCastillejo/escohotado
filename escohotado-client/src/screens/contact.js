@@ -1,10 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import Form from "../components/form";
 
 function Contact() {
   const [isBioOpen, setIsBioOpen] = useState(false);
   const { t } = useTranslation();
+
+  useEffect(
+    () => {
+      window.scrollTo(0, -100);
+    },
+    []
+  );
 
   return (
     <div className="screen contact-container">
