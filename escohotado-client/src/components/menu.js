@@ -37,13 +37,15 @@ function Menu() {
           >
             <p className="menu-item-p">{t("menu.videos")}</p>
           </Link>
-          <Link
-            className="menu-item"
-            to="/contact"
+          <a
+            className="menu-item menu-item"
+            href="https://laemboscadura.com/tienda/"
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setOpenMenu(false)}
           >
-            <p className="menu-item-p">{t("menu.contact")}</p>
-          </Link>
+            <p className="menu-item-p">{t("menu.shop")}</p>
+          </a>
           <a
             className="menu-item menu-item"
             href="http://laemboscadura.com"
