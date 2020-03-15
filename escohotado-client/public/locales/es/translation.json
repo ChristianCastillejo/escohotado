@@ -1,51 +1,50 @@
 {
-    "menu": {
-      "home": "Inicio",
-      "articles": "Artículos",
-      "videos": "Vídeos",
-      "contact": "Contacto"
-    },
-    "home":{
-      "info":"Por favor, pulsa en la sección Artículos o Vídeos.",
-      "bio": "Biografía",
-      "openBio": "Ver más",
-      "closeBio": "Ver menos",
-      "networks": "Redes sociales",
-      "follow": "Segir en"
-    },
-    "categories": {
-      "philosophy": "Filosofía",
-      "comunism": "Comunismo",
-      "drugs": "Drogas",
-      "ecomomy": "Economía",
-      "history": "Historia",
-      "general": "General",
-      "search": "Buscar",
-      "placeholder": "De la piel para dentro..."
-    },
-    "resources": {
-      "resources": "Recursos",
-      "articles": "Artículos",
-      "videos": "Vídeos",
-      "books": "Libros",
-      "msgNoResources1articles":"Lo sentimos, no hay ningún artículo que incluya las categorías seleccionadas",
-      "msgNoResources1videos":"Lo sentimos, no hay ningún vídeo que incluya las categorías seleccionadas",
-      "msgNoResources2": " y el texto "
-    },
-    "resource": {
-      "by": "Por",
-      "day": "Día",
-      "sepia": "Sepia",
-      "night": "Noche"
-    },
-    "article": {
-      "continue": " Seguir leyendo",
-      "askDelete": "Estas seguro que quieres borrar este artículo?",
-      "cancel": "Cancelar",
-      "delete": "Borrar permanentemente"
-    },
-    "form": {
-      "send": "Enviar"
-    }
+  "menu": {
+    "home": "Inicio",
+    "articles": "Artículos",
+    "videos": "Vídeos",
+    "shop": "Tienda"
+  },
+  "home": {
+    "info": "Por favor, pulsa en la sección Artículos o Vídeos.",
+    "bio": "Biografía",
+    "openBio": "Ver más",
+    "closeBio": "Ver menos",
+    "networks": "Redes sociales",
+    "follow": "Seguir en"
+  },
+  "categories": {
+    "philosophy": "Filosofía",
+    "comunism": "Comunismo",
+    "drugs": "Drogas",
+    "ecomomy": "Economía",
+    "history": "Historia",
+    "general": "General",
+    "search": "Buscar",
+    "placeholder": "De la piel para dentro..."
+  },
+  "resources": {
+    "resources": "Recursos",
+    "articles": "Artículos",
+    "videos": "Vídeos",
+    "books": "Libros",
+    "msgNoResources1articles": "Lo sentimos, no hay ningún artículo que incluya las categorías seleccionadas",
+    "msgNoResources1videos": "Lo sentimos, no hay ningún vídeo que incluya las categorías seleccionadas",
+    "msgNoResources2": " y el texto "
+  },
+  "resource": {
+    "by": "Por",
+    "day": "Día",
+    "sepia": "Sepia",
+    "night": "Noche"
+  },
+  "article": {
+    "continue": " Seguir leyendo",
+    "askDelete": "Estas seguro que quieres borrar este artículo?",
+    "cancel": "Cancelar",
+    "delete": "Borrar permanentemente"
+  },
+  "form": {
+    "send": "Enviar"
   }
-  
+}
