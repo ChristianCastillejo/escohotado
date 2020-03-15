@@ -17,7 +17,7 @@ body {
 }
 .screen {
   margin-top: 70px;
-  min-height: calc(100vh - 220px);
+  min-height: calc(100vh - 140px);
 }
 
 .yellow-container {
@@ -454,6 +454,7 @@ h2 {
   max-width: 1200px;
   margin: auto;
   padding: 30px;
+  padding-bottom: 250px;
 }
 .articles-article {
   display: grid;
@@ -986,6 +987,71 @@ h2 {
 .create-video-iframe {
   width: 100%;
   min-height: 500px;
+}
+
+// Login
+.login-screen {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  background-image: white;
+  padding-top: 80px;
+}
+.login-container {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  grid-gap: 30px;
+  text-align: center;
+  background-color: $yellow;
+  height: 300px;
+  width: 500px;
+  padding: 10px;
+  max-width: 80vw;
+  border-radius: 20px;
+  box-shadow: 0px 8px 14px 3px $shadow-light;
+  color: $yellow;
+  animation: zoomIn 1.2s;
+  input {
+    width: 90%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+  }
+  button {
+    background-color: white;
+    color: $black;
+    border: none;
+    border-radius: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+}
+@media (max-width: 800px) {
+  .login-container {
+    height: 200px;
+    padding: 30px;
+    h1 {
+      font-size: 25px;
+    }
+    button {
+      font-size: 18px;
+    }
+  }
+}
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.5, 0.5);
+  }
+  50% {
+    transform: scale(1.05, 1.05);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
 }
 
 //Admin

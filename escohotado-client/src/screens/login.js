@@ -1,10 +1,63 @@
-import React from "react";
-import { useTranslation } from "react-i18next";
+import React, { useEffect, useState } from "react";
+import propTypes from "prop-types";
+import { useDispatch, useSelector } from "react-redux";
+import cookie from "react-cookies";
+import { login } from "../actions/session";
 
-function Home() {
-  const { t } = useTranslation();
+export default function Login({ history }) {
+  const session = useSelector(state => state.session);
+  const [formDetails, setformDetails] = useState({ email: "", password: "" });
+  const dispatch = useDispatch();
 
-  return <div className="screen home-container">{t("login")}</div>;
+  useEffect(() => {
+    if (session.id && cookie.load("jwt")) {
+      history.push(`/admin`);
+    }
+  }, [session, history]);
+
+  return (
+    <div className="screen login-screen">
+      <div className="login-container">
+        <input
+          placeholder="Email"
+          value={formDetails.email}
+          name="email"
+          type="email"
+          onChange={e =>
+            setformDetails({
+              ...formDetails,
+              [e.target.name]: e.target.value
+            })
+          }
+          required
+        />
+        <input
+          placeholder="Password"
+          value={formDetails.password}
+          name="password"
+          type="password"
+          onChange={e =>
+            setformDetails({
+              ...formDetails,
+              [e.target.name]: e.target.value
+            })
+          }
+          required
+        />
+        <button
+          className="login-button"
+          type="subbmit"
+          onClick={() => dispatch(login(formDetails))}
+        >
+          Login
+        </button>
+      </div>
+    </div>
+  );
 }
 
-export default Home;
+Login.propTypes = {
+  history: propTypes.shape({
+    push: propTypes.func.isRequired
+  }).isRequired
+};
