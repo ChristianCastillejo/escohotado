@@ -192,7 +192,7 @@ h2 {
 // Home
 .home-container,
 .contact-container {
-  font-size: 25px;
+  font-size: 20px;
 }
 .home-hero-img {
   display: grid;
@@ -1032,10 +1032,9 @@ h2 {
 // Footer
 .footer {
   display: grid;
-  grid-template-columns: auto auto;
-  grid-gap: 20px;
+  grid-template-columns: repeat(3, auto);
+  grid-gap: 30px;
   align-items: center;
-  justify-content: center;
   min-height: 70px;
   background-color: #292f33;
   color: white;
@@ -1047,10 +1046,19 @@ h2 {
     font-weight: bold;
   }
 }
+.social-network {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-gap: 20px;
+  justify-content: center;
+}
 @media (max-width: 900px) {
   .footer {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
     grid-gap: 0px;
+  }
+  .social-network {
+    justify-content: center;
   }
 }

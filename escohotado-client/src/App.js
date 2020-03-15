@@ -17,7 +17,6 @@ const CreateArticle = lazy(() => import("./screens/createArticle"));
 const EditArticle = lazy(() => import("./screens/editArticle"));
 const CreateVideo = lazy(() => import("./screens/createVideo"));
 const EditVideo = lazy(() => import("./screens/editVideo"));
-const Contact = lazy(() => import("./screens/contact"));
 const Login = lazy(() => import("./screens/login"));
 const Admin = lazy(() => import("./screens/admin"));
 const Footer = lazy(() => import("./components/footer"));
@@ -57,8 +56,8 @@ function App() {
             <Route exact path="/articles" component={Resources} />
             <Route exact path="/articles/:id" component={Article} />
             <Route exact path="/videos" component={Resources} />
-            <Route exact path="/books" component={Resources} />
-            <Route exact path="/books/:id" component={Article} />
+            {/* <Route exact path="/books" component={Resources} />
+            <Route exact path="/books/:id" component={Article} /> */}
             <Route exact path="/login" component={Login} />
             <Route exact path="/admin" component={Admin} />
             <Route exact path="/admin/articles" component={Resources} />
@@ -67,7 +66,7 @@ function App() {
             <Route exact path="/admin/videos" component={Resources} />
             <Route exact path="/video/new" component={CreateVideo} />
             <Route exact path="/videos/:id/edit" component={EditVideo} />
-            <Route exact path="/contact" component={Contact} />
+            {/* <Route exact path="/contact" component={Contact} /> */}
             <ProtectedRoute exact path="/admin/videos" component={Resources} />
           </Switch>
           <Footer />

@@ -3,9 +3,9 @@
     "home": "Home",
     "articles": "Articles",
     "videos": "Videos",
-    "contact": "Contact"
+    "shop": "Shop"
   },
-  "home":{
+  "home": {
     "info": "Please, click on Articles or Videos.",
     "bio": "Bio",
     "openBio": "See more",
@@ -28,8 +28,8 @@
     "articles": "Articles",
     "videos": "Videos",
     "books": "Books",
-    "msgNoResources1articles":"Sorry, there are not articles that include these categories",
-    "msgNoResources1videos":"Sorry, there are not articles that include these categories",
+    "msgNoResources1articles": "Sorry, there are not articles that include these categories",
+    "msgNoResources1videos": "Sorry, there are not articles that include these categories",
     "msgNoResources2": " and the text "
   },
   "resource": {

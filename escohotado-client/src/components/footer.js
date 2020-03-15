@@ -3,14 +3,31 @@ import Fade from "react-reveal/Fade";
 
 function Menu() {
   return (
-    <div className="footer">
-      <Fade right cascade>
+    <Fade right cascade>
+      <div className="footer">
         <p>Antonio Escohotado 2019.</p>
-        <a href="https://ezsoftware.io">
+        <div className="social-network">
+          <a href="https://www.facebook.com/AEscohotado/" target="_blank">
+            <i className="fab fa-facebook" />
+          </a>
+          <a href="https://twitter.com/AEscohotado" target="_blank">
+            <i className="fab fa-twitter" />
+          </a>
+          <a href="https://www.instagram.com/escohotado/" target="_blank">
+            <i className="fab fa-instagram" />
+          </a>
+          <a
+            href="https://www.youtube.com/channel/UCks2FdxaBZZFl4PTBAGz4Jw"
+            target="_blank"
+          >
+            <i className="fab fa-youtube" />
+          </a>
+        </div>
+        <a href="https://ezsoftware.io" target="_blank">
           <p>Creado por Christian Castillejo</p>
         </a>
-      </Fade>
-    </div>
+      </div>
+    </Fade>
   );
 }
 

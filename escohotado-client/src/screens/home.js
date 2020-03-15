@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchRandomVideos, cleanVideos } from "../actions/videos";
 import Fade from "react-reveal/Fade";
-import Loading from "../components/loading";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import { TwitterTimelineEmbed, TwitterFollowButton } from "react-twitter-embed";
-import YouTubeSubscribe from "../components/youtubeSubscribe";
+
+import SocialMedia from "../components/socialMedia/socialMedia.component";
+import Loading from "../components/loading";
+
+import { fetchRandomVideos, cleanVideos } from "../actions/videos";
 
 function Home() {
   const { t } = useTranslation();
@@ -14,13 +15,10 @@ function Home() {
   const videos = useSelector(state => state.videos);
   const dispatch = useDispatch();
 
-  useEffect(
-    () => {
-      window.scrollTo(0, -100);
-      dispatch(fetchRandomVideos());
-    },
-    [dispatch]
-  );
+  useEffect(() => {
+    window.scrollTo(0, -100);
+    dispatch(fetchRandomVideos());
+  }, [dispatch]);
 
   useEffect(() => {
     return () => {
@@ -254,32 +252,7 @@ function Home() {
               </Fade>
             </div>
           </div>
-          <div className="home-social">
-            <h1>{t("home.networks")}</h1>
-            <div className="home-social-items">
-              <div className="centerContent">
-                <div className="selfCenter standardWidth">
-                  <TwitterTimelineEmbed
-                    sourceType="profile"
-                    screenName="aescohotado"
-                    theme="dark"
-                    options={{ height: "50vh" }}
-                  />
-                </div>
-              </div>
-              <div className="home-social-share">
-                <h2>{t("home.follow")}</h2>
-                <TwitterFollowButton screenName="aescohotado" />
-                <YouTubeSubscribe
-                  // channelName={channelName}
-                  channelid="UCks2FdxaBZZFl4PTBAGz4Jw"
-                  theme={"default"}
-                  layout={"full"}
-                  count={"default"}
-                />
-              </div>
-            </div>
-          </div>
+          <SocialMedia />
         </div>
       )}
     </div>
