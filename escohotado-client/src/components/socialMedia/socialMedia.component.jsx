@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { TwitterTimelineEmbed, TwitterFollowButton } from "react-twitter-embed";
+import { TwitterTimelineEmbed } from "react-twitter-embed";
 import Fade from "react-reveal/Fade";
 
 import {
@@ -8,7 +8,7 @@ import {
   Container,
   SocialButton,
   ShareButtonsContainer,
-  ShareButtons
+  ShareButtons,
 } from "./socialMedia.styles";
 
 const SocialMedia = () => {
@@ -26,7 +26,6 @@ const SocialMedia = () => {
               theme="dark"
               options={{ height: "50vh" }}
             />
-            <TwitterFollowButton screenName="aescohotado" />
           </div>
           <ShareButtonsContainer>
             <h3>{t("home.follow")}</h3>

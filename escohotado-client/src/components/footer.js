@@ -5,7 +5,7 @@ function Menu() {
   return (
     <Fade right cascade>
       <div className="footer">
-        <p>Antonio Escohotado 2019.</p>
+        <p>Antonio Escohotado 2020.</p>
         <div className="social-network">
           <a
             href="https://www.facebook.com/AEscohotado/"

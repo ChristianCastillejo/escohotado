@@ -7,7 +7,7 @@ function Article({ article, history, t, language, admin }) {
   const [askDelete, setAskDelete] = useState(false);
   const dispatch = useDispatch();
 
-  const removeArticle = id => {
+  const removeArticle = (id) => {
     dispatch(deleteArticle(id));
   };
 
@@ -20,8 +20,9 @@ function Article({ article, history, t, language, admin }) {
     >
       {admin && (
         <div
-          className={`resources-resource-admin ${askDelete &&
-            "resources-resource-admin--askDelete"}`}
+          className={`resources-resource-admin ${
+            askDelete && "resources-resource-admin--askDelete"
+          }`}
         >
           {askDelete ? (
             <Fragment>
@@ -67,7 +68,7 @@ function Article({ article, history, t, language, admin }) {
         alt="article"
         className="articles-article-img"
         src={
-          article.images ||
+          // article.images ||
           "https://www.ocultalit.com/wp-content/uploads/2017/02/morralla-filosof%C3%ADa.jpg"
         }
       />
@@ -120,7 +121,7 @@ function Article({ article, history, t, language, admin }) {
           </span>
         </div>
         <div>
-          {Array.from(article.tags).map(tag => (
+          {Array.from(article.tags).map((tag) => (
             <span key={tag.name} className="articles-article-tag">
               {t(`categories.${[tag.name]}`)}
             </span>
