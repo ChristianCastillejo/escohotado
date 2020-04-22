@@ -2,6 +2,7 @@
   "name": "escohotado",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://christiancastillejo.gitlab.io/escohotado",
   "dependencies": {
     "axios": "^0.19.0",
     "i18next": "^17.0.16",
