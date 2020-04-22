@@ -1,26 +1,28 @@
-image: node:alpine
+image: node:8.11.1
 
 variables:
   PUBLIC_URL: "/escohotado"
 
-cache:
-  paths:
-  - escohotado-client/node_modules
-
+    
+pages:
 stages:
 - deploy
 
 pages:
+  cache:
+    paths:
+      - ./node_modules/
+
   stage: deploy
   script:
     - cd escohotado-client/
-    - npm rebuild node-sass
-    - yarn
-    - yarn build --prod
-    - mv build ../public
+    - npm install
+    - npm run build
+    - rm public -rf
+    - mv build public
     - cp ../public/index.html ../public/404.html
   artifacts:
     paths:
     - public
   only:
-    - master
+    - dev

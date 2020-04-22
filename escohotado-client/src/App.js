@@ -23,7 +23,6 @@ const Footer = lazy(() => import("./components/footer"));
 
 function isAuthenticated() {
   const accessToken = cookie.load("jwt");
-  console.log("asdasd");
   return accessToken ? true : false;
 }
 
@@ -53,21 +52,27 @@ function App() {
           <Menu />
           <Switch>
             <Route exact path="/" component={Home} />
+
             <Route exact path="/articles" component={Resources} />
             <Route exact path="/articles/:id" component={Article} />
+
             <Route exact path="/videos" component={Resources} />
-            {/* <Route exact path="/books" component={Resources} />
-            <Route exact path="/books/:id" component={Article} /> */}
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/admin" component={Admin} />
-            <Route exact path="/admin/articles" component={Resources} />
+
             <Route exact path="/article/new" component={CreateArticle} />
             <Route exact path="/articles/:id/edit" component={EditArticle} />
-            <Route exact path="/admin/videos" component={Resources} />
+
             <Route exact path="/video/new" component={CreateVideo} />
             <Route exact path="/videos/:id/edit" component={EditVideo} />
-            {/* <Route exact path="/contact" component={Contact} /> */}
+
+            <Route exact path="/login" component={Login} />
+
+            <ProtectedRoute exact path="/admin" component={Admin} />
             <ProtectedRoute exact path="/admin/videos" component={Resources} />
+            <ProtectedRoute
+              exact
+              path="/admin/articles"
+              component={Resources}
+            />
           </Switch>
           <Footer />
         </Router>
