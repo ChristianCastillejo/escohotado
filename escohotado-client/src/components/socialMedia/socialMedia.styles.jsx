@@ -2,7 +2,6 @@ import styled, { css } from "styled-components";
 
 export const Container = styled.div`
   display: grid;
-  grid-gap: 3rem 2rem;
   max-width: 75rem;
   margin: 0 auto;
   padding: 2rem;
@@ -81,7 +80,7 @@ const instagramStyle = css`
   );
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
 `;
-const getButtonStyles = props => {
+const getButtonStyles = (props) => {
   switch (props.color) {
     case "facebook":
       return facebookStyle;
@@ -101,7 +100,7 @@ export const SocialButton = styled.a`
   align-items: center;
   justify-content: center;
   color: white;
-  min-width: 10rem;
+  min-width: 8rem;
   min-height: 2.5rem;
   border: none;
   border-radius: 0.8rem;

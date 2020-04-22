@@ -12,7 +12,7 @@ import { fetchRandomVideos, cleanVideos } from "../actions/videos";
 function Home() {
   const { t } = useTranslation();
   const [isBioOpen, setIsBioOpen] = useState(false);
-  const videos = useSelector(state => state.videos);
+  const videos = useSelector((state) => state.videos);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -245,7 +245,7 @@ function Home() {
                   />
                   <Link to="/videos">
                     <button>
-                      <i className="fa fa-plus" />
+                      <i className="fa fa-arrow-right" />
                     </button>
                   </Link>
                 </div>
