@@ -1,5 +1,11 @@
 class UsersController < ApplicationController
-  skip_before_action :authorize_request, only: :create
+  include Response
+  include ExceptionHandler
+
+  before_action :authorize_request, only: [:current]
+
+  attr_reader :current_user
+
   # POST /signup
   # return authenticated token upon signup
   def create
@@ -15,6 +21,10 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def authorize_request
+    @current_user = (AuthorizeApiRequest.new(request.headers).call)[:user]
+  end
 
   def user_params
     params.permit(
