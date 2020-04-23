@@ -1,5 +1,11 @@
 class ArticlesController < ApplicationController
+  include Response
+  include ExceptionHandler
+
   before_action :set_article, only: [:show, :update, :destroy]
+  before_action :authorize_request, only: [:create, :update, :destroy]
+
+  attr_reader :current_user
 
   # GET /articles
   def index
@@ -66,6 +72,10 @@ class ArticlesController < ApplicationController
   end
 
   private
+
+  def authorize_request
+    @current_user = (AuthorizeApiRequest.new(request.headers).call)[:user]
+  end
 
   def article_params
     # whitelist params
