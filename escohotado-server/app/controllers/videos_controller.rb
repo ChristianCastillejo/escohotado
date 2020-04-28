@@ -1,9 +1,5 @@
 class VideosController < ApplicationController
-  include Response
-  include ExceptionHandler
-
   before_action :set_video, only: [:show, :update, :destroy]
-  before_action :authorize_request, only: [:create, :update, :destroy]
 
   attr_reader :current_user
 
@@ -81,11 +77,7 @@ class VideosController < ApplicationController
   end
 
   private
-
-  def authorize_request
-    @current_user = (AuthorizeApiRequest.new(request.headers).call)[:user]
-  end
-
+  
   def video_params
     # whitelist params
     params.require(:video).permit(:title_sp, :title_en, :description_sp, :description_en, :url, :date, tag: [:name])

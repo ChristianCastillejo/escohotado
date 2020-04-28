@@ -1,8 +1,5 @@
 class UsersController < ApplicationController
-  include Response
-  include ExceptionHandler
-
-  before_action :authorize_request, only: [:current]
+ 
 
   attr_reader :current_user
 
@@ -21,10 +18,6 @@ class UsersController < ApplicationController
   end
 
   private
-
-  def authorize_request
-    @current_user = (AuthorizeApiRequest.new(request.headers).call)[:user]
-  end
 
   def user_params
     params.permit(
