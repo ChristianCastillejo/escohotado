@@ -1,7 +1,6 @@
 class VideosController < ApplicationController
+  before_action :authenticate_user!, only: [:create, :update, :destroy]
   before_action :set_video, only: [:show, :update, :destroy]
-
-  attr_reader :current_user
 
   # GET /videos
   def index
@@ -77,7 +76,7 @@ class VideosController < ApplicationController
   end
 
   private
-  
+
   def video_params
     # whitelist params
     params.require(:video).permit(:title_sp, :title_en, :description_sp, :description_en, :url, :date, tag: [:name])

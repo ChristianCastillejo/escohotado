@@ -10,13 +10,16 @@ const axiosConfig = {
   headers: {
     Accept: "application/json",
     "Content-Type": "application/json",
-    "Access-Control-Allow-Origin": "*",
   },
 };
 
 export const axiosInstance = axios.create(axiosConfig);
 
-const jwt = cookie.load("jwt");
-if (jwt) {
-  axiosInstance.defaults.headers.common.Authorization = `Auth Token ${jwt}`;
+const accessToken = cookie.load("access-token");
+if (accessToken) {
+  axiosInstance.defaults.headers.common.uid = cookie.load("uid");
+  axiosInstance.defaults.headers.common.client = cookie.load("client");
+  axiosInstance.defaults.headers.common["access-token"] = cookie.load(
+    "access-token"
+  );
 }

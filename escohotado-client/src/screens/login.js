@@ -5,12 +5,17 @@ import cookie from "react-cookies";
 import { login } from "../actions/session";
 
 export default function Login({ history }) {
-  const session = useSelector(state => state.session);
+  const session = useSelector((state) => state.session);
   const [formDetails, setformDetails] = useState({ email: "", password: "" });
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (session.id && cookie.load("jwt")) {
+    if (
+      session.id &&
+      cookie.load("uid") &&
+      cookie.load("client") &&
+      cookie.load("access-token")
+    ) {
       history.push(`/admin`);
     }
   }, [session, history]);
@@ -23,10 +28,10 @@ export default function Login({ history }) {
           value={formDetails.email}
           name="email"
           type="email"
-          onChange={e =>
+          onChange={(e) =>
             setformDetails({
               ...formDetails,
-              [e.target.name]: e.target.value
+              [e.target.name]: e.target.value,
             })
           }
           required
@@ -36,10 +41,10 @@ export default function Login({ history }) {
           value={formDetails.password}
           name="password"
           type="password"
-          onChange={e =>
+          onChange={(e) =>
             setformDetails({
               ...formDetails,
-              [e.target.name]: e.target.value
+              [e.target.name]: e.target.value,
             })
           }
           required
@@ -58,6 +63,6 @@ export default function Login({ history }) {
 
 Login.propTypes = {
   history: propTypes.shape({
-    push: propTypes.func.isRequired
-  }).isRequired
+    push: propTypes.func.isRequired,
+  }).isRequired,
 };

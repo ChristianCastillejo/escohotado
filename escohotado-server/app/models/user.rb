@@ -1,9 +1,7 @@
 class User < ApplicationRecord
-  # encrypt password
-  has_secure_password
-
-  # Model associations
-  has_many :todos
-  # Validations
-  validates_presence_of :name, :email, :password_digest
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+  include DeviseTokenAuth::Concerns::User
 end

@@ -2,24 +2,30 @@ import { axiosInstance } from "../helpers/configured_axios";
 import { FETCH_LOGGED_IN_USER, LOGOUT } from "./actionTypes";
 import cookie from "react-cookies";
 
-export function setJWT(token) {
+function setTokens(response) {
   const expires = new Date(Date.now() + 1000 * 60 * 60 * 24 * 90);
-  cookie.save("jwt", token, { expires });
+  cookie.save("uid", response.headers.uid, { expires });
+  cookie.save("client", response.headers.client, { expires });
+  cookie.save("access-token", response.headers["access-token"], { expires });
+  localStorage.setItem("user", JSON.stringify(response.data));
 }
-
 export function login({ email, password }) {
-  return dispatch => {
+  return (dispatch) => {
     axiosInstance
-      .post("/login/", {
+      .post(`/auth/sign_in`, {
         email,
-        password
+        password,
       })
-      .then(response => {
-        setJWT(response.data.auth_token);
-        axiosInstance.defaults.headers.common.Authorization = `Authorization ${response.data.auth_token}`;
+      .then((response) => {
+        setTokens(response);
+        axiosInstance.defaults.headers.common.uid = response.headers.uid;
+        axiosInstance.defaults.headers.common.client = response.headers.client;
+        axiosInstance.defaults.headers.common["access-token"] =
+          response.headers["access-token"];
+
         dispatch(fetchLoggedInUser());
       })
-      .catch(function(error) {
+      .catch(function (error) {
         if (error.response) {
           alert("Usuario y/o contraseña incorrectos.");
         }
@@ -32,7 +38,7 @@ export function logout() {
 
   return {
     type: LOGOUT,
-    payload: {}
+    payload: {},
   };
 }
 
@@ -41,6 +47,6 @@ export function fetchLoggedInUser() {
 
   return {
     type: FETCH_LOGGED_IN_USER,
-    payload: request
+    payload: request,
   };
 }

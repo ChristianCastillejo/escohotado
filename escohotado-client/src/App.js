@@ -21,8 +21,8 @@ const Login = lazy(() => import("./screens/login"));
 const Admin = lazy(() => import("./screens/admin"));
 const Footer = lazy(() => import("./components/footer"));
 
-function isAuthenticated() {
-  const accessToken = cookie.load("jwt");
+function isUserAuthenticated() {
+  const accessToken = cookie.load("access-token");
   return accessToken ? true : false;
 }
 
@@ -30,7 +30,7 @@ const ProtectedRoute = ({ component: Component, ...rest }) => (
   <Route
     {...rest}
     render={(props) =>
-      isAuthenticated() ? (
+      isUserAuthenticated() ? (
         <Component {...props} />
       ) : (
         <Redirect

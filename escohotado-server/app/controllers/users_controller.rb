@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
- 
-
-  attr_reader :current_user
+  before_action :authenticate_user!, only: [:current]
+  before_action :set_user, only: [:show, :update, :destroy]
 
   # POST /signup
   # return authenticated token upon signup
@@ -18,13 +17,17 @@ class UsersController < ApplicationController
   end
 
   private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_user
+      @user = User.find(params[:id])
+    end
 
   def user_params
-    params.permit(
+    params.permit(session: [
       :name,
       :email,
       :password,
       :password_confirmation
-    )
+  ])
   end
 end
