@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { deleteArticle } from "../actions/articles";
 
+import ImagePlaceholder from "../assets/images/placeHolderArticle.png";
+
 function Article({ article, history, t, language, admin }) {
   const [askDelete, setAskDelete] = useState(false);
   const dispatch = useDispatch();
@@ -67,10 +69,7 @@ function Article({ article, history, t, language, admin }) {
       <img
         alt="article"
         className="articles-article-img"
-        src={
-          // article.images ||
-          "https://www.ocultalit.com/wp-content/uploads/2017/02/morralla-filosof%C3%ADa.jpg"
-        }
+        src={ImagePlaceholder} // article.images ||
       />
       <div className="articles-article-details">
         <h3 className="articles-article-title">

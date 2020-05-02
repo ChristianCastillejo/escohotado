@@ -15,7 +15,7 @@ function Video({ video, t, language, admin }) {
     "&modestbranding=" +
     1;
 
-  const removeVideo = id => {
+  const removeVideo = (id) => {
     dispatch(deleteVideo(id));
   };
 
@@ -23,8 +23,9 @@ function Video({ video, t, language, admin }) {
     <div className={`resources-video ${admin && "resources-video--admin"}`}>
       {admin && (
         <div
-          className={`resources-resource-admin ${askDelete &&
-            "resources-resource-admin--askDelete"}`}
+          className={`resources-resource-admin ${
+            askDelete && "resources-resource-admin--askDelete"
+          }`}
         >
           {askDelete ? (
             <Fragment>
@@ -84,7 +85,9 @@ function Video({ video, t, language, admin }) {
         <h3 className="resources-video-title">
           {language === "en" && video.title_en
             ? video.title_en
-            : video.title_sp}
+            : video.title_sp
+            ? video.title_sp
+            : ""}
         </h3>
         {language === "en" && !video.description_en && (
           <p className="articles-article-no-translation">
@@ -100,15 +103,17 @@ function Video({ video, t, language, admin }) {
                   return <p key={i}>{par}</p>;
                 })
             : video.description_sp
+            ? video.description_sp
                 .slice(0, 250)
                 .split("<br />")
                 .map((par, i) => {
                   return <p key={i}>{par}</p>;
-                })}
+                })
+            : ""}
           ...
         </div>
         <div>
-          {Array.from(video.tags).map(tag => (
+          {Array.from(video.tags).map((tag) => (
             <span key={tag.name} className="articles-article-tag">
               {t(`categories.${[tag.name]}`)}
             </span>
