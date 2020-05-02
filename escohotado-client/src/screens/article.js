@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 
 function Article({ match }) {
   const { t, i18n } = useTranslation();
-  const article = useSelector(state => state.article);
+  const article = useSelector((state) => state.article);
   const dispatch = useDispatch();
   const [openSettings, setOpenSettings] = useState(false);
   const [theme, setTheme] = useState("light");
@@ -17,13 +17,10 @@ function Article({ match }) {
     setFontSize(fontSize);
   }
 
-  useEffect(
-    () => {
-      dispatch(fetchArticle(match.params.id));
-      window.scrollTo(0, 0);
-    },
-    [dispatch, match.params.id]
-  );
+  useEffect(() => {
+    dispatch(fetchArticle(match.params.id));
+    window.scrollTo(0, 0);
+  }, [dispatch, match.params.id]);
 
   useEffect(() => {
     return () => {
@@ -41,8 +38,9 @@ function Article({ match }) {
           onClick={() => openSettings && setOpenSettings(false)}
         >
           <div
-            className={`article-settings ${openSettings &&
-              "article-settings--open"}`}
+            className={`article-settings ${
+              openSettings && "article-settings--open"
+            }`}
             onClick={() => !openSettings && setOpenSettings(true)}
           >
             <div className="article-settings-icon">
@@ -50,19 +48,19 @@ function Article({ match }) {
             </div>
             <div
               className="article-settings-font"
-              onClick={e => fontSize > 10 && editFontSize(e, fontSize - 1)}
+              onClick={(e) => fontSize > 10 && editFontSize(e, fontSize - 1)}
             >
               <i className="fa fa-minus" />
             </div>
             <div
               className="article-settings-font"
-              onClick={e => fontSize < 34 && editFontSize(e, fontSize + 1)}
+              onClick={(e) => fontSize < 34 && editFontSize(e, fontSize + 1)}
             >
               <i className="fa fa-plus" />
             </div>
             <div
               className="article-settings-light"
-              onClick={e => setTheme("light")}
+              onClick={(e) => setTheme("light")}
             >
               {t(`resource.day`)}
             </div>
@@ -95,19 +93,19 @@ function Article({ match }) {
               {t(`resource.by`)} Antonio Escohotado. {article.date}
             </p>
             {article.tags &&
-              article.tags.map(tag => (
+              article.tags.map((tag) => (
                 <span key={tag.name} className="articles-article-tag">
                   {t(`categories.${[tag.name]}`)}
                 </span>
               ))}
-            <img
+            {/* <img
               className="article-img"
               src={
                 article.images ||
                 "https://www.ocultalit.com/wp-content/uploads/2017/02/morralla-filosof%C3%ADa.jpg"
               }
               alt="article"
-            />
+            /> */}
             <div className="article-body" style={{ fontSize }}>
               {i18n.language === "en" && article.body_en
                 ? article.body_en.split("<br />").map((par, i) => {

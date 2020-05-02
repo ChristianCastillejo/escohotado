@@ -7,17 +7,14 @@ import { useTranslation } from "react-i18next";
 function Article({ match, location, history }) {
   const { t } = useTranslation();
   const path = location.pathname.split("/").pop();
-  const fetchedArticle = useSelector(state => state.article);
+  const fetchedArticle = useSelector((state) => state.article);
   const [article, setArticle] = useState(fetchedArticle);
   const dispatch = useDispatch();
 
-  useEffect(
-    () => {
-      window.scrollTo(0, 0);
-      dispatch(fetchArticle(match.params.id));
-    },
-    [dispatch, match.params.id]
-  );
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    dispatch(fetchArticle(match.params.id));
+  }, [dispatch, match.params.id]);
 
   useEffect(() => {
     return () => {
@@ -25,18 +22,15 @@ function Article({ match, location, history }) {
     };
   }, []); // eslint-disable-line
 
-  useEffect(
-    () => {
-      if (fetchedArticle.updated) {
-        history.push(`/admin/articles`);
-      } else {
-        setArticle(fetchedArticle);
-      }
-    },
-    [fetchedArticle, history]
-  );
+  useEffect(() => {
+    if (fetchedArticle.updated) {
+      history.push(`/admin/articles`);
+    } else {
+      setArticle(fetchedArticle);
+    }
+  }, [fetchedArticle, history]);
 
-  const updateArticle = article => {
+  const updateArticle = (article) => {
     let updatedArticle = article;
     updatedArticle.body_sp =
       updatedArticle.body_sp &&
@@ -57,7 +51,7 @@ function Article({ match, location, history }) {
             <h1>Editar artículo</h1>
             <input
               className="create-edit-article-title"
-              onChange={event =>
+              onChange={(event) =>
                 setArticle({ ...article, title_sp: event.target.value })
               }
               placeholder="Título"
@@ -65,7 +59,7 @@ function Article({ match, location, history }) {
             />
             <input
               className="create-edit-article-title"
-              onChange={event =>
+              onChange={(event) =>
                 setArticle({ ...article, title_en: event.target.value })
               }
               placeholder="Título en Ingles"
@@ -73,7 +67,7 @@ function Article({ match, location, history }) {
             />
             <input
               className="create-edit-article-title"
-              onChange={event =>
+              onChange={(event) =>
                 setArticle({ ...article, date: event.target.value })
               }
               placeholder="Fecha de publicacíon"
@@ -85,24 +79,26 @@ function Article({ match, location, history }) {
 
             <div className="create-edit-article-categories">
               {article.tags &&
-                ["philosophy", "comunism", "drugs", "history"].map(tag => (
+                ["philosophy", "comunism", "drugs", "history"].map((tag) => (
                   <span
                     key={tag}
-                    className={`articles-article-tag articles-article-tag--${article.tags.some(
-                      t => t.name === tag
-                    ) && "selected"}`}
+                    className={`articles-article-tag articles-article-tag--${
+                      article.tags.some((t) => t.name === tag) && "selected"
+                    }`}
                     onClick={() =>
-                      setArticle(t =>
-                        article.tags.some(t => t.name === tag)
+                      setArticle((t) =>
+                        article.tags.some((t) => t.name === tag)
                           ? {
                               ...article,
                               tags: [
-                                ...article["tags"].filter(ta => ta.name !== tag)
-                              ]
+                                ...article["tags"].filter(
+                                  (ta) => ta.name !== tag
+                                ),
+                              ],
                             }
                           : {
                               ...article,
-                              tags: [...article["tags"], { name: tag }]
+                              tags: [...article["tags"], { name: tag }],
                             }
                       )
                     }
@@ -110,7 +106,7 @@ function Article({ match, location, history }) {
                     {t(`categories.${[tag]}`)}
                     <i
                       className={`fa fa-${
-                        article.tags.some(t => t.name === tag)
+                        article.tags.some((t) => t.name === tag)
                           ? "times-circle"
                           : "plus-circle"
                       }`}
@@ -118,9 +114,9 @@ function Article({ match, location, history }) {
                   </span>
                 ))}
             </div>
-            <img className="article-img" src={article.images} alt="article" />
+            {/* <img className="article-img" src={article.images} alt="article" /> */}
             <textarea
-              onChange={event =>
+              onChange={(event) =>
                 setArticle({ ...article, body_sp: event.target.value })
               }
               className="create-edit-article-body"
@@ -128,7 +124,7 @@ function Article({ match, location, history }) {
               defaultValue={article.body_sp.replace(/<br\s*\/?>/gi, "\n")}
             />
             <textarea
-              onChange={event =>
+              onChange={(event) =>
                 setArticle({ ...article, body_en: event.target.value })
               }
               className="create-edit-article-body"
