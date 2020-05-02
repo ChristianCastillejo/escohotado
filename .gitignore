@@ -30,6 +30,7 @@
 
 # Ignore bundler config.
 /escohotado-server/.bundle
+/escohotado-server/vendor/bundle
 
 # Ignore the default SQLite database.
 /escohotado-server/db/*.sqlite3
