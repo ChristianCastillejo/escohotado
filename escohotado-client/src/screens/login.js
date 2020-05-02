@@ -10,6 +10,7 @@ export default function Login({ history }) {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    debugger;
     if (
       session.id &&
       cookie.load("uid") &&

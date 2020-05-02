@@ -8,12 +8,12 @@ class UsersController < ApplicationController
     user = User.create!(user_params)
     auth_token = AuthenticateUser.new(user.email, user.password).call
     response = { message: Message.account_created, auth_token: auth_token }
-    json_response(response, :created)
+    render json: @user
   end
 
   def current
     @user = User.find(current_user.id)
-    json_response(@user)
+    render json: @user
   end
 
   private
